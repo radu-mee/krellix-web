@@ -1,4 +1,5 @@
 .next/
+.open-next/
 node_modules/
 out/
 .vercel/
@@ -8,4 +9,3 @@ dist/
 *.log
 .env.local
 .env.*.local
-
