@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import designersThumbnail from "@/Assets/Solutions/Designers.png";
-import developersThumbnail from "@/Assets/Solutions/Developers.png";
-import foundersThumbnail from "@/Assets/Solutions/Founders.png";
-import marketersThumbnail from "@/Assets/Solutions/Marketers.png";
-import productManagersThumbnail from "@/Assets/Solutions/Product-managers.png";
-import researchersThumbnail from "@/Assets/Solutions/Researchers.png";
 import DotGridDivider from "@/ui/DotGridDivider";
+
+const designersThumbnail = "/solutions/Designers.png";
+const developersThumbnail = "/solutions/Developers.png";
+const foundersThumbnail = "/solutions/Founders.png";
+const marketersThumbnail = "/solutions/Marketers.png";
+const productManagersThumbnail = "/solutions/Product-managers.png";
+const researchersThumbnail = "/solutions/Researchers.png";
 
 type SolutionCard = {
   title: string;
@@ -27,7 +28,7 @@ const SOLUTION_CARDS: readonly SolutionCard[] = [
     description:
       "Strategy, marketing, product, and engineering agents collaborating in one workspace. Get cross-functional alignment without the meetings.",
     href: "/en/solutions/founders",
-    thumbnailImageSrc: foundersThumbnail.src,
+    thumbnailImageSrc: foundersThumbnail,
     thumbnailImageAlt: "Founders solution thumbnail illustration",
   },
   {
@@ -35,7 +36,7 @@ const SOLUTION_CARDS: readonly SolutionCard[] = [
     description:
       "PM, engineering, and design agents working together on specs, user intent, and cross-functional feedback before a single line of code is written.",
     href: "/en/solutions/product-managers",
-    thumbnailImageSrc: productManagersThumbnail.src,
+    thumbnailImageSrc: productManagersThumbnail,
     thumbnailImageAlt: "Product managers solution thumbnail illustration",
   },
   {
@@ -43,7 +44,7 @@ const SOLUTION_CARDS: readonly SolutionCard[] = [
     description:
       "Writing, marketing, and strategy agents that remember your voice, audience, and past campaigns. Build consistency at scale.",
     href: "/en/solutions/marketers",
-    thumbnailImageSrc: marketersThumbnail.src,
+    thumbnailImageSrc: marketersThumbnail,
     thumbnailImageAlt: "Marketers solution thumbnail illustration",
   },
   {
@@ -51,7 +52,7 @@ const SOLUTION_CARDS: readonly SolutionCard[] = [
     description:
       "Code review, architecture, and security agents that understand your codebase, remember decisions, and debate trade-offs together.",
     href: "/en/solutions/developers",
-    thumbnailImageSrc: developersThumbnail.src,
+    thumbnailImageSrc: developersThumbnail,
     thumbnailImageAlt: "Developers solution thumbnail illustration",
   },
   {
@@ -59,7 +60,7 @@ const SOLUTION_CARDS: readonly SolutionCard[] = [
     description:
       "UX, copy, and brand agents collaborating on your designs. Get holistic critique: accessibility, messaging, and conversion in one thread.",
     href: "/en/solutions/designers",
-    thumbnailImageSrc: designersThumbnail.src,
+    thumbnailImageSrc: designersThumbnail,
     thumbnailImageAlt: "Designers solution thumbnail illustration",
   },
   {
@@ -67,7 +68,7 @@ const SOLUTION_CARDS: readonly SolutionCard[] = [
     description:
       "Analysis, synthesis, and strategy agents maintaining continuity across your research. Never lose a thread or forget a finding.",
     href: "/en/solutions/researchers",
-    thumbnailImageSrc: researchersThumbnail.src,
+    thumbnailImageSrc: researchersThumbnail,
     thumbnailImageAlt: "Researchers solution thumbnail illustration",
   },
 ];

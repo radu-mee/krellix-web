@@ -1,27 +1,27 @@
-import aiAutomationVsAiAugmentationLarge from "@/Assets/Articles/AI-automation-vs-AI-augmentation-large.png";
-import aiAutomationVsAiAugmentationSmall from "@/Assets/Articles/AI-automation-vs-AI-augmentation-small.png";
-import aiIsNotEverywhereYetLarge from "@/Assets/Articles/AI-is-not-everywhere-(Yet)-large.png";
-import aiIsNotEverywhereYetSmall from "@/Assets/Articles/AI-is-not-everywhere-(Yet)-small.png";
-import aiWontAlwaysMakeYouFasterLarge from "@/Assets/Articles/AI-won't-always-make-you-faster-large.png";
-import aiWontAlwaysMakeYouFasterSmall from "@/Assets/Articles/AI-won't-always-make-you-faster-small.png";
-import oneAiIsNotATeamLarge from "@/Assets/Articles/One-AI-is-not-a-team-large.png";
-import oneAiIsNotATeamSmall from "@/Assets/Articles/One-AI-is-not-a-team-small.png";
-import theContextSwitchingTaxLarge from "@/Assets/Articles/The-context-switching-tax-large.png";
-import theContextSwitchingTaxSmall from "@/Assets/Articles/The-context-switching-tax-small.png";
-import theEndOfTheSearchBarLarge from "@/Assets/Articles/The-end-of-the-search-bar-large.png";
-import theEndOfTheSearchBarSmall from "@/Assets/Articles/The-end-of-the-search-bar-small.png";
-import theProactiveAiLarge from "@/Assets/Articles/The-proactive-AI-large.png";
-import theProactiveAiSmall from "@/Assets/Articles/The-proactive-AI-small.png";
-import whatAreAiAgentsLarge from "@/Assets/Articles/What-are-AI-agents-large.png";
-import whatAreAiAgentsSmall from "@/Assets/Articles/What-are-AI-agents-small.png";
-import whatAreAiEthicsLarge from "@/Assets/Articles/What-are-AI-ethics-large.png";
-import whatAreAiEthicsSmall from "@/Assets/Articles/What-are-AI-ethics-small.png";
-import whatAreAiHallucinationsLarge from "@/Assets/Articles/What-are-AI-hallucinations-large.png";
-import whatAreAiHallucinationsSmall from "@/Assets/Articles/What-are-AI-hallucinations-small.png";
-import whatAreAiTokensLarge from "@/Assets/Articles/What-are-AI-tokens-large.png";
-import whatAreAiTokensSmall from "@/Assets/Articles/What-are-AI-tokens-small.png";
-import whyAiProjectsFailLarge from "@/Assets/Articles/Why-AI-projects-fail-large.png";
-import whyAiProjectsFailSmall from "@/Assets/Articles/Why-AI-projects-fail-small.png";
+const aiAutomationVsAiAugmentationLarge = "/articles/AI-automation-vs-AI-augmentation-large.png";
+const aiAutomationVsAiAugmentationSmall = "/articles/AI-automation-vs-AI-augmentation-small.png";
+const aiIsNotEverywhereYetLarge = "/articles/AI-is-not-everywhere-(Yet)-large.png";
+const aiIsNotEverywhereYetSmall = "/articles/AI-is-not-everywhere-(Yet)-small.png";
+const aiWontAlwaysMakeYouFasterLarge = "/articles/AI-won't-always-make-you-faster-large.png";
+const aiWontAlwaysMakeYouFasterSmall = "/articles/AI-won't-always-make-you-faster-small.png";
+const oneAiIsNotATeamLarge = "/articles/One-AI-is-not-a-team-large.png";
+const oneAiIsNotATeamSmall = "/articles/One-AI-is-not-a-team-small.png";
+const theContextSwitchingTaxLarge = "/articles/The-context-switching-tax-large.png";
+const theContextSwitchingTaxSmall = "/articles/The-context-switching-tax-small.png";
+const theEndOfTheSearchBarLarge = "/articles/The-end-of-the-search-bar-large.png";
+const theEndOfTheSearchBarSmall = "/articles/The-end-of-the-search-bar-small.png";
+const theProactiveAiLarge = "/articles/The-proactive-AI-large.png";
+const theProactiveAiSmall = "/articles/The-proactive-AI-small.png";
+const whatAreAiAgentsLarge = "/articles/What-are-AI-agents-large.png";
+const whatAreAiAgentsSmall = "/articles/What-are-AI-agents-small.png";
+const whatAreAiEthicsLarge = "/articles/What-are-AI-ethics-large.png";
+const whatAreAiEthicsSmall = "/articles/What-are-AI-ethics-small.png";
+const whatAreAiHallucinationsLarge = "/articles/What-are-AI-hallucinations-large.png";
+const whatAreAiHallucinationsSmall = "/articles/What-are-AI-hallucinations-small.png";
+const whatAreAiTokensLarge = "/articles/What-are-AI-tokens-large.png";
+const whatAreAiTokensSmall = "/articles/What-are-AI-tokens-small.png";
+const whyAiProjectsFailLarge = "/articles/Why-AI-projects-fail-large.png";
+const whyAiProjectsFailSmall = "/articles/Why-AI-projects-fail-small.png";
 
 export type BlogPostSection = {
   heading: string;
@@ -52,9 +52,9 @@ const BLOG_POSTS: readonly BlogPost[] = [
     publishedAtLabel: "Feb 16, 2026",
     publishedAtIso: "2026-02-16",
     readTimeLabel: "5 min read",
-    heroImageSrc: aiIsNotEverywhereYetLarge.src,
+    heroImageSrc: aiIsNotEverywhereYetLarge,
     heroImageAlt: "Abstract monochrome wave pattern",
-    thumbnailImageSrc: aiIsNotEverywhereYetSmall.src,
+    thumbnailImageSrc: aiIsNotEverywhereYetSmall,
     thumbnailImageAlt: "Abstract monochrome wave pattern",
     content: [
       {
@@ -146,9 +146,9 @@ const BLOG_POSTS: readonly BlogPost[] = [
     publishedAtLabel: "Feb 16, 2026",
     publishedAtIso: "2026-02-16",
     readTimeLabel: "5 min read",
-    heroImageSrc: theProactiveAiLarge.src,
+    heroImageSrc: theProactiveAiLarge,
     heroImageAlt: "Abstract colorful scanline pattern",
-    thumbnailImageSrc: theProactiveAiSmall.src,
+    thumbnailImageSrc: theProactiveAiSmall,
     thumbnailImageAlt: "Abstract colorful scanline pattern",
     content: [
       {
@@ -237,9 +237,9 @@ const BLOG_POSTS: readonly BlogPost[] = [
     publishedAtLabel: "Feb 16, 2026",
     publishedAtIso: "2026-02-16",
     readTimeLabel: "5 min read",
-    heroImageSrc: theEndOfTheSearchBarLarge.src,
+    heroImageSrc: theEndOfTheSearchBarLarge,
     heroImageAlt: "Abstract diagonal signal pattern",
-    thumbnailImageSrc: theEndOfTheSearchBarSmall.src,
+    thumbnailImageSrc: theEndOfTheSearchBarSmall,
     thumbnailImageAlt: "Abstract diagonal signal pattern",
     content: [
       {
@@ -316,9 +316,9 @@ const BLOG_POSTS: readonly BlogPost[] = [
     publishedAtLabel: "Mar 04, 2026",
     publishedAtIso: "2026-03-04",
     readTimeLabel: "6 min read",
-    heroImageSrc: aiAutomationVsAiAugmentationLarge.src,
+    heroImageSrc: aiAutomationVsAiAugmentationLarge,
     heroImageAlt: "Abstract layered helix pattern",
-    thumbnailImageSrc: aiAutomationVsAiAugmentationSmall.src,
+    thumbnailImageSrc: aiAutomationVsAiAugmentationSmall,
     thumbnailImageAlt: "Abstract layered helix pattern",
     content: [
       {
@@ -426,9 +426,9 @@ const BLOG_POSTS: readonly BlogPost[] = [
     publishedAtLabel: "Mar 11, 2026",
     publishedAtIso: "2026-03-11",
     readTimeLabel: "6 min read",
-    heroImageSrc: theContextSwitchingTaxLarge.src,
+    heroImageSrc: theContextSwitchingTaxLarge,
     heroImageAlt: "Abstract drifting strata pattern",
-    thumbnailImageSrc: theContextSwitchingTaxSmall.src,
+    thumbnailImageSrc: theContextSwitchingTaxSmall,
     thumbnailImageAlt: "Abstract drifting strata pattern",
     content: [
       {
@@ -532,9 +532,9 @@ const BLOG_POSTS: readonly BlogPost[] = [
     publishedAtLabel: "Mar 18, 2026",
     publishedAtIso: "2026-03-18",
     readTimeLabel: "6 min read",
-    heroImageSrc: oneAiIsNotATeamLarge.src,
+    heroImageSrc: oneAiIsNotATeamLarge,
     heroImageAlt: "Abstract vector bloom pattern",
-    thumbnailImageSrc: oneAiIsNotATeamSmall.src,
+    thumbnailImageSrc: oneAiIsNotATeamSmall,
     thumbnailImageAlt: "Abstract vector bloom pattern",
     content: [
       {
@@ -645,9 +645,9 @@ const BLOG_POSTS: readonly BlogPost[] = [
     publishedAtLabel: "Mar 22, 2026",
     publishedAtIso: "2026-03-22",
     readTimeLabel: "7 min read",
-    heroImageSrc: whatAreAiAgentsLarge.src,
+    heroImageSrc: whatAreAiAgentsLarge,
     heroImageAlt: "Abstract helix-style AI signal animation",
-    thumbnailImageSrc: whatAreAiAgentsSmall.src,
+    thumbnailImageSrc: whatAreAiAgentsSmall,
     thumbnailImageAlt: "Abstract helix-style AI signal animation",
     content: [
       {
@@ -771,9 +771,9 @@ const BLOG_POSTS: readonly BlogPost[] = [
     publishedAtLabel: "Mar 25, 2026",
     publishedAtIso: "2026-03-25",
     readTimeLabel: "7 min read",
-    heroImageSrc: whyAiProjectsFailLarge.src,
+    heroImageSrc: whyAiProjectsFailLarge,
     heroImageAlt: "Abstract layered drift pattern",
-    thumbnailImageSrc: whyAiProjectsFailSmall.src,
+    thumbnailImageSrc: whyAiProjectsFailSmall,
     thumbnailImageAlt: "Abstract layered drift pattern",
     content: [
       {
@@ -879,9 +879,9 @@ const BLOG_POSTS: readonly BlogPost[] = [
     publishedAtLabel: "Mar 28, 2026",
     publishedAtIso: "2026-03-28",
     readTimeLabel: "7 min read",
-    heroImageSrc: aiWontAlwaysMakeYouFasterLarge.src,
+    heroImageSrc: aiWontAlwaysMakeYouFasterLarge,
     heroImageAlt: "Abstract vector bloom flow",
-    thumbnailImageSrc: aiWontAlwaysMakeYouFasterSmall.src,
+    thumbnailImageSrc: aiWontAlwaysMakeYouFasterSmall,
     thumbnailImageAlt: "Abstract vector bloom flow",
     content: [
       {
@@ -985,9 +985,9 @@ const BLOG_POSTS: readonly BlogPost[] = [
     publishedAtLabel: "Mar 27, 2026",
     publishedAtIso: "2026-03-27",
     readTimeLabel: "6 min read",
-    heroImageSrc: whatAreAiEthicsLarge.src,
+    heroImageSrc: whatAreAiEthicsLarge,
     heroImageAlt: "Abstract ethical signal field",
-    thumbnailImageSrc: whatAreAiEthicsSmall.src,
+    thumbnailImageSrc: whatAreAiEthicsSmall,
     thumbnailImageAlt: "Abstract ethical signal field",
     content: [
       {
@@ -1091,9 +1091,9 @@ const BLOG_POSTS: readonly BlogPost[] = [
     publishedAtLabel: "Mar 17, 2026",
     publishedAtIso: "2026-03-17",
     readTimeLabel: "6 min read",
-    heroImageSrc: whatAreAiHallucinationsLarge.src,
+    heroImageSrc: whatAreAiHallucinationsLarge,
     heroImageAlt: "Abstract uncertainty ripple pattern",
-    thumbnailImageSrc: whatAreAiHallucinationsSmall.src,
+    thumbnailImageSrc: whatAreAiHallucinationsSmall,
     thumbnailImageAlt: "Abstract uncertainty ripple pattern",
     content: [
       {
@@ -1178,9 +1178,9 @@ const BLOG_POSTS: readonly BlogPost[] = [
     publishedAtLabel: "Mar 10, 2026",
     publishedAtIso: "2026-03-10",
     readTimeLabel: "6 min read",
-    heroImageSrc: whatAreAiTokensLarge.src,
+    heroImageSrc: whatAreAiTokensLarge,
     heroImageAlt: "Abstract token stream lines",
-    thumbnailImageSrc: whatAreAiTokensSmall.src,
+    thumbnailImageSrc: whatAreAiTokensSmall,
     thumbnailImageAlt: "Abstract token stream lines",
     content: [
       {
@@ -1268,3 +1268,4 @@ export function getBlogPosts(): readonly BlogPost[] {
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
   return BLOG_POSTS.find((post) => post.slug === slug);
 }
+
