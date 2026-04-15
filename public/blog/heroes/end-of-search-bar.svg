@@ -1,0 +1,32 @@
+﻿<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#0F1013"/>
+  <defs>
+    <linearGradient id="glowC" x1="160" y1="160" x2="1060" y2="530" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D9F4FF"/>
+      <stop offset="0.45" stop-color="#9D8EFF"/>
+      <stop offset="1" stop-color="#62E3CC"/>
+    </linearGradient>
+    <filter id="blurC" x="0" y="0" width="1200" height="675" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#blurC)" opacity="0.18">
+    <path d="M140 485L430 250L780 430L1060 190" stroke="url(#glowC)" stroke-width="28" stroke-linecap="round"/>
+  </g>
+
+  <g stroke="url(#glowC)" stroke-width="2" opacity="0.78" stroke-linecap="round">
+    <path d="M120 500L420 255L790 440L1080 200"/>
+    <path d="M120 474L420 229L790 414L1080 174"/>
+    <path d="M120 448L420 203L790 388L1080 148"/>
+    <path d="M120 422L420 177L790 362L1080 122"/>
+    <path d="M120 396L420 151L790 336L1080 96"/>
+  </g>
+
+  <g fill="#9D8EFF" opacity="0.42">
+    <circle cx="300" cy="355" r="2.5"/>
+    <circle cx="510" cy="275" r="2.5"/>
+    <circle cx="700" cy="350" r="2.5"/>
+    <circle cx="890" cy="285" r="2.5"/>
+  </g>
+</svg>

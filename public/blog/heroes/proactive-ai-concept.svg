@@ -1,0 +1,39 @@
+﻿<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#101014"/>
+  <defs>
+    <linearGradient id="glowB" x1="200" y1="120" x2="1000" y2="580" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5BE3FF"/>
+      <stop offset="0.45" stop-color="#7C6DFF"/>
+      <stop offset="1" stop-color="#FF6CB6"/>
+    </linearGradient>
+    <filter id="blurB" x="0" y="0" width="1200" height="675" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+  <g filter="url(#blurB)" opacity="0.22">
+    <rect x="220" y="180" width="760" height="310" rx="42" fill="url(#glowB)"/>
+  </g>
+  <g stroke="url(#glowB)" stroke-width="2.5" opacity="0.8">
+    <path d="M180 448H1020"/>
+    <path d="M180 425H1020"/>
+    <path d="M180 402H1020"/>
+    <path d="M180 379H1020"/>
+    <path d="M180 356H1020"/>
+    <path d="M180 333H1020"/>
+    <path d="M180 310H1020"/>
+    <path d="M180 287H1020"/>
+    <path d="M180 264H1020"/>
+    <path d="M180 241H1020"/>
+  </g>
+  <g stroke="url(#glowB)" stroke-width="2" opacity="0.44">
+    <path d="M250 190V500"/>
+    <path d="M338 190V500"/>
+    <path d="M426 190V500"/>
+    <path d="M514 190V500"/>
+    <path d="M602 190V500"/>
+    <path d="M690 190V500"/>
+    <path d="M778 190V500"/>
+    <path d="M866 190V500"/>
+    <path d="M954 190V500"/>
+  </g>
+</svg>
