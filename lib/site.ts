@@ -7,7 +7,7 @@ export interface NavigationItem {
 
 export const siteConfig = {
   name: "Krellix",
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://krellixlabs.com",
   downloadHref: "#",
   waitlistHref: localizePath("/join-waitlist"),
   youtubeHref: "#",

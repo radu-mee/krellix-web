@@ -24,7 +24,7 @@ const PRICING_PLANS: readonly PricingPlan[] = [
       "2 Projects",
       "1 Mb files per project",
       "2 Files per project",
-      "Single agent chats",
+      "Group agents chats",
     ],
     imageSrc: "/images/pricing-free.png",
   },
@@ -64,7 +64,7 @@ const FAQ_ITEMS = [
   {
     question: "Can I cancel my subscription at any time?",
     answer:
-      "Yes. You can cancel any paid plan whenever you want. Your workspace stays available through the current billing cycle, then switches back to the free plan.",
+      "Yes. You can cancel any paid plan whenever you want. Your workspace—and your AI agents—stay available through the current billing cycle, then it switches back to the free plan.",
   },
   {
     question: "Is there a refund policy if I'm not satisfied?",
@@ -144,7 +144,8 @@ export default function PricingContent() {
           <p className="type-label text-brand-mint">Pricing</p>
           <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Work smarter</h1>
           <p className="type-paragraph mt-4 text-[var(--text-muted)]">
-            Pick the setup that fits your team and scale as your projects grow.
+            Get started in minutes. Build your team and scale your workflow as your AI agents work together
+            seamlessly.
           </p>
         </div>
       </div>
@@ -175,8 +176,8 @@ export default function PricingContent() {
             Cross platform continuity
           </h2>
           <p className="type-paragraph mt-4 max-w-[560px] text-[var(--text-muted)]">
-            Start on your Mac, continue on your PC or the other way around. Work
-            doesn&apos;t happen in a single place.
+            Start on your Mac, continue on your PC or the other way around. Your AI agents and workflows stay
+            connected across devices—so your work continues without interruption.
           </p>
           <div className="mt-8">
             <ThemeImage

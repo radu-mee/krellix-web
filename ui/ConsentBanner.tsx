@@ -6,6 +6,7 @@ import PrimaryButton from "@/ui/PrimaryButton";
 import SecondaryButton from "@/ui/SecondaryButton";
 
 const CONSENT_STORAGE_KEY = "krellix-consent-v1";
+const EU_VISITOR_COOKIE_KEY = "krellix-eu-visitor";
 const PRIVACY_CHOICES_TRIGGER_SELECTOR = "[data-open-privacy-choices]";
 
 interface StoredConsent {
@@ -61,6 +62,18 @@ function applyConsentToGoogle(analytics: boolean) {
   });
 }
 
+function isEuVisitor(): boolean {
+  const cookieMatch = document.cookie.match(
+    new RegExp(`(?:^|; )${EU_VISITOR_COOKIE_KEY}=([^;]*)`),
+  );
+
+  if (!cookieMatch || !cookieMatch[1]) {
+    return true;
+  }
+
+  return decodeURIComponent(cookieMatch[1]) === "1";
+}
+
 function persistConsent(analytics: boolean) {
   const nextConsent: StoredConsent = {
     analytics,
@@ -79,6 +92,17 @@ export default function ConsentBanner() {
   const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
 
   useEffect(() => {
+    const euVisitor = isEuVisitor();
+
+    if (!euVisitor) {
+      // Non-EU visitors should not be blocked by consent mode defaults.
+      setAnalyticsEnabled(true);
+      applyConsentToGoogle(true);
+      setIsVisible(false);
+      setIsReady(true);
+      return;
+    }
+
     const storedConsent = readStoredConsent();
 
     if (storedConsent) {

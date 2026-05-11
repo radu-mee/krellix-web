@@ -1,6 +1,6 @@
 <svg width="375" height="742" viewBox="0 0 375 742" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_d_1194_38165)">
-<path d="M16 36C16 29.3726 21.3726 24 28 24H347C353.627 24 359 29.3726 359 36V706C359 712.627 353.627 718 347 718H28C21.3726 718 16 712.627 16 706V36Z" fill="white" shape-rendering="crispEdges"/>
+<g>
+<path d="M16 36C16 29.3726 21.3726 24 28 24H347C353.627 24 359 29.3726 359 36V706C359 712.627 353.627 718 347 718H28C21.3726 718 16 712.627 16 706V36Z" fill="white" shape-rendering="crispEdges" filter="url(#filter0_d_1194_38165)"/>
 <circle cx="56" cy="56" r="12.5" fill="black" stroke="white"/>
 <path d="M53.5 60L55.4 52.7H56.61L58.5 60H57.59L57.11 58.06H54.9L54.42 60H53.5ZM55.08 57.3H56.92L56.36 55.05C56.2533 54.6233 56.17 54.2667 56.11 53.98C56.05 53.6933 56.0133 53.5067 56 53.42C55.9867 53.5067 55.95 53.6933 55.89 53.98C55.83 54.2667 55.7467 54.62 55.64 55.04L55.08 57.3Z" fill="white"/>
 <circle cx="44" cy="68" r="12.5" fill="black" stroke="white"/>

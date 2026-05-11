@@ -1,8 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import AsciiEffectDemo, {
-  type AsciiEffectPalette,
-  type AsciiEffectType,
-} from "@/ui/AsciiEffectDemo";
 import DotGridDivider from "@/ui/DotGridDivider";
 import ThemeImage from "@/ui/ThemeImage";
 import WaitlistHero from "@/sections/waitlist/WaitlistHero";
@@ -16,8 +13,8 @@ type AgentExample = {
 type BenefitCard = {
   title: string;
   description: string;
-  effect: AsciiEffectType;
-  palette: AsciiEffectPalette;
+  imageSrc: string;
+  imageAlt: string;
 };
 
 const AGENT_EXAMPLES: readonly AgentExample[] = [
@@ -25,19 +22,19 @@ const AGENT_EXAMPLES: readonly AgentExample[] = [
     ascii: "% ::::-- # ::...",
     title: "Code reviewer",
     description:
-      "Reviews for feasibility, design patterns, performance, and security implications.",
+      "Reviews design patterns, performance, security, and system architecture. Supports fast, consistent AI code review across your codebase.",
   },
   {
     ascii: ".... *  : .::  .",
     title: "Strategy agent",
     description:
-      "Evaluates UX flows, accessibility, and consistency with design systems.",
+      "Evaluates long-term architecture trade-offs, scalability, and technical debt. Supports AI reasoning across complex engineering decisions.",
   },
   {
     ascii: "# **** :::: ....",
     title: "Business analyst",
     description:
-      "Validates requirements, defines success metrics, and flags scope risks.",
+      "Validates technical decisions against requirements, scope, and constraints-connecting implementation with real-world impact.",
   },
 ];
 
@@ -45,41 +42,56 @@ const BENEFIT_CARDS: readonly BenefitCard[] = [
   {
     title: "Get real-time team debates",
     description:
-      "Propose an architecture change and watch your agents break it down. Code Reviewer evaluates the implementation, Business Analyst validates against requirements, Strategy Agent flags long-term trade-offs. All perspectives in one thread.",
-    effect: "noiseCloud",
-    palette: "cyanMagentaAmber",
+      "Propose a solution and watch your agents challenge it. Code Reviewer evaluates implementation, Strategy Agent questions scalability, and Business Analyst validates constraints-all in one shared conversation.",
+    imageSrc: "/images/solutions-team-debates.png",
+    imageAlt: "Team debates visualization",
   },
   {
     title: "Every decision gets captured",
     description:
-      "When your team debates PostgreSQL vs. MongoDB or REST vs. GraphQL, the decision and reasoning behind it are preserved. Come back six months later and your agents still know why you chose your current stack.",
-    effect: "pulseGrid",
-    palette: "limeGoldSky",
+      "For architecture decisions like Postgres vs MongoDB or REST vs GraphQL, and debugging insights, every trade-off and reasoning is preserved. Come back later and your agents remember exactly what was decided and why.",
+    imageSrc: "/images/solutions-decisions.png",
+    imageAlt: "Decisions visualization",
   },
   {
     title: "Agents reference each other",
     description:
-      "Strategy Agent flags a scalability concern with the current approach. Code Reviewer sees it and proposes an alternative pattern. Your agents actively build on each other's input - not just respond in sequence.",
-    effect: "waveField",
-    palette: "sunsetCoralGold",
+      "Strategy Agent flags scalability concerns and long-term trade-offs. Code Reviewer builds on it and proposes alternative patterns. Your agents actively build on each other's input-working as a connected system rather than isolated tools.",
+    imageSrc: "/images/solutions-references.png",
+    imageAlt: "References visualization",
   },
 ];
 
 const FAQ_ITEMS = [
   {
-    question: "Is this a replacement for peer code review?",
+    question: "What is AI for developers?",
     answer:
-      "Not really. It's the conversation that happens before and after the PR. Use your agents to pressure-test architecture decisions, debate implementation approaches, and validate technical trade-offs. By the time you open a pull request, the hard thinking is already done.",
+      "Yes. AI code review helps you evaluate implementation, identify issues, and improve code quality faster. Instead of reviewing in isolation, multiple agents contribute different perspectives to refine your code before it ships.",
+  },
+  {
+    question: "Can AI help with code review?",
+    answer:
+      "Yes. AI code review helps you evaluate implementation, identify issues, and improve code quality faster. Instead of reviewing in isolation, multiple agents contribute different perspectives to refine your code before it ships.",
+  },
+  {
+    question: "How does AI support software development?",
+    answer:
+      "AI supports software development by connecting code, decisions, and context in one place. It helps you evaluate trade-offs, improve architecture, and move faster with more informed decisions.",
+  },
+  {
+    question: "Can AI help debug code?",
+    answer:
+      "Yes. AI debugging helps identify issues, surface root causes, and suggest improvements by analysing code and reasoning through potential solutions step by step.",
+  },
+  {
+    question: "What is multi-agent AI?",
+    answer:
+      "Multi-agent artificial intelligence refers to systems where multiple AI agents work together, each contributing a different perspective. In development workflows, this means code review, architecture, and decision-making can happen in one shared conversation.",
   },
   {
     question: "How is this different from ChatGPT or Copilot?",
     answer:
-      "ChatGPT gives you one answer. Copilot autocompletes your line. Krellix gives you a room of senior engineers debating your approach. Your Code Reviewer, Business Analyst, and Strategy Agent each weigh in from their own angle - and they reference past architectural decisions you've made together.",
-  },
-  {
-    question: "Does it remember my codebase and past decisions?",
-    answer:
-      "Every technical decision, architecture choice, and trade-off discussed is preserved. Start a new feature conversation next quarter and your agents already know your stack, your patterns, and the reasoning behind them.",
+      "ChatGPT gives you one answer. Copilot autocompletes your code. Krellix gives you a room of senior engineers debating your approach-where multiple agents review code, challenge architecture decisions, and build on past context to improve outcomes over time.",
   },
 ] as const;
 
@@ -118,8 +130,14 @@ function BenefitCard({
     <article
       className={`flex flex-col border-b border-[var(--border-soft)] ${withDivider ? "md:border-l" : ""}`.trim()}
     >
-      <div className="flex min-h-[120px] items-center justify-center border-b border-[var(--border-soft)] bg-[var(--ascii-divider-bg)] px-6 py-6">
-        <AsciiEffectDemo effect={card.effect} palette={card.palette} size={140} />
+      <div className="relative h-[214px] border-b border-[var(--border-soft)] bg-[var(--ascii-divider-bg)]">
+        <Image
+          src={card.imageSrc}
+          alt={card.imageAlt}
+          fill
+          sizes="(min-width: 768px) 33vw, 100vw"
+          className="object-cover"
+        />
       </div>
 
       <div className="bg-[var(--surface-bg)] px-6 py-6">
@@ -146,9 +164,9 @@ export default function SolutionDevelopersContent() {
           </Link>
           <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Developers</h1>
           <p className="type-paragraph mt-4 text-[var(--text-muted)]">
-            Architecture discussions, code reviews, and debugging sessions with AI agents that track your technical
-            decisions and codebase context across every conversation. Senior-level input on demand, without waiting
-            for a pull request review.
+            Architect solutions, run AI code reviews, and debug faster with AI for developers that understands your
+            codebase, architecture, and past decisions. Unlike a traditional AI coding assistant, your agents
+            collaborate to evaluate trade-offs and improve decisions-bringing senior-level input on demand.
           </p>
         </div>
       </div>
@@ -169,7 +187,7 @@ export default function SolutionDevelopersContent() {
             <ThemeImage
               lightSrc="/images/solutions-developers-hero-image-light-mode-eng.svg"
               darkSrc="/images/solutions-developers-hero-image-dark-mode-eng.svg"
-              alt="Developers collaboration view"
+              alt="AI agents collaborating on software development decisions in a shared workspace, combining code review, architecture, and debugging insights."
               width={738}
               height={773}
             />
@@ -179,7 +197,7 @@ export default function SolutionDevelopersContent() {
             <ThemeImage
               lightSrc="/images/solutions-developers-mobile-hero-image-light-mode-eng.svg"
               darkSrc="/images/solutions-developers-mobile-hero-image-dark-mode-eng.svg"
-              alt="Developers collaboration view"
+              alt="AI agents collaborating on software development decisions in a shared workspace, combining code review, architecture, and debugging insights."
               width={375}
               height={697}
             />
@@ -191,14 +209,20 @@ export default function SolutionDevelopersContent() {
               How they collaborate
             </h2>
             <p className="type-paragraph mt-4 text-[var(--text-muted)]">
-              You share a technical decision. Code Reviewer digs into the implementation details. Business Analyst
-              checks it against requirements and timelines. Strategy Agent zooms out on long-term implications. They
-              challenge each other in the same thread - so you get the kind of technical debate that usually
-              takes three meetings and a whiteboard.
+              You describe a technical decision once. Code Reviewer evaluates implementation details. Strategy Agent
+              challenges long-term trade-offs. Business Analyst validates impact and constraints. They build on each
+              other's input in the same conversation-so your code, architecture, and decisions are aligned before you
+              ship.
             </p>
           </div>
         </div>
+
       </div>
+
+      <p className="type-paragraph mx-auto mt-10 max-w-[760px] px-4 text-center text-[var(--text-muted)] md:px-6">
+        Krellix is an interactive AI system for developers where multiple agents collaborate to support AI code
+        review, debugging, and architecture decisions across software development in one shared workspace.
+      </p>
 
       <div className="my-16">
         <DotGridDivider />
@@ -211,8 +235,9 @@ export default function SolutionDevelopersContent() {
             Collaboration benefits
           </h2>
           <p className="type-paragraph mt-4 text-[var(--text-muted)]">
-            Having a team of AI agents is more than just speed. It's about perspective. When multiple specialists
-            weigh in on the same problem, blind spots shrink and better solutions emerge.
+            Working with AI for software development brings structure and multiple perspectives to every decision.
+            Your agents collaborate through AI reasoning to improve outcomes, solve complex problems, and maintain
+            consistency across your codebase.
           </p>
         </div>
       </div>
@@ -257,4 +282,5 @@ export default function SolutionDevelopersContent() {
     </section>
   );
 }
+
 

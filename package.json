@@ -14,6 +14,10 @@
     "build:cf": "opennextjs-cloudflare build",
     "preview:cf": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy:cf": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "deploy:cf:indexnow": "opennextjs-cloudflare build && opennextjs-cloudflare deploy && npm run indexnow:submit:sitemap -- --non-fatal",
+    "indexnow:submit:sitemap": "node scripts/indexnow/indexnow.mjs submit-sitemap",
+    "indexnow:submit:url": "node scripts/indexnow/indexnow.mjs submit-url",
+    "indexnow:submit:file": "node scripts/indexnow/indexnow.mjs submit-file",
     "typegen:cf": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {

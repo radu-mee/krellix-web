@@ -1,37 +1,34 @@
-import AsciiEffectDemo, {
-  type AsciiEffectPalette,
-  type AsciiEffectType,
-} from "@/ui/AsciiEffectDemo";
+import Image from "next/image";
 import DotGridDivider from "@/ui/DotGridDivider";
 
 type AboutValueCard = {
   title: string;
   description: string;
-  effect: AsciiEffectType;
-  palette: AsciiEffectPalette;
+  imageSrc: string;
+  imageAlt: string;
 };
 
 const ABOUT_VALUE_CARDS: readonly AboutValueCard[] = [
   {
     title: "Context vs overhead",
     description:
-      "The biggest productivity drain is context switching. We built Krellix to keep your momentum inside one shared workspace.",
-    effect: "noiseCloud",
-    palette: "cyanMagentaAmber",
+      "The biggest productivity drain is context switching. Krellix uses context-aware AI to keep momentum in a shared workspace.",
+    imageSrc: "/images/about-context-vs-overhead.png",
+    imageAlt: "Context vs overhead illustration",
   },
   {
     title: "Work in collaboration",
     description:
-      "No one works in isolation. Your work sits in strategy, product, design, and code at once, so your AI should too.",
-    effect: "particleSwarm",
-    palette: "sunsetCoralGold",
+      "No one works in isolation. Your work spans strategy, product, design, and code at once, so your AI should collaborate too.",
+    imageSrc: "/images/about-work-in-collaboration.png",
+    imageAlt: "Work in collaboration illustration",
   },
   {
-    title: "Devices should matter",
+    title: "Devices shouldn't matter",
     description:
-      "Your creative workspace should be truly portable. Start on desktop, continue on tablet, iterate anywhere.",
-    effect: "waveField",
-    palette: "tealIndigoRose",
+      "Your creative workspace should be truly portable. Start on desktop, continue on tablet. Your work get synced across devices.",
+    imageSrc: "/images/about-devices-should-not-matter.png",
+    imageAlt: "Devices should not matter illustration",
   },
 ];
 
@@ -46,8 +43,14 @@ function AboutValueTile({
     <article
       className={`flex flex-col border-b border-[var(--border-soft)] ${withDivider ? "md:border-l" : ""}`.trim()}
     >
-      <div className="flex min-h-[180px] items-center justify-center bg-[var(--surface-bg)] px-6 py-8 md:min-h-[210px]">
-        <AsciiEffectDemo effect={card.effect} palette={card.palette} size={160} />
+      <div className="relative h-[214px] w-full overflow-hidden bg-[var(--surface-bg)]">
+        <Image
+          src={card.imageSrc}
+          alt={card.imageAlt}
+          fill
+          sizes="(min-width: 768px) 33vw, 100vw"
+          className="object-cover object-center"
+        />
       </div>
 
       <div className="flex flex-col items-center border-t border-[var(--border-soft)] bg-[var(--surface-raised)] px-6 py-7 text-center">
@@ -70,6 +73,8 @@ export default function AboutContent() {
           <p className="type-paragraph mt-4 text-[var(--text-muted)]">
             We&apos;re a team of builders who believe the future of work is
             collaboration between humans and AI, organized around real projects.
+            We build context-driven AI, where intelligence works together in a
+            shared environment.
           </p>
         </div>
       </div>
@@ -85,7 +90,7 @@ export default function AboutContent() {
             We started Krellix because modern teams don&apos;t work in one lane.
             Strategy, design, coding, and writing constantly overlap. Most tools
             still treat this as separate workflows. Krellix brings those worlds
-            together in one system.
+            together through a more interactive AI collaboration.
           </p>
         </div>
       </div>
@@ -96,11 +101,12 @@ export default function AboutContent() {
 
       <div className="px-4 md:px-6">
         <div className="mx-auto max-w-[760px] text-center">
-          <h2 className="type-h2 text-[var(--text-strong)]">What we believe</h2>
+          <h2 className="type-h2 text-[var(--text-strong)]">What be believe</h2>
           <p className="type-paragraph mt-4 text-[var(--text-muted)]">
             AI should amplify teams, not replace judgment. Great collaboration
             happens when context is shared, decisions are traceable, and tools
-            adapt to how people already work.
+            adapt to how people already work. We believe in a more natural way
+            of working with AI, where intelligence supports real workflows.
           </p>
         </div>
       </div>

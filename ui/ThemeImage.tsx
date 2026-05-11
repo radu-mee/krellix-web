@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 interface ThemeImageProps {
   lightSrc: string;
   darkSrc: string;
@@ -21,28 +19,32 @@ export default function ThemeImage({
 }: ThemeImageProps) {
   return (
     <span
-      className={`relative inline-flex ${className ?? ""}`}
+      className={`inline-flex ${className ?? ""}`}
       role="img"
       aria-label={alt}
       style={{ width, height }}
     >
-      <Image
+      <img
         src={lightSrc}
         alt=""
         aria-hidden="true"
         width={width}
         height={height}
-        priority={priority}
-        className="theme-image theme-image--light"
+        loading={priority ? "eager" : "lazy"}
+        decoding="async"
+        fetchPriority={priority ? "high" : "auto"}
+        className="theme-only-light h-full w-full object-contain"
       />
-      <Image
+      <img
         src={darkSrc}
         alt=""
         aria-hidden="true"
         width={width}
         height={height}
-        priority={priority}
-        className="theme-image theme-image--dark"
+        loading={priority ? "eager" : "lazy"}
+        decoding="async"
+        fetchPriority={priority ? "high" : "auto"}
+        className="theme-only-dark h-full w-full object-contain"
       />
     </span>
   );

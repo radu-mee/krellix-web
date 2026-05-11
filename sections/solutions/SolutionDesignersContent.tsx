@@ -1,8 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import AsciiEffectDemo, {
-  type AsciiEffectPalette,
-  type AsciiEffectType,
-} from "@/ui/AsciiEffectDemo";
 import DotGridDivider from "@/ui/DotGridDivider";
 import ThemeImage from "@/ui/ThemeImage";
 import WaitlistHero from "@/sections/waitlist/WaitlistHero";
@@ -16,8 +13,8 @@ type AgentExample = {
 type BenefitCard = {
   title: string;
   description: string;
-  effect: AsciiEffectType;
-  palette: AsciiEffectPalette;
+  imageSrc: string;
+  imageAlt: string;
 };
 
 const AGENT_EXAMPLES: readonly AgentExample[] = [
@@ -25,19 +22,19 @@ const AGENT_EXAMPLES: readonly AgentExample[] = [
     ascii: "% ::::-- # ::...",
     title: "UI / UX designer",
     description:
-      "Evaluates UX flows, accessibility, component patterns, and design system consistency.",
+      "Evaluates UX flows, accessibility, component patterns, and design system consistency-improving usability across your product.",
   },
   {
     ascii: ".... *  : .::  .",
     title: "Copywriter",
     description:
-      "Refines microcopy, UI text, and content hierarchy for clarity and tone.",
+      "Refines microcopy, UX text, and content hierarchy for clarity, tone, and conversion-aligning messaging with your designs.",
   },
   {
     ascii: "# **** :::: ....",
     title: "Marketing pro",
     description:
-      "Checks brand alignment, messaging consistency, and conversion optimization.",
+      "Checks brand alignment, messaging consistency, and conversion opportunities-ensuring every design performs in real-world use.",
   },
 ];
 
@@ -45,41 +42,56 @@ const BENEFIT_CARDS: readonly BenefitCard[] = [
   {
     title: "Get real-time team debates",
     description:
-      "Share a design brief and watch your agents critique it together. Design Expert flags usability issues, Writing Coach sharpens the copy, Marketing Pro checks the conversion angle. All perspectives in one thread.",
-    effect: "noiseCloud",
-    palette: "cyanMagentaAmber",
+      "Share a design or flow and watch your agents critique it. UI/UX Designer reviews usability, Copywriter improves clarity, and Marketing Pro evaluates conversion-all in one shared conversation.",
+    imageSrc: "/images/solutions-team-debates.png",
+    imageAlt: "Team debates visualization",
   },
   {
     title: "Every decision gets captured",
     description:
-      "When your team agrees on a component pattern, tone of voice, or standard, the reasoning is preserved. Come back later and your agents remember your decisions and why you made them.",
-    effect: "pulseGrid",
-    palette: "limeGoldSky",
+      "From layout choices to messaging updates, every design decision and its reasoning is preserved. Come back later and your agents remember exactly what was explored and why.",
+    imageSrc: "/images/solutions-decisions.png",
+    imageAlt: "Decisions visualization",
   },
   {
     title: "Agents reference each other",
     description:
-      "Your copywriter shortens a headline. The UI / UX designer sees it and proposes layout adjustments to match. Your agents actively build on each other's input - not just respond in sequence.",
-    effect: "waveField",
-    palette: "sunsetCoralGold",
+      "Copywriter refines messaging based on UX structure. UI/UX Designer adapts flows based on content clarity. Your agents actively build on each other's input-working as a connected system.",
+    imageSrc: "/images/solutions-references.png",
+    imageAlt: "References visualization",
   },
 ];
 
 const FAQ_ITEMS = [
   {
+    question: "What are AI design tools?",
+    answer:
+      "AI design tools help designers generate and refine visuals, layouts, and user experiences using artificial intelligence. Krellix goes further by bringing UX, copy, and product feedback into one place-where multiple agents work together to improve decisions as you design.",
+  },
+  {
+    question: "How does AI help with UX design?",
+    answer:
+      "AI can improve UX design by identifying friction, refining flows, and helping you evaluate decisions faster. Instead of reviewing designs in isolation, Krellix brings feedback and context together in one conversation.",
+  },
+  {
+    question: "Can AI help with design and copy together?",
+    answer:
+      "Yes. Krellix connects copywriting with design decisions, so messaging evolves alongside layouts, flows, and user experience.",
+  },
+  {
+    question: "What is AI in product design?",
+    answer:
+      "AI in product design helps teams refine layouts, interactions, and messaging by bringing feedback and context into one workflow.",
+  },
+  {
+    question: "Is this just another AI design tool?",
+    answer:
+      "No. Most AI design tools focus on individual tasks. Krellix connects multiple perspectives in one system-so feedback, decisions, and context stay aligned.",
+  },
+  {
     question: "Can it give feedback on actual designs?",
     answer:
-      "You can describe your flows, share briefs, share actual designs - your agents will critique structure, copy, accessibility, and conversion. It's not pixel-level feedback, but it catches the UX, content, and strategy issues that matter most before you open Figma.",
-  },
-  {
-    question: "How is this different from ChatGPT?",
-    answer:
-      "ChatGPT gives you one opinion with no memory. Krellix gives you a design critique team that remembers your typography choices, accessibility requirements, and brand guidelines. Your Design Expert, Writing Coach, and Marketing Pro each bring a different lens - and they reference past design decisions to keep everything consistent.",
-  },
-  {
-    question: "Does it remember my design system?",
-    answer:
-      "Every decision - color rationale, component patterns, spacing rules, tone guidelines - is preserved across sessions. Start a new project and your agents already know your established design language and build on it.",
+      "You can describe your flows, share briefs, share actual designs-your agents will critique structure, copy, accessibility, and conversion. It's not pixel-perfect feedback, but it catches the UX, content, and strategy issues.",
   },
 ] as const;
 
@@ -118,8 +130,14 @@ function BenefitCard({
     <article
       className={`flex flex-col border-b border-[var(--border-soft)] ${withDivider ? "md:border-l" : ""}`.trim()}
     >
-      <div className="flex min-h-[120px] items-center justify-center border-b border-[var(--border-soft)] bg-[var(--ascii-divider-bg)] px-6 py-6">
-        <AsciiEffectDemo effect={card.effect} palette={card.palette} size={140} />
+      <div className="relative h-[214px] border-b border-[var(--border-soft)] bg-[var(--ascii-divider-bg)]">
+        <Image
+          src={card.imageSrc}
+          alt={card.imageAlt}
+          fill
+          sizes="(min-width: 768px) 33vw, 100vw"
+          className="object-cover"
+        />
       </div>
 
       <div className="bg-[var(--surface-bg)] px-6 py-6">
@@ -146,9 +164,9 @@ export default function SolutionDesignersContent() {
           </Link>
           <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Designers</h1>
           <p className="type-paragraph mt-4 text-[var(--text-muted)]">
-            Get UX, copy, and brand feedback in one conversation. Your AI design team critiques flows, tightens
-            microcopy, and checks brand alignment - so you iterate faster without chasing feedback across tools
-            and channels.
+            Get UX, copy, and brand feedback in one conversation. Your AI design team critiques flows, flags
+            inconsistencies, and checks brand alignment-so you iterate faster without chasing feedback across tools
+            and channels. Krellix works as a single AI design tool for feedback, iteration, and alignment.
           </p>
         </div>
       </div>
@@ -169,7 +187,7 @@ export default function SolutionDesignersContent() {
             <ThemeImage
               lightSrc="/images/solutions-designers-hero-image-light-mode-eng.svg"
               darkSrc="/images/solutions-designers-hero-image-dark-mode-eng.svg"
-              alt="Designers collaboration view"
+              alt="AI agents collaborating on UX design, copywriting, and product design decisions in a shared workspace."
               width={738}
               height={773}
             />
@@ -179,7 +197,7 @@ export default function SolutionDesignersContent() {
             <ThemeImage
               lightSrc="/images/solutions-designers-mobile-hero-image-light-mode-eng.svg"
               darkSrc="/images/solutions-designers-mobile-hero-image-dark-mode-eng.svg"
-              alt="Designers collaboration view"
+              alt="AI agents collaborating on UX design, copywriting, and product design decisions in a shared workspace."
               width={375}
               height={697}
             />
@@ -191,13 +209,20 @@ export default function SolutionDesignersContent() {
               How they collaborate
             </h2>
             <p className="type-paragraph mt-4 text-[var(--text-muted)]">
-              You describe a design problem. Design Expert critiques the flow and structure. The copywriter tightens
-              every label and message. Marketing pro makes sure the experience actually converts. They build on each
-              other's feedback in the same thread - so you get a holistic critique, not three separate reviews.
+              You describe a design or flow once. UI/UX Designer evaluates usability and structure. Copywriter
+              refines messaging and clarity. Marketing Pro ensures alignment with brand and conversion goals. They
+              build on each other's input in the same conversation-so your design, copy, and user experience stay
+              aligned before anything ships.
             </p>
           </div>
         </div>
+
       </div>
+
+      <p className="type-paragraph mx-auto mt-10 max-w-[760px] px-4 text-center text-[var(--text-muted)] md:px-6">
+        Krellix brings UX, copy, and product feedback into one place. Your AI agents work together on the same
+        problems-so ideas build, decisions improve, and your designs evolve faster.
+      </p>
 
       <div className="my-16">
         <DotGridDivider />
@@ -210,8 +235,8 @@ export default function SolutionDesignersContent() {
             Collaboration benefits
           </h2>
           <p className="type-paragraph mt-4 text-[var(--text-muted)]">
-            Having a team of AI agents is more than just speed. It's about perspective. When multiple specialists
-            weigh in on the same problem, blind spots shrink and better solutions emerge.
+            Having a team of AI agents is more than just speed-it's about perspective. When multiple specialists
+            weigh in on the same problem, blind spots shrink and better design decisions emerge.
           </p>
         </div>
       </div>
@@ -256,4 +281,5 @@ export default function SolutionDesignersContent() {
     </section>
   );
 }
+
 

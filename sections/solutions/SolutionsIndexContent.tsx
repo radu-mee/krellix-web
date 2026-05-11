@@ -26,7 +26,7 @@ const SOLUTION_CARDS: readonly SolutionCard[] = [
   {
     title: "Founders",
     description:
-      "Strategy, marketing, product, and engineering agents collaborating in one workspace. Get cross-functional alignment without the meetings.",
+      "Strategy, marketing, product, and engineering agents in one workspace. Get cross-functional alignment without the meetings.",
     href: "/en/solutions/founders",
     thumbnailImageSrc: foundersThumbnail,
     thumbnailImageAlt: "Founders solution thumbnail illustration",
@@ -75,19 +75,29 @@ const SOLUTION_CARDS: readonly SolutionCard[] = [
 
 const SOLUTION_PILLARS: readonly SolutionPillar[] = [
   {
-    title: "Multi-agent collaboration",
+    title: "What are AI business solutions?",
     description:
-      "Your agents work together. They hand off intelligently, reference each other's insights, and debate trade-offs in one conversation.",
+      "AI business solutions are systems that help you improve how work gets done by combining context, tasks, and decision-making in one place. With Krellix, you can create your own team of AI agents that collaborate to support your work across different roles and workflows.",
   },
   {
-    title: "Persistent project context",
+    title: "How do AI agents work together in business?",
     description:
-      "Every decision, insight, and open question is preserved. Come back days or weeks later, your team remembers exactly where you left off.",
+      "AI agents for business collaborate by sharing context, building on each other's input, and contributing to the same tasks or decisions. Instead of working independently, they operate as a connected system that improves outcomes through multiple perspectives.",
   },
   {
-    title: "Cross-device continuity",
+    title: "Can AI replace cross-functional collaboration?",
     description:
-      "Switch devices and keep moving. Your team follows you everywhere, same context, same continuity, no re-onboarding.",
+      "AI doesn't replace collaboration - it enhances it. Whether you're working on your own or as part of a team, multiple agents can explore ideas, evaluate trade-offs, and support decisions before final outcomes are reached.",
+  },
+  {
+    title: "What is an artificial intelligence workforce?",
+    description:
+      "An artificial intelligence workforce refers to a system where multiple AI agents act like a team, supporting different roles across a business or individual workflow. These agents retain context, build on past work, and help you move faster with more informed decisions.",
+  },
+  {
+    title: "How does AI help with business operations?",
+    description:
+      "AI supports business operations by connecting decisions, tasks, and context in one place. It reduces manual coordination, improves alignment, and helps you focus on higher-value work.",
   },
 ];
 

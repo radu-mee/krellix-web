@@ -86,7 +86,7 @@ export default function WaitlistHero() {
           <AsciiEffectDemo effect="waveField" size={220} className="mb-16" />
         </div>
 
-        <h1 className="type-h1 text-[var(--text-strong)]">Coming soon</h1>
+        <h2 className="type-h1 text-[var(--text-strong)]">Coming soon</h2>
         <p className="type-paragraph mt-4 max-w-[620px] text-[var(--text-muted)]">
           We&apos;re putting the final touches on something new. Join the
           waitlist. Access rolls out in batches, and spots open as we go.

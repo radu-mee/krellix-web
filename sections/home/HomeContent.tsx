@@ -153,7 +153,7 @@ export default function HomeContent() {
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(300px,1fr)_minmax(560px,1.25fr)] lg:gap-16">
           <div className="max-w-[520px]">
             <p className="type-label text-brand-mint">COLLABORATION IMPROVES OUTCOMES</p>
-            <h1 className="type-h1 mt-5 text-[var(--text-strong)] md:text-[68px] md:leading-[1.1]">
+            <h1 className="type-h1 mt-5 leading-[1.08] text-[var(--text-strong)] md:leading-[1.1]">
               AI copilots that collaborate like a real team
             </h1>
             <p className="type-paragraph mt-6 text-[var(--text-muted)] md:max-w-[470px]">

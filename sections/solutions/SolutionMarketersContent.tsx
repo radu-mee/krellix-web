@@ -1,8 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import AsciiEffectDemo, {
-  type AsciiEffectPalette,
-  type AsciiEffectType,
-} from "@/ui/AsciiEffectDemo";
 import DotGridDivider from "@/ui/DotGridDivider";
 import ThemeImage from "@/ui/ThemeImage";
 import WaitlistHero from "@/sections/waitlist/WaitlistHero";
@@ -16,8 +13,8 @@ type AgentExample = {
 type BenefitCard = {
   title: string;
   description: string;
-  effect: AsciiEffectType;
-  palette: AsciiEffectPalette;
+  imageSrc: string;
+  imageAlt: string;
 };
 
 const AGENT_EXAMPLES: readonly AgentExample[] = [
@@ -45,41 +42,56 @@ const BENEFIT_CARDS: readonly BenefitCard[] = [
   {
     title: "Get real-time team debates",
     description:
-      "Ask for a campaign draft and watch your agents shape it together. Writing Coach nails the voice, Marketing Pro sharpens the angle, Business Analyst flags what converted last time. All perspectives in one thread.",
-    effect: "noiseCloud",
-    palette: "cyanMagentaAmber",
+      "Ask for a campaign idea and watch your agents shape it together. Writing Coach refines the messaging, Marketing Pro sharpens the distribution angle, and Business Analyst validates against post performance-all in one shared conversation.",
+    imageSrc: "/images/solutions-team-debates.png",
+    imageAlt: "Team debates visualization",
   },
   {
     title: "Every decision gets captured",
     description:
-      "When your team lands on a brand voice, messaging framework, or campaign direction, the reasoning is preserved. Come back next quarter and your agents remember exactly what tone and strategy you agreed on.",
-    effect: "pulseGrid",
-    palette: "limeGoldSky",
+      "When your team defines messaging, audience targeting, or campaign direction, every decision and its reasoning are preserved. Come back later and your agents remember exactly what worked and why.",
+    imageSrc: "/images/solutions-decisions.png",
+    imageAlt: "Decisions visualization",
   },
   {
     title: "Agents reference each other",
     description:
-      "Business Analyst surfaces that short-form posts outperformed long-form last month. Writing Coach sees it and adjusts the draft length. Your agents actively build on each other's input - not just respond in sequence.",
-    effect: "waveField",
-    palette: "sunsetCoralGold",
+      "Business Analyst highlights what performed best. Writing Coach adapts tone and messaging. Marketing Pro adjusts distribution. Your agents actively build on each other's input-not just respond in sequence.",
+    imageSrc: "/images/solutions-references.png",
+    imageAlt: "References visualization",
   },
 ];
 
 const FAQ_ITEMS = [
   {
-    question: "Will my agents remember my brand voice?",
+    question: "What are AI tools for digital marketers?",
     answer:
-      "Yes. Brief your agents once on tone, audience, and style - and they carry it across every conversation. Blog post number one and blog post number fifty will feel like they came from the same team, because they did.",
+      "AI tools for digital marketers help structure content, campaigns, and strategy by bringing together messaging, audience insights, and performance data in one place, enabling faster and more informed decisions.",
+  },
+  {
+    question: "How can AI support content marketing?",
+    answer:
+      "AI supports content marketing by helping you generate ideas, refine messaging, and align content with strategy and performance insights, so every piece builds on what worked before.",
+  },
+  {
+    question: "Can AI help with content creation?",
+    answer:
+      "Yes. AI for content creation helps generate and refine content while aligning tone, messaging, and strategy across campaigns, improving both speed and consistency.",
+  },
+  {
+    question: "How does AI improve marketing decisions?",
+    answer:
+      "AI improves marketing decisions by combining data, context, and multiple perspectives, helping you evaluate campaign performance, refine strategy, and move forward with greater confidence.",
   },
   {
     question: "How is this different from ChatGPT?",
     answer:
-      "ChatGPT gives you one writer with no memory. Krellix gives you a creative team that builds on itself. Your Writing Coach, Marketing Pro, and Business Analyst each bring a different lens - and they reference past campaigns, performance data, and established brand decisions to shape every new piece.",
+      "ChatGPT gives you one writer with no memory. Krellix gives you a creative team that builds on itself-where Writing Coach, Marketing Pro, and Business Analyst bring different perspectives and reference past campaigns and performance data to shape every new piece.",
   },
   {
-    question: "Can this help with campaign planning, not just copy?",
+    question: "Will my agents maintain brand consistency?",
     answer:
-      "Absolutely. Your agents cover the full arc - from messaging strategy and content drafts to distribution channels and performance benchmarks. Brief them on a launch and they'll come back with copy, a channel plan, and metrics to track.",
+      "Yes. Your agents learn your tone, messaging, and positioning over time, helping you maintain consistency in branding across campaigns, channels, and content.",
   },
 ] as const;
 
@@ -118,8 +130,14 @@ function BenefitCard({
     <article
       className={`flex flex-col border-b border-[var(--border-soft)] ${withDivider ? "md:border-l" : ""}`.trim()}
     >
-      <div className="flex min-h-[120px] items-center justify-center border-b border-[var(--border-soft)] bg-[var(--ascii-divider-bg)] px-6 py-6">
-        <AsciiEffectDemo effect={card.effect} palette={card.palette} size={140} />
+      <div className="relative h-[214px] border-b border-[var(--border-soft)] bg-[var(--ascii-divider-bg)]">
+        <Image
+          src={card.imageSrc}
+          alt={card.imageAlt}
+          fill
+          sizes="(min-width: 768px) 33vw, 100vw"
+          className="object-cover"
+        />
       </div>
 
       <div className="bg-[var(--surface-bg)] px-6 py-6">
@@ -146,7 +164,7 @@ export default function SolutionMarketersContent() {
           </Link>
           <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Marketers</h1>
           <p className="type-paragraph mt-4 text-[var(--text-muted)]">
-            Build a creative team that remembers your brand voice, audience, and past campaigns. Get writing, strategy, and data perspectives in one workspace - every piece of content builds on what came before.
+            Build better campaigns with AI for marketers-designed to remember your brand voice, audience, and past campaigns. From AI for content creation to campaign strategy and performance analysis, your agents collaborate in one workspace so every decision builds on what came before.
           </p>
         </div>
       </div>
@@ -167,7 +185,7 @@ export default function SolutionMarketersContent() {
             <ThemeImage
               lightSrc="/images/solutions-marketers-hero-image-light-mode-eng.svg"
               darkSrc="/images/solutions-marketers-hero-image-dark-mode-eng.svg"
-              alt="Marketers collaboration view"
+              alt="AI agents collaborating on marketing campaigns in a shared workspace, combining content, strategy, and performance insights."
               width={738}
               height={773}
             />
@@ -177,7 +195,7 @@ export default function SolutionMarketersContent() {
             <ThemeImage
               lightSrc="/images/solutions-marketers-mobile-hero-image-light-mode-eng.svg"
               darkSrc="/images/solutions-marketers-mobile-hero-image-dark-mode-eng.svg"
-              alt="Marketers collaboration view"
+              alt="AI agents collaborating on marketing campaigns in a shared workspace, combining content, strategy, and performance insights."
               width={375}
               height={697}
             />
@@ -189,13 +207,20 @@ export default function SolutionMarketersContent() {
               How they collaborate
             </h2>
             <p className="type-paragraph mt-4 text-[var(--text-muted)]">
-              You brief your agents once. Writing Coach drafts the copy. Marketing Pro shapes the distribution angle.
-              Business Analyst pulls in what worked last time. They build on each other's input in
-              the same conversation - so your content is on-brand, optimized, and informed by real data before you hit publish.
+              You brief your AI agents once. Writing Coach drafts the copy. Marketing Pro shapes the distribution
+              strategy. Business Analyst brings in performance insights from past campaigns. They build on each
+              other's input in the same conversation-so your content is aligned, informed, and ready to perform
+              before you publish.
             </p>
           </div>
         </div>
+
       </div>
+
+      <p className="type-paragraph mx-auto mt-10 max-w-[760px] px-4 text-center text-[var(--text-muted)] md:px-6">
+        Krellix is an AI productivity tool where multiple agents collaborate to support decision-making,
+        prioritisation, and execution in one place.
+      </p>
 
       <div className="my-16">
         <DotGridDivider />
@@ -203,13 +228,14 @@ export default function SolutionMarketersContent() {
 
       <div className="px-4 md:px-6">
         <div className="max-w-[760px]">
-          <p className="type-label text-brand-mint">A real dynamic</p>
+          <p className="type-label text-brand-mint">A REAL DYNAMIC</p>
           <h2 className="mt-3 font-display text-[20px] leading-none text-[var(--text-strong)] md:text-[24px]">
             Collaboration benefits
           </h2>
           <p className="type-paragraph mt-4 text-[var(--text-muted)]">
-            Having a team of AI agents is more than just speed. It's about perspective. When multiple specialists
-            weigh in on the same problem, blind spots shrink and better solutions emerge.
+            Working with artificial intelligence marketing tools gives you more than speed-it brings structure and
+            multiple perspectives to every decision. Your team of AI agents collaborates to improve outcomes while
+            maintaining consistency in branding.
           </p>
         </div>
       </div>
@@ -254,6 +280,7 @@ export default function SolutionMarketersContent() {
     </section>
   );
 }
+
 
 
 

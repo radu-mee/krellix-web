@@ -1,8 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import AsciiEffectDemo, {
-  type AsciiEffectPalette,
-  type AsciiEffectType,
-} from "@/ui/AsciiEffectDemo";
 import DotGridDivider from "@/ui/DotGridDivider";
 import ThemeImage from "@/ui/ThemeImage";
 import WaitlistHero from "@/sections/waitlist/WaitlistHero";
@@ -16,8 +13,8 @@ type AgentExample = {
 type BenefitCard = {
   title: string;
   description: string;
-  effect: AsciiEffectType;
-  palette: AsciiEffectPalette;
+  imageSrc: string;
+  imageAlt: string;
 };
 
 const AGENT_EXAMPLES: readonly AgentExample[] = [
@@ -25,19 +22,19 @@ const AGENT_EXAMPLES: readonly AgentExample[] = [
     ascii: "% ::::-- # ::...",
     title: "Business analyst",
     description:
-      "Interprets data, validates methodology, and flags inconsistencies across findings.",
+      "Interprets data, validates methodology, and flags inconsistencies across findings - supporting structured thinking like an AI researcher.",
   },
   {
     ascii: ".... *  : .::  .",
     title: "Copywriter",
     description:
-      "Structures arguments, sharpens articulation, and ensures clarity across complex topics.",
+      "Structures arguments, sharpens articulation, and ensures clarity across complex topics - refining how insights are communicated.",
   },
   {
     ascii: "# **** :::: ....",
     title: "General assistant",
     description:
-      "Handles broad research support, source gathering, and cross-referencing disciplines.",
+      "Handles broad research support, source gathering, and cross-referencing disciplines - connecting ideas across your workflow.",
   },
 ];
 
@@ -45,41 +42,56 @@ const BENEFIT_CARDS: readonly BenefitCard[] = [
   {
     title: "Get real-time team debates",
     description:
-      "Bring a research question and watch your agents structure it together. The business analyst proposes a methodology. The copywriter challenges the framing, the general assistant surfaces supporting sources.",
-    effect: "noiseCloud",
-    palette: "cyanMagentaAmber",
+      "Bring a research question and watch your agents challenge it. Business Analyst defines methodology, Copywriter refines clarity, and General Assistant supports with sources - all in one thread.",
+    imageSrc: "/images/solutions-team-debates.png",
+    imageAlt: "Team debates visualization",
   },
   {
     title: "Every decision gets captured",
     description:
-      "When your team agrees on a hypothesis or methodology, the reasoning is preserved. Come back weeks later and your agents remember every data point, open question, and evolving conclusion.",
-    effect: "pulseGrid",
-    palette: "limeGoldSky",
+      "From hypotheses to methodology choices, every decision and its reasoning is preserved. Come back later and your AI research assistant remembers exactly what was explored and why.",
+    imageSrc: "/images/solutions-decisions.png",
+    imageAlt: "Decisions visualization",
   },
   {
     title: "Agents reference each other",
     description:
-      "The general assistant surfaces a new data source. The business analyst sees it and adjusts the analysis framework. Your agents actively build on each other's input. They do not just respond in sequence.",
-    effect: "waveField",
-    palette: "sunsetCoralGold",
+      "General Assistant surfaces new information. Business Analyst adapts the approach. Copywriter refines how insights are presented. Your agents build on each other's input - not as isolated AI research tools.",
+    imageSrc: "/images/solutions-references.png",
+    imageAlt: "References visualization",
   },
 ];
 
 const FAQ_ITEMS = [
   {
+    question: "What is an AI research assistant?",
+    answer:
+      "An AI research assistant helps you explore ideas, analyse information, and refine conclusions. Krellix goes further by using multiple agents that collaborate and build on past work - so your research evolves instead of restarting each time.",
+  },
+  {
+    question: "Can I personalize my AI research assistant?",
+    answer:
+      "Yes. Your personalized AI research assistant adapts to your workflow, remembers decisions, and improves over time - building on past context across every session.",
+  },
+  {
     question: "Can it handle long-running research projects?",
     answer:
-      "That's exactly what it's built for. Start a literature review on Monday, continue analysis on Thursday, write conclusions next week. Your agents maintain the full thread - established findings, open questions, and evolving hypotheses - across every session.",
+      "That's exactly what it's built for. Start research on Monday, continue analysis later in the week, and refine conclusions over time. Your AI research assistant maintains the full thread - capturing findings, open questions, and evolving hypotheses.",
+  },
+  {
+    question: "How is this different from AI research tools?",
+    answer:
+      "Most AI research tools handle isolated tasks like summarising or retrieving information. Krellix connects multiple agents so research, reasoning, and context stay aligned across your entire workflow.",
   },
   {
     question: "How is this different from ChatGPT?",
     answer:
-      "ChatGPT gives you one perspective that resets every conversation. Krellix gives you a research team that accumulates knowledge over time. Your Business Analyst, Writing Coach, and General Assistant each bring a different lens - and they reference weeks of past findings, methodology decisions, and unresolved questions.",
+      "ChatGPT gives you one response at a time. Krellix gives you a team working together as an AI researcher system - where insights build over time and past context shapes future decisions.",
   },
   {
-    question: "Can I search across past research conversations?",
+    question: "What happens to past research and insights?",
     answer:
-      "Every finding, methodology choice, and open question is preserved and searchable. That insight from three weeks ago, the framework you debated last Tuesday - it's all there. Your project becomes a living knowledge base that grows with your research.",
+      "Every finding, methodology choice, and open question is preserved and searchable. Krellix supports AI knowledge management, turning your research into a continuous, evolving knowledge base you can revisit and build on.",
   },
 ] as const;
 
@@ -118,8 +130,14 @@ function BenefitCard({
     <article
       className={`flex flex-col border-b border-[var(--border-soft)] ${withDivider ? "md:border-l" : ""}`.trim()}
     >
-      <div className="flex min-h-[120px] items-center justify-center border-b border-[var(--border-soft)] bg-[var(--ascii-divider-bg)] px-6 py-6">
-        <AsciiEffectDemo effect={card.effect} palette={card.palette} size={140} />
+      <div className="relative h-[214px] border-b border-[var(--border-soft)] bg-[var(--ascii-divider-bg)]">
+        <Image
+          src={card.imageSrc}
+          alt={card.imageAlt}
+          fill
+          sizes="(min-width: 768px) 33vw, 100vw"
+          className="object-cover"
+        />
       </div>
 
       <div className="bg-[var(--surface-bg)] px-6 py-6">
@@ -148,7 +166,8 @@ export default function SolutionResearchersContent() {
           <p className="type-paragraph mt-4 text-[var(--text-muted)]">
             Synthesize findings, track hypotheses, and maintain research continuity across weeks of work. Your AI
             research team remembers every data point, methodology decision, and open question - so your thinking
-            compounds instead of restarting.
+            compounds instead of restarting. Krellix is a personalized AI research assistant, building on your
+            workflow and past context over time.
           </p>
         </div>
       </div>
@@ -169,7 +188,7 @@ export default function SolutionResearchersContent() {
             <ThemeImage
               lightSrc="/images/solutions-researchers-hero-image-light-mode-eng.svg"
               darkSrc="/images/solutions-researchers-hero-image-dark-mode-eng.svg"
-              alt="Researchers collaboration view"
+              alt="AI research assistant agents collaborating on research workflows, combining analysis, writing, and data interpretation"
               width={738}
               height={773}
             />
@@ -179,7 +198,7 @@ export default function SolutionResearchersContent() {
             <ThemeImage
               lightSrc="/images/solutions-researchers-mobile-hero-image-light-mode-eng.svg"
               darkSrc="/images/solutions-researchers-mobile-hero-image-dark-mode-eng.svg"
-              alt="Researchers collaboration view"
+              alt="AI research assistant agents collaborating on research workflows, combining analysis, writing, and data interpretation"
               width={375}
               height={697}
             />
@@ -191,13 +210,19 @@ export default function SolutionResearchersContent() {
               How they collaborate
             </h2>
             <p className="type-paragraph mt-4 text-[var(--text-muted)]">
-              You bring a research question. Business Analyst structures the methodology and validates the data. The
-              copywriter shapes how the findings are articulated. The general assistant pulls in sources and flags
-              gaps. They work together in the same thread so your research stays rigorous and clear.
+              You bring a research question. Business Analyst structures the approach. Copywriter refines how insights
+              are expressed. General Assistant gathers sources and fills gaps. They build on each other's input in the
+              same conversation - so your research stays structured and connected.
             </p>
           </div>
         </div>
       </div>
+
+      <p className="type-paragraph mx-auto mt-10 max-w-[760px] px-4 text-center text-[var(--text-muted)] md:px-6">
+        Krellix is a personalized AI research assistant where multiple agents collaborate across one continuous
+        workflow. Instead of switching between separate AI research tools, your agents build on shared context - so
+        research improves over time.
+      </p>
 
       <div className="my-16">
         <DotGridDivider />
@@ -211,7 +236,7 @@ export default function SolutionResearchersContent() {
           </h2>
           <p className="type-paragraph mt-4 text-[var(--text-muted)]">
             Having a team of AI agents is more than just speed. It's about perspective. When multiple specialists
-            weigh in on the same problem, blind spots shrink and better solutions emerge.
+            weigh in on the same problem, blind spots shrink and better research decisions emerge.
           </p>
         </div>
       </div>
@@ -256,5 +281,6 @@ export default function SolutionResearchersContent() {
     </section>
   );
 }
+
 
 

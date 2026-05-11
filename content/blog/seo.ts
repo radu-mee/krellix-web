@@ -14,9 +14,9 @@ export type BlogSeoMetadata = {
 const BLOG_SEO_METADATA: readonly BlogSeoMetadata[] = [
   {
     slug: "ai-wont-always-make-you-faster",
-    metaTitle: "AI Won't Always Make You Faster | Krellix Blog",
+    metaTitle: "AI Productivity Isn’t What You Thin",
     metaDescription:
-      "AI boosts output, but without judgment it can increase errors and slow experienced workers down. Research shows expertise - not tools - determines AI productivity gains.",
+      "AI can increase output—but not always results. Learn how judgment, experience, and decision-making shape real productivity.",
     primaryKeyword: "AI productivity",
     secondaryKeywordsCsv:
       "AI and expertise, AI for knowledge workers, does AI make you faster, AI judgment, AI experienced workers, AI productivity gains research",
@@ -29,9 +29,9 @@ const BLOG_SEO_METADATA: readonly BlogSeoMetadata[] = [
   },
   {
     slug: "what-are-ai-ethics",
-    metaTitle: "What Are AI Ethics? A Clear Guide for 2026 | Krellix Blog",
+    metaTitle: "What Is AI Ethics? Challenges & Risks",
     metaDescription:
-      "AI ethics is the practice of building AI that is fair, transparent, and accountable. Learn the core principles, real-world failures, and what ethical AI looks like in practice.",
+      "Understand AI ethics challenges, transparency, and accountability. Learn how ethical AI impacts real-world decisions.",
     primaryKeyword: "AI ethics",
     secondaryKeywordsCsv:
       "what is AI ethics, AI bias, AI fairness, AI transparency, AI accountability, responsible AI, EU AI Act",
@@ -44,9 +44,9 @@ const BLOG_SEO_METADATA: readonly BlogSeoMetadata[] = [
   },
   {
     slug: "why-ai-projects-fail",
-    metaTitle: "Why AI Projects Fail: The Data Behind the 80% Rate | Krellix",
+    metaTitle: "Why AI Projects Fail: The Real AI Adoption Challenges",
     metaDescription:
-      "80% of AI projects fail - not because the technology is broken, but because organizations treat AI as a tech problem instead of a design problem. Here's what the data shows.",
+      "Most AI projects fail due to data, workflows, and leadership—not tech. Learn the real AI adoption challenges and how to implement AI in business.",
     primaryKeyword: "why AI projects fail",
     secondaryKeywordsCsv:
       "AI project failure rate, AI implementation, AI ROI, AI pilot failure, enterprise AI failure, AI adoption challenges",
@@ -59,9 +59,9 @@ const BLOG_SEO_METADATA: readonly BlogSeoMetadata[] = [
   },
   {
     slug: "what-are-ai-agents",
-    metaTitle: "What Are AI Agents? A Plain-English Guide for 2026 | Krellix",
+    metaTitle: "What Are AI Agents? How They Work & Real Use Cases",
     metaDescription:
-      "AI agents are software that can pursue goals on your behalf, making decisions along the way. Learn how they work, what they're good at, and where they fall short.",
+      "What are AI agents? Learn how they work, how they differ from chatbots, and where they add real value in modern workflows.",
     primaryKeyword: "what are AI agents",
     secondaryKeywordsCsv:
       "AI agents explained, AI agents vs chatbots, how AI agents work, multi-agent systems, agentic AI, AI agent use cases",
@@ -74,9 +74,10 @@ const BLOG_SEO_METADATA: readonly BlogSeoMetadata[] = [
   },
   {
     slug: "one-ai-is-not-a-team",
-    metaTitle: "One AI Is Not a Team: The Case for Multi-Agent AI | Krellix",
+    metaTitle:
+      "Collaborative Artificial Intelligence: Why One AI Isn't Enough",
     metaDescription:
-      "A single AI assistant gives you one perspective trying to sound like all of them. Multi-agent collaboration produces better results through genuine tension between viewpoints.",
+      "One AI can't match a team. See how collaborative artificial intelligence and multi-agent systems improve complex work and decision-making.",
     primaryKeyword: "multi-agent AI",
     secondaryKeywordsCsv:
       "AI collaboration, AI team, multi-agent systems, AI agents working together, one AI vs team of agents, AI for teams",
@@ -88,19 +89,19 @@ const BLOG_SEO_METADATA: readonly BlogSeoMetadata[] = [
     canonicalPath: "/en/blog/one-ai-is-not-a-team",
   },
   {
-    slug: "what-are-ai-hallucinations",
-    metaTitle: "What Are AI Hallucinations? Why AI Gets Things Wrong | Krellix",
+    slug: "what-is-an-ai-hallucination",
+    metaTitle: "AI Hallucination: What It Is, Why It Happens & How to Prevent It",
     metaDescription:
-      "AI hallucinations happen when language models generate confident, plausible output that is factually wrong. Learn why it happens, the types to watch for, and how to protect yourself.",
-    primaryKeyword: "AI hallucinations",
+      "AI hallucination explained. Learn why AI generates false information, see real examples, and how to prevent errors in your workflow.",
+    primaryKeyword: "AI hallucination",
     secondaryKeywordsCsv:
-      "what are AI hallucinations, why does AI make things up, AI accuracy, AI confabulation, LLM hallucination, AI factual errors",
-    ogTitle: "What Are AI Hallucinations?",
+      "what is an AI hallucination, why does AI make things up, AI accuracy, AI confabulation, LLM hallucination, AI factual errors",
+    ogTitle: "What Is an AI Hallucination?",
     ogDescription:
       "AI can sound perfectly right while being completely wrong. Here's why hallucinations happen and how to protect yourself.",
-    h1Tag: "What are AI hallucinations?",
-    focusKeyphrase: "AI hallucinations",
-    canonicalPath: "/en/blog/what-are-ai-hallucinations",
+    h1Tag: "What is an AI hallucination",
+    focusKeyphrase: "AI hallucination",
+    canonicalPath: "/en/blog/what-is-an-ai-hallucination",
   },
   {
     slug: "the-context-switching-tax",

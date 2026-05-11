@@ -312,44 +312,46 @@ select {
   box-shadow: var(--shadow-soft);
 }
 
-.type-h1,
-.type-h2,
-.type-h3,
-.type-label {
-  font-family: var(--font-jetbrains-mono);
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 0;
-}
+@layer components {
+  .type-h1,
+  .type-h2,
+  .type-h3,
+  .type-label {
+    font-family: var(--font-jetbrains-mono);
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
 
-.type-h1 {
-  font-size: var(--type-h1-size);
-  line-height: 1;
-}
+  .type-h1 {
+    font-size: var(--type-h1-size);
+    line-height: 1;
+  }
 
-.type-h2 {
-  font-size: var(--type-h2-size);
-  line-height: 1;
-}
+  .type-h2 {
+    font-size: var(--type-h2-size);
+    line-height: 1;
+  }
 
-.type-h3 {
-  font-size: var(--type-h3-size);
-  line-height: 1;
-}
+  .type-h3 {
+    font-size: var(--type-h3-size);
+    line-height: 1;
+  }
 
-.type-paragraph {
-  font-family: var(--font-poppins);
-  font-size: var(--type-body-size);
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.7;
-}
+  .type-paragraph {
+    font-family: var(--font-poppins);
+    font-size: var(--type-body-size);
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.7;
+  }
 
-.type-label {
-  font-size: var(--type-label-size);
-  line-height: 1;
-  text-transform: uppercase;
+  .type-label {
+    font-size: var(--type-label-size);
+    line-height: 1;
+    text-transform: uppercase;
+  }
 }
 
 

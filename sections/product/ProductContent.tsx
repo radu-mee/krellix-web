@@ -218,16 +218,14 @@ export default function ProductContent() {
         <div className="max-w-[760px]">
           <p className="type-label text-brand-mint">Product</p>
           <h1 className="type-h1 mt-3 text-[var(--text-strong)]">
-            Your AI-powered collaboration platform
+            Your AI-powered
+            <br />
+            collaboration platform
           </h1>
           <p className="type-paragraph mt-4 text-[var(--text-muted)]">
             Build your team, organize your projects, and let your AI agents collaborate in one place.
           </p>
         </div>
-      </div>
-
-      <div className="my-16">
-        <DotGridDivider />
       </div>
 
       <ProductFeatureSection feature={PRODUCT_FEATURES[0]} />

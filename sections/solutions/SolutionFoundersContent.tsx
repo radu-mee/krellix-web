@@ -1,8 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import AsciiEffectDemo, {
-  type AsciiEffectPalette,
-  type AsciiEffectType,
-} from "@/ui/AsciiEffectDemo";
 import DotGridDivider from "@/ui/DotGridDivider";
 import ThemeImage from "@/ui/ThemeImage";
 import WaitlistHero from "@/sections/waitlist/WaitlistHero";
@@ -16,28 +13,28 @@ type AgentExample = {
 type BenefitCard = {
   title: string;
   description: string;
-  effect: AsciiEffectType;
-  palette: AsciiEffectPalette;
+  imageSrc: string;
+  imageAlt: string;
 };
 
 const AGENT_EXAMPLES: readonly AgentExample[] = [
   {
     ascii: "% ::::-- # ::...",
-    title: "Strategy expert",
+    title: "Strategy agent",
     description:
-      "Shapes the roadmap and opportunity framing so priorities stay aligned with growth goals.",
+      "Frames business challenges, identifies opportunities, and thinks long term.",
   },
   {
     ascii: ".... *  : .::  .",
     title: "Business analyst",
     description:
-      "Surfaces assumptions, risks, and trade-offs from your data before decisions become expensive.",
+      "Validates assumptions, analyzes metrics, and structures data-driven decisions.",
   },
   {
     ascii: "# **** :::: ....",
     title: "Marketing pro",
     description:
-      "Builds launch narratives, messaging, and campaign direction around the same product context.",
+      "Develops go-to-market strategy, defines positioning, and suggests distribution.",
   },
 ];
 
@@ -45,23 +42,23 @@ const BENEFIT_CARDS: readonly BenefitCard[] = [
   {
     title: "Get real-time team debates",
     description:
-      "Ask one question and watch your agents work it out. Strategy proposes an approach, Business Analyst questions feasibility, Marketing Pro refines the angle. All perspectives in one coherent thread.",
-    effect: "noiseCloud",
-    palette: "cyanMagentaAmber",
+      "Ask one question and watch your agents work it out. A strategy agent proposes an approach, a business analyst challenges feasibility, and a marketing specialist refines the angle, all in one shared thread.",
+    imageSrc: "/images/solutions-team-debates.png",
+    imageAlt: "Team debates visualization",
   },
   {
     title: "Every decision gets captured",
     description:
-      "When your team debates a pivot or pricing change, the decision and reasoning behind it are preserved. Come back next month and your agents remember exactly what was decided and why.",
-    effect: "pulseGrid",
-    palette: "limeGoldSky",
+      "When your team debates a pivot or pricing change, the decision and reasoning are preserved. Come back later and your agents remember exactly what was decided and why, with full context.",
+    imageSrc: "/images/solutions-decisions.png",
+    imageAlt: "Decisions visualization",
   },
   {
     title: "Agents reference each other",
     description:
-      "Code Reviewer flags a technical limitation. Marketing Pro sees it and adjusts the go-to-market strategy accordingly. Your agents actively build on each other's input - not just respond in sequence.",
-    effect: "waveField",
-    palette: "sunsetCoralGold",
+      "A technical limitation surfaces, and positioning adjusts instantly. Your agents build on each other's input in real time, not just respond in sequence, but adapt together as the conversation evolves.",
+    imageSrc: "/images/solutions-references.png",
+    imageAlt: "References visualization",
   },
 ];
 
@@ -69,17 +66,32 @@ const FAQ_ITEMS = [
   {
     question: "Can this replace early hires?",
     answer:
-      "Krellix isn't designed to replace your team. It's designed to extend it. Think of it as giving every team member their own sub-team of specialists they can bounce ideas off, pressure-test decisions with, and delegate thinking to. That said, if you're a solo founder who needs to move before you can hire, it can absolutely do that as well.",
+      "Krellix isn't designed to replace your team, it's designed to extend it. It gives you multiple perspectives to explore ideas, challenge decisions, and move faster with confidence before you hire.",
   },
   {
     question: "How is this different from ChatGPT?",
     answer:
-      "ChatGPT and other similar tools give you one voice. Krellix gives you a room. When you ask a growth question, your Strategy agent, Business Analyst, and Marketing Pro each weigh in from their own angle and they challenge each other. You get the tension and trade-offs that lead to better decisions.",
+      "Most AI tools give you a single response, Krellix brings multiple perspectives into one space where agents challenge each other, helping you reach more complete answers and better decisions.",
   },
   {
     question: "Is this worth the setup time?",
     answer:
-      "Setup takes minutes, not hours. Create a project, create your agents, and start working together. There's no onboarding process to sit through. You get value from the first conversation, and it compounds as your agents learn your startup's context.",
+      "Most AI tools give you a single response, Krellix brings multiple perspectives into one space where agents challenge each other, helping you reach more complete answers and better decisions.",
+  },
+  {
+    question: "What is AI for businesses?",
+    answer:
+      "Artificial intelligence for businesses refers to systems that help speed up tasks, improve decision-making, and operate more efficiently using data, context and intelligent software across daily workflows.",
+  },
+  {
+    question: "What is an AI business solution?",
+    answer:
+      "An AI business solution is a system that helps you apply AI to real work, from planning and analysis to execution and collaboration in one place.",
+  },
+  {
+    question: "How can startups use AI in business?",
+    answer:
+      "Startups can use AI to validate ideas, support decisions, and streamline execution across product, marketing, and operations, all within one collaborative system that evolves with their work.",
   },
 ] as const;
 
@@ -118,8 +130,14 @@ function BenefitCard({
     <article
       className={`flex flex-col border-b border-[var(--border-soft)] ${withDivider ? "md:border-l" : ""}`.trim()}
     >
-      <div className="flex min-h-[120px] items-center justify-center border-b border-[var(--border-soft)] bg-[var(--ascii-divider-bg)] px-6 py-6">
-        <AsciiEffectDemo effect={card.effect} palette={card.palette} size={140} />
+      <div className="relative h-[214px] border-b border-[var(--border-soft)] bg-[var(--ascii-divider-bg)]">
+        <Image
+          src={card.imageSrc}
+          alt={card.imageAlt}
+          fill
+          sizes="(min-width: 768px) 33vw, 100vw"
+          className="object-cover"
+        />
       </div>
 
       <div className="bg-[var(--surface-bg)] px-6 py-6">
@@ -146,8 +164,9 @@ export default function SolutionFoundersContent() {
           </Link>
           <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Founders</h1>
           <p className="type-paragraph mt-4 text-[var(--text-muted)]">
-            Build your startup with specialized AI agents collaborating in one workspace. Get strategy, marketing,
-            product, and engineering perspectives working together-the team every founder needs.
+            Build your startup on a system powered by artificial intelligence for businesses, bringing strategy,
+            product, and execution into one collaborative workspace. Work with a team that thinks across every
+            function-the AI business solution founders need.
           </p>
         </div>
       </div>
@@ -168,7 +187,7 @@ export default function SolutionFoundersContent() {
             <ThemeImage
               lightSrc="/images/solutions-founders-hero-image-light-mode-eng.svg"
               darkSrc="/images/solutions-founders-hero-image-dark-mode-eng.svg"
-              alt="Founder agents collaboration view"
+              alt="AI workforce collaborating in a shared workspace, showing multiple agents contributing to a business decision in real time."
               width={738}
               height={773}
             />
@@ -178,25 +197,31 @@ export default function SolutionFoundersContent() {
             <ThemeImage
               lightSrc="/images/solutions-founders-mobile-hero-image-light-mode-eng.svg"
               darkSrc="/images/solutions-founders-mobile-hero-image-dark-mode-eng.svg"
-              alt="Founder agents collaboration view"
+              alt="AI workforce collaborating in a shared workspace, showing multiple agents contributing to a business decision in real time."
               width={375}
               height={697}
             />
           </div>
 
           <div>
-            <p className="type-label text-brand-mint">Stop wearing every hat alone</p>
+            <p className="type-label text-brand-mint">STOP WEARING EVERY HAT ALONE</p>
             <h2 className="mt-3 font-display text-[20px] leading-none text-[var(--text-strong)] md:text-[24px]">
               How they collaborate
             </h2>
             <p className="type-paragraph mt-4 text-[var(--text-muted)]">
-              Your founder workspace blends strategic planning, business analysis,
-              and marketing execution in one thread. Each agent sees the same
-              context, so you get sharper decisions and faster iteration.
+              You bring an idea. A strategy agent frames it and surfaces risks. A marketing specialist shapes
+              positioning, while a business analyst brings data into the conversation. They challenge each other in
+              the same thread, helping you reach aligned decisions without meetings.
             </p>
           </div>
         </div>
+
       </div>
+
+      <p className="type-paragraph mx-auto mt-10 max-w-[760px] px-4 text-center text-[var(--text-muted)] md:px-6">
+        Krellix is an AI productivity tool where multiple agents collaborate to support decision-making,
+        prioritisation, and execution in one place.
+      </p>
 
       <div className="my-16">
         <DotGridDivider />
@@ -204,13 +229,13 @@ export default function SolutionFoundersContent() {
 
       <div className="px-4 md:px-6">
         <div className="max-w-[760px]">
-          <p className="type-label text-brand-mint">A real dynamic</p>
+          <p className="type-label text-brand-mint">A REAL DYNAMIC</p>
           <h2 className="mt-3 font-display text-[20px] leading-none text-[var(--text-strong)] md:text-[24px]">
             Collaboration benefits
           </h2>
           <p className="type-paragraph mt-4 text-[var(--text-muted)]">
-            Having a team of AI agents is more than just speed. When multiple specialists weigh
-            in on the same problem, blind spots shrink and better solutions emerge.
+            Working with an AI workforce gives you more than speed. It brings multiple perspectives into every
+            decision, helping you reduce blind spots and move forward with clarity.
           </p>
         </div>
       </div>
@@ -255,6 +280,7 @@ export default function SolutionFoundersContent() {
     </section>
   );
 }
+
 
 
 

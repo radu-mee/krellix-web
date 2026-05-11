@@ -20,11 +20,12 @@ const poppins = Poppins({
 });
 
 const siteDescription =
-  "Presentation website scaffold for Krellix, structured for responsive marketing pages and legal content.";
+  "Build AI workflows where AI agents collaborate in one platform to deliver faster, better decisions.";
 const socialPreviewImage = "/social-preview-image.png";
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://krellixlabs.com";
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID || "GTM-NJH7LGW8";
 const consentStorageKey = "krellix-consent-v1";
+const euVisitorCookieKey = "krellix-eu-visitor";
 
 export const metadata: Metadata = {
   title: {
@@ -34,8 +35,14 @@ export const metadata: Metadata = {
   description: siteDescription,
   metadataBase: new URL(siteUrl),
   icons: {
-    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
-    shortcut: ["/icon.svg"],
+    icon: [
+      { url: "/favicon.ico", type: "image/x-icon", sizes: "any" },
+      { url: "/favicon-48x48.png", type: "image/png", sizes: "48x48" },
+      { url: "/icon-192x192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon.svg", type: "image/svg+xml", sizes: "any" },
+    ],
+    shortcut: ["/favicon.ico"],
+    apple: [{ url: "/apple-touch-icon.png", type: "image/png", sizes: "180x180" }],
   },
   openGraph: {
     title: "Krellix",
@@ -77,16 +84,31 @@ export default function RootLayout({
               id="gtm-consent-bootstrap"
               strategy="beforeInteractive"
               dangerouslySetInnerHTML={{
-                __html: `(function(w,l,k){
+                __html: `(function(w,d,l,k,c){
   w[l]=w[l]||[];
   w.gtag = w.gtag || function(){ w[l].push(arguments); };
+
+  var euVisitor = true;
+  try {
+    var cookieMatch = d.cookie.match(new RegExp('(?:^|; )' + c + '=([^;]*)'));
+    if (cookieMatch && cookieMatch[1]) {
+      euVisitor = decodeURIComponent(cookieMatch[1]) === '1';
+    }
+  } catch (error) {}
+
+  var defaultAnalyticsState = euVisitor ? 'denied' : 'granted';
+
   w.gtag('consent','default',{
-    analytics_storage:'denied',
+    analytics_storage: defaultAnalyticsState,
     ad_storage:'denied',
     ad_user_data:'denied',
     ad_personalization:'denied',
     wait_for_update:500
   });
+
+  if (!euVisitor) {
+    return;
+  }
 
   try {
     var savedConsentRaw = w.localStorage.getItem(k);
@@ -104,7 +126,7 @@ export default function RootLayout({
       ad_personalization:'denied'
     });
   } catch (error) {}
-})(window,'dataLayer','${consentStorageKey}');`,
+})(window,document,'dataLayer','${consentStorageKey}','${euVisitorCookieKey}');`,
               }}
             />
             <Script
