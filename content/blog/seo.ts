@@ -105,9 +105,9 @@ const BLOG_SEO_METADATA: readonly BlogSeoMetadata[] = [
   },
   {
     slug: "the-context-switching-tax",
-    metaTitle: "The Context Switching Tax: How Fragmented AI Kills Productivity",
+    metaTitle: "Workflow AI and the Hidden Cost of Context Switching",
     metaDescription:
-      "Knowledge workers lose up to 4 hours daily to context switching between disconnected AI tools. The productivity cost isn't speed - it's cognitive quality.",
+      "Workflow AI can improve tasks but destroy focus. Learn how disconnected AI tools increase context switching, cognitive overload, and lost productivity.",
     primaryKeyword: "context switching productivity",
     secondaryKeywordsCsv:
       "context switching cost, AI tool sprawl, AI productivity tools, knowledge worker productivity, too many AI tools, fragmented AI workflow",
@@ -120,9 +120,9 @@ const BLOG_SEO_METADATA: readonly BlogSeoMetadata[] = [
   },
   {
     slug: "what-are-ai-tokens",
-    metaTitle: "What Are AI Tokens? The Simple Explanation for 2026 | Krellix",
+    metaTitle: "What Are AI Tokens? Context Windows, Cost & Tokenization",
     metaDescription:
-      "AI tokens are the basic units of text that language models process. They determine context limits, costs, and why AI sometimes forgets what you said. Here's how they work.",
+      "Learn how AI tokens affect context windows, model limits, token cost, and why long prompts can impact output quality.",
     primaryKeyword: "AI tokens",
     secondaryKeywordsCsv:
       "what are AI tokens, AI token explained, context window, AI token limit, how tokenization works, AI token cost",
@@ -135,9 +135,9 @@ const BLOG_SEO_METADATA: readonly BlogSeoMetadata[] = [
   },
   {
     slug: "ai-automation-vs-ai-augmentation",
-    metaTitle: "AI Automation vs AI Augmentation: Why Augmentation Wins | Krellix",
+    metaTitle: "AI Automation vs AI Augmentation: Why Humans Still Matter",
     metaDescription:
-      "Hybrid human-AI teams outperform full automation by 68.7%. The data is clear: AI augmentation produces better results than replacing humans entirely.",
+      "AI automation removes humans. AI augmentation improves judgment. Learn why human-in-the-loop AI often wins in real-world outcomes.",
     primaryKeyword: "AI automation vs augmentation",
     secondaryKeywordsCsv:
       "AI augmentation, human in the loop AI, AI replacing humans, human-AI collaboration, AI automation problems, augmentation vs automation",
@@ -150,9 +150,9 @@ const BLOG_SEO_METADATA: readonly BlogSeoMetadata[] = [
   },
   {
     slug: "ai-is-not-everywhere-yet",
-    metaTitle: "AI Is Not Everywhere Yet: Hype vs Reality in 2026 | Krellix",
+    metaTitle: "AI Hype vs Reality: Why AI Isn't Everywhere Yet",
     metaDescription:
-      "AI adoption is slower, messier, and more political than the media narrative. The revolution is real - but it's incremental, uneven, and deeply contextual.",
+      "AI hype is ahead of reality. Learn why AI adoption is slower, messier, and shaped by readiness, governance, and implementation challenges.",
     primaryKeyword: "AI adoption",
     secondaryKeywordsCsv:
       "AI hype vs reality, AI in the workplace, enterprise AI adoption, AI implementation challenges, AI in business, is AI overhyped",
@@ -165,9 +165,9 @@ const BLOG_SEO_METADATA: readonly BlogSeoMetadata[] = [
   },
   {
     slug: "the-proactive-ai",
-    metaTitle: "The Proactive AI: From Reactive Answers to Real Leverage | Krellix",
+    metaTitle: "Proactive AI: Why Reactive Assistants Limit Productivity",
     metaDescription:
-      "Reactive AI answers questions. Proactive AI creates leverage - anticipating needs, remembering context, and acting before you ask. Here's why the shift matters.",
+      "Proactive AI anticipates needs instead of waiting for prompts. Learn why reactive AI limits productivity and how proactive assistants create leverage.",
     primaryKeyword: "proactive AI",
     secondaryKeywordsCsv:
       "reactive vs proactive AI, AI anticipation, AI that remembers, AI context awareness, proactive AI assistant, AI leverage",
@@ -180,9 +180,9 @@ const BLOG_SEO_METADATA: readonly BlogSeoMetadata[] = [
   },
   {
     slug: "the-end-of-the-search-bar",
-    metaTitle: "The End of the Search Bar: What Comes Next | Krellix Blog",
+    metaTitle: "Conversational Search Engine: The End of the Search Bar",
     metaDescription:
-      "Search bars return links. AI delivers answers. The shift from searching to conversing is changing how we find, process, and act on information.",
+      "Conversational search is changing how people find answers. Learn why AI search engines, answer engines, and direct responses are replacing blue links.",
     primaryKeyword: "AI search",
     secondaryKeywordsCsv:
       "AI vs search, conversational AI search, end of search engines, AI replacing Google, future of search, AI information retrieval",

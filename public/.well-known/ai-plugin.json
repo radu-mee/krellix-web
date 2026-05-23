@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Krellix",
+  "name_for_model": "krellix",
+  "description_for_human": "Collaborative AI workspace for multi-agent teamwork.",
+  "description_for_model": "Use Krellix for multi-agent collaboration workflows and project support.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://krellixlabs.com/api/openapi.json",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://krellixlabs.com/icon-192x192.png",
+  "contact_email": "support@krellixlabs.com",
+  "legal_info_url": "https://krellixlabs.com/en/terms-of-service"
+}

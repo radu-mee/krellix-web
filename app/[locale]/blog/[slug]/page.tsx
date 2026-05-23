@@ -208,6 +208,209 @@ const WHAT_IS_AN_AI_HALLUCINATION_FAQ_ITEMS = [
   },
 ] as const;
 
+const THE_CONTEXT_SWITCHING_TAX_FAQ_ITEMS = [
+  {
+    question: "What is workflow AI?",
+    answer:
+      "Workflow AI refers to AI systems designed to support connected workflows across multiple tasks, tools, and processes instead of isolated single-purpose actions.",
+  },
+  {
+    question: "Why does context switching reduce productivity?",
+    answer:
+      "Frequent context switching interrupts focus and forces the brain to repeatedly rebuild mental context, reducing cognitive quality and increasing fatigue.",
+  },
+  {
+    question: "What is AI workflow fragmentation?",
+    answer:
+      "AI workflow fragmentation happens when multiple AI tools operate independently without shared context, memory, or continuity between tasks.",
+  },
+  {
+    question: "How does AI affect productivity?",
+    answer:
+      "AI can improve task efficiency, but disconnected tools can also increase cognitive overload and reduce deep focus if workflows become fragmented.",
+  },
+  {
+    question: "Why do AI tools feel overwhelming?",
+    answer:
+      "Many users experience AI overload because each tool creates separate conversations, interfaces, and workflows that require constant switching and re-explaining.",
+  },
+  {
+    question: "How can you reduce context switching at work?",
+    answer:
+      "Reducing context switching requires fewer disconnected tools, better workflow architecture, shared context systems, and more integrated work environments.",
+  },
+] as const;
+
+const WHAT_ARE_AI_TOKENS_FAQ_ITEMS = [
+  {
+    question: "What are AI tokens?",
+    answer:
+      "AI tokens are chunks of text that language models process, count, and generate instead of reading full words the way humans do.",
+  },
+  {
+    question: "What is AI tokenization?",
+    answer:
+      "AI tokenization is the process of splitting text into smaller units, or tokens, so a language model can process it.",
+  },
+  {
+    question: "What are LLM tokens?",
+    answer:
+      "LLM tokens are the pieces of text used by large language models to calculate context, generate output, and determine API cost.",
+  },
+  {
+    question: "What is an AI context window?",
+    answer:
+      "An AI context window is the total amount of input and output a model can process at once, measured in tokens.",
+  },
+  {
+    question: "Why do AI tokens matter?",
+    answer:
+      "AI tokens matter because they affect model memory, response length, performance, and cost.",
+  },
+  {
+    question: "What are tokens in AI?",
+    answer:
+      "Tokens in AI are the basic text units a model uses to understand prompts, process context, and generate responses.",
+  },
+] as const;
+
+const AI_AUTOMATION_VS_AI_AUGMENTATION_FAQ_ITEMS = [
+  {
+    question: "What is AI augmentation?",
+    answer:
+      "AI augmentation means using AI to improve human judgment, speed, and decision-making rather than replacing the person doing the work.",
+  },
+  {
+    question: "What is the difference between AI automation and AI augmentation?",
+    answer:
+      "AI automation removes the human from a task, while AI augmentation keeps the human involved and uses AI to support better outcomes.",
+  },
+  {
+    question: "Is AI automation always bad?",
+    answer:
+      "No. AI automation works well for narrow, repetitive, rules-based tasks. It becomes riskier in complex knowledge work that requires context and judgment.",
+  },
+  {
+    question: "What is human-in-the-loop AI?",
+    answer:
+      "Human-in-the-loop AI is an approach where people remain involved in reviewing, guiding, or approving AI outputs.",
+  },
+  {
+    question: "Will AI replace humans?",
+    answer:
+      "AI will replace some tasks, but the strongest outcomes often come from redesigning work so humans and AI collaborate effectively.",
+  },
+  {
+    question: "Why does AI augmentation work better?",
+    answer:
+      "AI augmentation works better when tasks require judgment, context, creativity, or strategic trade-offs that AI cannot reliably evaluate alone.",
+  },
+  {
+    question: "What is human-centered AI?",
+    answer:
+      "Human-centered AI refers to systems designed to support human judgment, collaboration, and decision-making rather than fully replacing people.",
+  },
+] as const;
+
+const AI_IS_NOT_EVERYWHERE_YET_FAQ_ITEMS = [
+  {
+    question: "What is AI hype?",
+    answer:
+      "AI hype refers to exaggerated claims that make AI adoption seem faster, easier, or more universal than it is in real organizations.",
+  },
+  {
+    question: "Why is AI not everywhere yet?",
+    answer:
+      "AI is not everywhere yet because companies still face cultural, operational, data, governance, and integration barriers.",
+  },
+  {
+    question: "What is AI readiness?",
+    answer:
+      "AI readiness means having the data, workflows, skills, governance, and infrastructure needed to use AI safely and effectively.",
+  },
+  {
+    question: "What are common AI implementation challenges?",
+    answer:
+      "Common AI implementation challenges include legacy systems, unclear ownership, data quality issues, security concerns, and difficulty measuring ROI.",
+  },
+  {
+    question: "Why do AI pilot projects fail to scale?",
+    answer:
+      "AI pilot projects often fail to scale because they are disconnected from real workflows, lack clear ownership, or do not have measurable business outcomes.",
+  },
+  {
+    question: "What is an AI adoption strategy?",
+    answer:
+      "An AI adoption strategy is a plan for where, how, and why AI will be introduced across workflows, including governance, success metrics, and ownership.",
+  },
+] as const;
+
+const THE_PROACTIVE_AI_FAQ_ITEMS = [
+  {
+    question: "What is proactive AI?",
+    answer:
+      "Proactive AI refers to AI systems that anticipate needs, surface useful information, and suggest actions before the user explicitly asks.",
+  },
+  {
+    question: "What is reactive AI?",
+    answer:
+      "Reactive AI responds only after a user gives it a prompt, command, or request. It is useful for isolated tasks but limited for ongoing productivity.",
+  },
+  {
+    question: "What is the difference between reactive AI and proactive AI?",
+    answer:
+      "Reactive AI waits for instructions. Proactive AI uses context, patterns, and signals to flag issues, suggest next steps, and create leverage before being prompted.",
+  },
+  {
+    question: "What is a proactive AI assistant?",
+    answer:
+      "A proactive AI assistant is an AI system designed to support ongoing work by using context, reminders, and suggestions instead of waiting only for prompts.",
+  },
+  {
+    question: "How can proactive AI improve productivity?",
+    answer:
+      "Proactive AI can reduce cognitive overhead by spotting patterns, flagging deadlines, suggesting automations, and keeping important information visible.",
+  },
+  {
+    question: "Is proactive AI the same as AI workflow automation?",
+    answer:
+      "Not exactly. AI workflow automation focuses on automating steps in a process, while proactive AI focuses on anticipating what needs attention and helping users act sooner.",
+  },
+] as const;
+
+const THE_END_OF_THE_SEARCH_BAR_FAQ_ITEMS = [
+  {
+    question: "What is conversational search?",
+    answer:
+      "Conversational search is a way of finding information by asking questions in natural language and refining the answer through follow-up questions instead of using short keyword queries.",
+  },
+  {
+    question: "What is a conversational search engine?",
+    answer:
+      "A conversational search engine is a search system that lets users ask questions, receive synthesized answers, and continue the search through dialogue.",
+  },
+  {
+    question: "What is an answer engine?",
+    answer:
+      "An answer engine is a tool designed to provide direct answers rather than only returning a list of links.",
+  },
+  {
+    question: "Is AI replacing Google search?",
+    answer:
+      "Not completely. Traditional search still works well for navigation, local results, and quick lookups, while AI search is becoming more useful for complex questions, synthesis, and decision support.",
+  },
+  {
+    question: "What is the future of search?",
+    answer:
+      "The future of search is likely to combine traditional search, AI-generated answers, conversational refinement, source validation, and more personalized information retrieval.",
+  },
+  {
+    question: "What is answer engine optimization?",
+    answer:
+      "Answer engine optimization is the process of making content easier for AI-powered answer engines to understand, summarize, and cite in response to user questions.",
+  },
+] as const;
+
 function splitKeywords(csv: string): string[] {
   return csv
     .split(",")
@@ -226,7 +429,10 @@ function parseReadMinutes(readTimeLabel: string): number | undefined {
 }
 
 function stripMarkdownLinks(text: string): string {
-  return text.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/[^\s)]+)\)/g, "$1");
+  return text
+    .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/[^\s)]+)\)/g, "$1")
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/_([^_]+)_/g, "$1");
 }
 
 export function generateStaticParams() {
@@ -376,6 +582,18 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
               ? ONE_AI_IS_NOT_A_TEAM_FAQ_ITEMS
               : post.slug === "what-is-an-ai-hallucination"
                 ? WHAT_IS_AN_AI_HALLUCINATION_FAQ_ITEMS
+                : post.slug === "the-context-switching-tax"
+                  ? THE_CONTEXT_SWITCHING_TAX_FAQ_ITEMS
+                  : post.slug === "what-are-ai-tokens"
+                    ? WHAT_ARE_AI_TOKENS_FAQ_ITEMS
+                    : post.slug === "ai-automation-vs-ai-augmentation"
+                      ? AI_AUTOMATION_VS_AI_AUGMENTATION_FAQ_ITEMS
+                      : post.slug === "ai-is-not-everywhere-yet"
+                        ? AI_IS_NOT_EVERYWHERE_YET_FAQ_ITEMS
+                        : post.slug === "the-proactive-ai"
+                          ? THE_PROACTIVE_AI_FAQ_ITEMS
+                          : post.slug === "the-end-of-the-search-bar"
+                            ? THE_END_OF_THE_SEARCH_BAR_FAQ_ITEMS
         : null;
 
   const faqSchema = faqItems

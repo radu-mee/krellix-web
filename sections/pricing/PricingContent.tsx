@@ -31,7 +31,7 @@ const PRICING_PLANS: readonly PricingPlan[] = [
   {
     badge: "Most popular",
     name: "Plus",
-    price: "$9.90",
+    price: "$19.90",
     period: "/MO",
     features: [
       "Unlimited chats",
@@ -46,7 +46,7 @@ const PRICING_PLANS: readonly PricingPlan[] = [
   {
     badge: "Most powerful",
     name: "Pro",
-    price: "$19.90",
+    price: "$29.90",
     period: "/MO",
     features: [
       "Unlimited chats",

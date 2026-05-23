@@ -1,0 +1,118 @@
+# Krellix - llms-full.txt
+Last updated: 2026-05-11
+Canonical domain: https://krellixlabs.com
+
+Krellix is a collaborative AI workspace where multiple AI agents work together in shared projects and conversations to improve decision quality, execution speed, and cross-functional workflow continuity.
+
+## Product overview
+Krellix is designed around multi-agent collaboration instead of a single assistant model.
+Users can work with specialized AI agents in one shared workspace so strategy, writing, product, design, and technical reasoning can happen in the same thread and context.
+
+## Who Krellix is for
+- Founders
+- Product managers
+- Marketers
+- Developers
+- Designers
+- Researchers
+- Cross-functional teams that need multi-step, multi-perspective AI support
+
+## Core capabilities
+- Multi-agent collaboration in a shared conversation
+- Shared project context across agents and sessions
+- Cross-functional workflow support for business and product execution
+- Role-oriented solution paths by audience (founders, PMs, marketers, developers, designers, researchers)
+- Web and desktop product presence (Windows and macOS download page available)
+
+## Integrations mentioned on the website
+- Notion
+- Google Calendar
+- Asana
+
+## Pricing (machine-readable summary)
+Source page: https://krellixlabs.com/en/pricing
+Source markdown: https://krellixlabs.com/pricing.md
+
+### Free
+Price: $0.00 / month
+Includes:
+- Unlimited chats
+- 2 agents
+- 2 projects
+- 1 MB files per project
+- 2 files per project
+- Group agents chats
+
+### Plus
+Price: $19.90 / month
+Includes:
+- Unlimited chats
+- 6 agents
+- 4 projects
+- 10 MB files per project
+- 4 files per project
+- Group agents chats
+
+### Pro
+Price: $29.90 / month
+Includes:
+- Unlimited chats
+- Unlimited agents
+- 10 projects
+- 100 MB files per project
+- 6 files per project
+- Group agents chats
+
+Pricing note:
+- VAT may apply.
+- Pricing may change over time.
+
+## Constraints and limitations
+- Public API documentation is not yet published.
+- Public OpenAPI specification is not yet published.
+- Public MCP endpoint is discoverable metadata-first and may evolve.
+- Capabilities and limits should be treated as current website state.
+
+## Security and privacy references
+Primary policy URLs:
+- Privacy Policy: https://krellixlabs.com/en/privacy-policy
+- Terms of Service: https://krellixlabs.com/en/terms-of-service
+- Cookie Policy: https://krellixlabs.com/en/cookie-policy
+- Subprocessors: https://krellixlabs.com/en/subprocessors
+
+## Core URLs
+- Home: https://krellixlabs.com/en
+- Product: https://krellixlabs.com/en/product
+- Solutions: https://krellixlabs.com/en/solutions
+- Pricing: https://krellixlabs.com/en/pricing
+- Blog: https://krellixlabs.com/en/blog
+- About: https://krellixlabs.com/en/about
+- Contact: https://krellixlabs.com/en/contact
+- Press kit: https://krellixlabs.com/en/press-kit
+- Download: https://krellixlabs.com/en/download
+- Join waitlist: https://krellixlabs.com/en/join-waitlist
+
+## Solution URLs
+- Founders: https://krellixlabs.com/en/solutions/founders
+- Product Managers: https://krellixlabs.com/en/solutions/product-managers
+- Marketers: https://krellixlabs.com/en/solutions/marketers
+- Developers: https://krellixlabs.com/en/solutions/developers
+- Designers: https://krellixlabs.com/en/solutions/designers
+- Researchers: https://krellixlabs.com/en/solutions/researchers
+
+## Discovery and machine-readable URLs
+- llms.txt: https://krellixlabs.com/llms.txt
+- llms-full.txt: https://krellixlabs.com/llms-full.txt
+- pricing.md: https://krellixlabs.com/pricing.md
+- sitemap.xml: https://krellixlabs.com/sitemap.xml
+- robots.txt: https://krellixlabs.com/robots.txt
+- agent discovery: https://krellixlabs.com/.well-known/agent.json
+- ai-plugin manifest: https://krellixlabs.com/.well-known/ai-plugin.json
+- A2A agent card: https://krellixlabs.com/.well-known/agent-card.json
+- MCP discovery: https://krellixlabs.com/.well-known/mcp
+- MCP server card: https://krellixlabs.com/.well-known/mcp/server-card.json
+
+## Support and contact
+- General: office@krellixlabs.com
+- Press: press@krellixlabs.com
+- Support: support@krellixlabs.com

@@ -4,6 +4,8 @@ import { DEFAULT_LOCALE, SUPPORTED_LOCALES, isSupportedLocale } from "@/lib/i18n
 
 const LOCALE_SEGMENT_PATTERN = /^[a-z]{2}(?:-[a-z]{2,4})?$/i;
 const EU_VISITOR_COOKIE_KEY = "krellix-eu-visitor";
+const WWW_HOSTNAME = "www.krellixlabs.com";
+const CANONICAL_HOSTNAME = "krellixlabs.com";
 const EU_COUNTRY_CODES = new Set([
   "AT",
   "BE",
@@ -66,6 +68,14 @@ function withEuVisitorCookie(response: NextResponse, isEu: boolean): NextRespons
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const euVisitor = isEuVisitor(request);
+  const hostname = request.nextUrl.hostname.toLowerCase();
+
+  // Keep crawlers and users on a single canonical host to avoid duplicate URLs.
+  if (hostname === WWW_HOSTNAME) {
+    const url = request.nextUrl.clone();
+    url.hostname = CANONICAL_HOSTNAME;
+    return withEuVisitorCookie(NextResponse.redirect(url, 308), euVisitor);
+  }
 
   if (hasSupportedLocale(pathname)) {
     return withEuVisitorCookie(NextResponse.next(), euVisitor);

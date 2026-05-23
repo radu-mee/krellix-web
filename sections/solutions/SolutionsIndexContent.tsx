@@ -131,7 +131,7 @@ function SolutionsCard({
           href={card.href}
           className="type-paragraph mt-4 inline-flex w-fit no-underline text-[var(--text-strong)] transition-colors hover:text-brand-mint hover:underline hover:underline-offset-4"
         >
-          Learn more
+          {`AI solutions for ${card.title}`}
         </Link>
       </div>
     </article>

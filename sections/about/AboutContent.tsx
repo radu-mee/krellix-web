@@ -26,7 +26,7 @@ const ABOUT_VALUE_CARDS: readonly AboutValueCard[] = [
   {
     title: "Devices shouldn't matter",
     description:
-      "Your creative workspace should be truly portable. Start on desktop, continue on tablet. Your work get synced across devices.",
+      "Your creative workspace should be truly portable. Start on one device, continue on another. Your work get synced across devices.",
     imageSrc: "/images/about-devices-should-not-matter.png",
     imageAlt: "Devices should not matter illustration",
   },
@@ -53,9 +53,9 @@ function AboutValueTile({
         />
       </div>
 
-      <div className="flex flex-col items-center border-t border-[var(--border-soft)] bg-[var(--surface-raised)] px-6 py-7 text-center">
+      <div className="flex flex-col items-center border-t border-[var(--border-soft)] bg-[var(--surface-raised)] px-4 py-7 md:px-5 text-center">
         <p className="type-label text-brand-mint">{card.title}</p>
-        <p className="type-paragraph mt-4 max-w-[300px] text-[var(--text-muted)]">
+        <p className="type-paragraph mt-4 max-w-[360px] text-[var(--text-muted)]">
           {card.description}
         </p>
       </div>

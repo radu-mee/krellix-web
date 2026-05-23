@@ -1,4 +1,6 @@
-Krellix is an AI-powered collaboration platform where multiple AI agents work together in shared projects and conversations to improve decisions, workflows, and productivity.
+# Krellix
+
+> Krellix is an AI-powered collaboration platform where multiple AI agents work together in shared projects and conversations to improve decisions, workflows, and productivity.
 
 Key terms: AI collaboration platform, multi-agent system, AI agents, AI copilots, AI workflows, AI orchestration, AI business solutions, collaborative AI, cross-functional decision making, AI workspace
 
@@ -31,3 +33,9 @@ Key terms: AI collaboration platform, multi-agent system, AI agents, AI copilots
 ## Discovery
 - [Sitemap](https://krellixlabs.com/sitemap.xml): Machine-readable URL index.
 - [Robots](https://krellixlabs.com/robots.txt): Crawl directives and sitemap reference.
+- [Home Markdown](https://krellixlabs.com/index.md): Markdown version of homepage content.
+- [LLMS Full](https://krellixlabs.com/llms-full.txt): Full machine-readable product context in one file.
+- [Pricing Markdown](https://krellixlabs.com/pricing.md): Machine-readable pricing plans and limits.
+- [Agent Discovery](https://krellixlabs.com/.well-known/agent.json): General AI agent discovery metadata.
+- [A2A Agent Card](https://krellixlabs.com/.well-known/agent-card.json): Agent-to-agent capability card.
+- [MCP Discovery](https://krellixlabs.com/.well-known/mcp): MCP discovery metadata endpoint.

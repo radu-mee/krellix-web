@@ -24,6 +24,15 @@ export function buildSiteSchemaNodes(): JsonLdNode[] {
       "@id": ORGANIZATION_ID,
       name: siteConfig.name,
       url: getSiteRootUrl(),
+      sameAs: [
+        "https://www.linkedin.com/company/krellixlabs",
+        "https://www.crunchbase.com/organization/krellixlabs",
+        "https://www.instagram.com/krellixlabs",
+        "https://x.com/krellixlabs",
+        "https://github.com/krellixlabs",
+        "https://www.trustpilot.com/review/krellixlabs.com",
+        "https://www.youtube.com/@Krellixlabs",
+      ],
       logo: {
         "@type": "ImageObject",
         url: new URL("/icon.svg", siteConfig.siteUrl).toString(),

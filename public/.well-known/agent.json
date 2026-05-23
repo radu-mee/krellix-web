@@ -1,0 +1,20 @@
+{
+  "name": "Krellix",
+  "url": "https://krellixlabs.com",
+  "description": "Collaborative AI workspace where multiple agents work together.",
+  "capabilities": [
+    "multi-agent collaboration",
+    "shared project context",
+    "cross-functional workflows"
+  ],
+  "resources": {
+    "llms": "https://krellixlabs.com/llms.txt",
+    "llms_full": "https://krellixlabs.com/llms-full.txt",
+    "pricing_markdown": "https://krellixlabs.com/pricing.md",
+    "home_markdown": "https://krellixlabs.com/index.md",
+    "agent_mode": "https://krellixlabs.com/en?mode=agent"
+  },
+  "contact": {
+    "email": "support@krellixlabs.com"
+  }
+}

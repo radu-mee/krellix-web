@@ -1,0 +1,28 @@
+{
+  "name": "Krellix Agent",
+  "description": "Multi-agent collaboration assistant for project workflows.",
+  "url": "https://krellixlabs.com",
+  "version": "1.0.0",
+  "provider": {
+    "organization": "Krellix Labs",
+    "url": "https://krellixlabs.com"
+  },
+  "documentationUrl": "https://krellixlabs.com/en/developers",
+  "capabilities": {
+    "streaming": false
+  },
+  "authentication": {
+    "schemes": [
+      {
+        "type": "none"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "id": "multi_agent_collaboration",
+      "name": "Multi-agent collaboration",
+      "description": "Coordinate multiple AI agents in a shared workspace context."
+    }
+  ]
+}
