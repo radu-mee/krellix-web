@@ -69,6 +69,7 @@ function buildAgentModePayload(locale: string) {
       home: localized("/"),
       product: localized("/product"),
       solutions: localized("/solutions"),
+      resources: localized("/resources"),
       pricing: localized("/pricing"),
       blog: localized("/blog"),
       contact: localized("/contact"),

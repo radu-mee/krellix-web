@@ -65,6 +65,11 @@
   --blog-pagination-bg: #ffffff;
   --blog-pagination-border: var(--border-soft);
   --dot-grid-dot: #d9d9d9;
+  --resource-row-button-bg: #fafafa;
+  --resource-row-button-divider: #e5e5e6;
+  --resource-row-pill-bg: #f9f9fa;
+  --resource-agent-detail-bg: #ffffff;
+  --resource-agent-download-button-bg: #ffffff;
 }
 
 [data-theme="dark"] {
@@ -115,6 +120,11 @@
   --blog-pagination-bg: #171717;
   --blog-pagination-border: var(--border-soft);
   --dot-grid-dot: #2c2c2c;
+  --resource-row-button-bg: #141414;
+  --resource-row-button-divider: #272727;
+  --resource-row-pill-bg: #141414;
+  --resource-agent-detail-bg: #171717;
+  --resource-agent-download-button-bg: #141414;
 }
 
 @media (min-width: 48rem) {

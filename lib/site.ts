@@ -17,6 +17,7 @@ export const primaryNavigation = [
   { href: localizePath("/"), label: "Home" },
   { href: localizePath("/product"), label: "Product" },
   { href: localizePath("/solutions"), label: "Solutions" },
+  { href: localizePath("/resources"), label: "Resources" },
   { href: localizePath("/pricing"), label: "Pricing" },
   { href: localizePath("/blog"), label: "Blog" },
 ] satisfies readonly NavigationItem[];
