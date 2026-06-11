@@ -35,7 +35,24 @@ const guidesItemListSchema = {
     "@type": "ListItem",
     position: index + 1,
     name: guide.title,
-    url: buildLocalizedAbsoluteUrl(`${PAGE_PATH}#${guide.slug}`),
+    url: buildLocalizedAbsoluteUrl(
+      [
+        "ai-prompts-for-product-managers",
+        "how-developers-can-use-ai-for-code-review",
+        "how-to-build-an-ai-workflow-for-your-team",
+        "how-to-onboard-your-team-to-ai-without-the-pushback",
+        "how-to-run-a-marketing-campaign-with-ai",
+        "how-to-run-better-meetings-with-ai",
+        "how-to-use-ai-for-competitive-analysis",
+        "how-to-use-ai-for-data-analysis",
+        "how-to-use-ai-for-user-research",
+        "how-to-write-a-prd-with-ai",
+        "how-to-write-a-system-prompt-for-ai-agents",
+        "the-beginners-guide-to-ai-agents",
+      ].includes(guide.slug)
+        ? `${PAGE_PATH}/${guide.slug}`
+        : `${PAGE_PATH}#${guide.slug}`,
+    ),
   })),
 };
 

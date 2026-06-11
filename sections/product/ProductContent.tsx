@@ -25,6 +25,15 @@ type IntegrationCard = {
   iconDarkSrc: string;
 };
 
+type FileTypeColumn = {
+  title: string;
+  files: readonly {
+    extension: string;
+    iconSrc: string;
+    invertIconOnLight?: boolean;
+  }[];
+};
+
 const PRODUCT_FEATURES: readonly ProductFeature[] = [
   {
     label: "Your team, your way",
@@ -99,6 +108,51 @@ const INTEGRATION_CARDS: readonly IntegrationCard[] = [
     iconDarkSrc: "/brand/asana-icon-dark-mode-64x64.svg",
   },
 ];
+
+const SHOW_INTEGRATIONS_SECTION = false;
+
+const FILE_TYPE_COLUMNS: readonly FileTypeColumn[] = [
+  {
+    title: "Documents",
+    files: [
+      { extension: ".docx", iconSrc: "/brand/File-types-icons/docx-icon.svg" },
+      { extension: ".txt", iconSrc: "/brand/File-types-icons/txt-icon.svg" },
+      { extension: ".rtf", iconSrc: "/brand/File-types-icons/rtf-icon.svg" },
+      { extension: ".pdf", iconSrc: "/brand/File-types-icons/pdf-icon.svg" },
+      { extension: ".md", iconSrc: "/brand/File-types-icons/md-icon.svg" },
+      { extension: ".pptx", iconSrc: "/brand/File-types-icons/pptx-icon.svg" },
+    ],
+  },
+  {
+    title: "Code",
+    files: [
+      { extension: ".html", iconSrc: "/brand/File-types-icons/html-icon.svg" },
+      { extension: ".css", iconSrc: "/brand/File-types-icons/css-icon.svg" },
+      { extension: ".javascript", iconSrc: "/brand/File-types-icons/javascript-icon.svg" },
+      { extension: ".typescript", iconSrc: "/brand/File-types-icons/typescript-icon.svg" },
+      { extension: ".python", iconSrc: "/brand/File-types-icons/python-icon.svg" },
+      { extension: ".svg", iconSrc: "/brand/File-types-icons/svg-icon.svg" },
+      { extension: ".json", iconSrc: "/brand/File-types-icons/json-icon.svg" },
+    ],
+  },
+  {
+    title: "Data",
+    files: [
+      { extension: ".xlsx", iconSrc: "/brand/File-types-icons/xlsx-icon.svg" },
+      { extension: ".csv", iconSrc: "/brand/File-types-icons/csv-icon.svg" },
+      { extension: ".xml", iconSrc: "/brand/File-types-icons/xml-icon.svg" },
+    ],
+  },
+  {
+    title: "Images",
+    files: [
+      { extension: ".png", iconSrc: "/brand/File-types-icons/png-icon.svg" },
+      { extension: ".jpg", iconSrc: "/brand/File-types-icons/jpg-icon.svg" },
+      { extension: ".jpeg", iconSrc: "/brand/File-types-icons/jpeg-icon.svg", invertIconOnLight: true },
+      { extension: ".gif", iconSrc: "/brand/File-types-icons/gif-icon.svg" },
+    ],
+  },
+] as const;
 
 const FAQ_ITEMS = [
   {
@@ -211,6 +265,53 @@ function IntegrationToolCard({
   );
 }
 
+function FileTypesTable() {
+  const rowCount = Math.max(...FILE_TYPE_COLUMNS.map((column) => column.files.length));
+
+  return (
+    <div className="grid border-t border-[var(--border-soft)] md:grid-cols-2 lg:grid-cols-4">
+      {FILE_TYPE_COLUMNS.map((column) => (
+        <div
+          key={column.title}
+          className="border-b border-[var(--border-soft)] md:border-l md:first:border-l-0 lg:border-b-0"
+        >
+          <div className="flex min-h-[58px] items-center bg-[var(--product-file-table-header-bg)] px-6 font-display text-[14px] leading-none text-[var(--text-strong)]">
+            {column.title}
+          </div>
+          {Array.from({ length: rowCount }, (_, index) => {
+            const file = column.files[index];
+
+            return (
+              <div
+                key={`${column.title}-${index}`}
+                className={`${file ? "flex" : "hidden md:flex"} min-h-[72px] items-center border-t border-[var(--border-soft)] bg-[var(--surface-raised)] px-6`}
+              >
+                {file ? (
+                  <div className="flex items-center gap-4">
+                    <img
+                      src={file.iconSrc}
+                      alt=""
+                      aria-hidden="true"
+                      width={24}
+                      height={24}
+                      loading="lazy"
+                      decoding="async"
+                      className={`size-6 shrink-0 ${file.invertIconOnLight ? "theme-invert-on-light" : ""}`.trim()}
+                    />
+                    <span className="font-display text-[14px] leading-none text-[var(--text-strong)]">
+                      {file.extension}
+                    </span>
+                  </div>
+                ) : null}
+              </div>
+            );
+          })}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function ProductContent() {
   return (
     <section className="flex flex-col">
@@ -242,6 +343,25 @@ export default function ProductContent() {
 
       <ProductFeatureSection feature={PRODUCT_FEATURES[2]} />
 
+      <div className="my-16">
+        <DotGridDivider />
+      </div>
+
+      <div className="border-b border-[var(--border-soft)]">
+        <div className="bg-[var(--surface-raised)] px-4 py-10 md:px-6 md:py-12">
+          <div className="max-w-[760px]">
+            <p className="type-label text-brand-mint">BRING YOUR FILES</p>
+            <h2 className="mt-3 font-display text-[20px] leading-none text-[var(--text-strong)] md:text-[24px]">
+              Works with most file types
+            </h2>
+            <p className="type-paragraph mt-4 max-w-[700px] text-[var(--text-muted)]">
+              Your work doesn't live in one format, and neither does Krellix. Your agents can read a large variety of file types, understand them, and get to work.
+            </p>
+          </div>
+        </div>
+        <FileTypesTable />
+      </div>
+
       <div className="border-b border-[var(--border-soft)] px-4 py-10 md:px-6">
         <p className="type-paragraph mx-auto max-w-[860px] text-center text-[var(--text-muted)]">
           Krellix is an AI-powered collaboration platform built as a multi-agent system where AI agents
@@ -253,26 +373,30 @@ export default function ProductContent() {
         <DotGridDivider />
       </div>
 
-      <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[780px]">
-          <p className="type-label text-brand-mint">Integrations</p>
-          <h2 className="type-h2 mt-4 text-[var(--text-strong)]">Works with the tools you already use</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
-            Krellix connects to your existing workflow, giving your AI agents the context they need
-            from the tools your team already depends on.
-          </p>
-        </div>
-      </div>
+      {SHOW_INTEGRATIONS_SECTION ? (
+        <>
+          <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
+            <div className="max-w-[780px]">
+              <p className="type-label text-brand-mint">Integrations</p>
+              <h2 className="type-h2 mt-4 text-[var(--text-strong)]">Works with the tools you already use</h2>
+              <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+                Krellix connects to your existing workflow, giving your AI agents the context they need
+                from the tools your team already depends on.
+              </p>
+            </div>
+          </div>
 
-      <div className="grid md:grid-cols-3">
-        {INTEGRATION_CARDS.map((card, index) => (
-          <IntegrationToolCard key={card.title} card={card} withDivider={index > 0} />
-        ))}
-      </div>
+          <div className="grid md:grid-cols-3">
+            {INTEGRATION_CARDS.map((card, index) => (
+              <IntegrationToolCard key={card.title} card={card} withDivider={index > 0} />
+            ))}
+          </div>
 
-      <div className="my-16">
-        <DotGridDivider />
-      </div>
+          <div className="my-16">
+            <DotGridDivider />
+          </div>
+        </>
+      ) : null}
 
       <div className="border-y border-[var(--border-soft)]">
         <WaitlistHero />
