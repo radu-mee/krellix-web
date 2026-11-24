@@ -13,7 +13,7 @@ import ResourceGuidesIndexContent from "@/sections/resources/ResourceGuidesIndex
 import JsonLd from "@/ui/JsonLd";
 
 const PAGE_PATH = "/resources/guides";
-const PAGE_TITLE = "AI Guides & Prompt Workflows ";
+const PAGE_TITLE = "AI Guides & Prompt Workflows";
 const PAGE_DESCRIPTION =
   "Practical AI guides and prompt strategies for workflows, research, collaboration, and real-world AI implementation.";
 

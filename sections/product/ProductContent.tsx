@@ -13,8 +13,10 @@ type ProductFeature = {
   alt: string;
   desktopWidth: number;
   desktopHeight: number;
+  darkDesktopHeight?: number;
   mobileWidth: number;
   mobileHeight: number;
+  darkMobileHeight?: number;
   imageFirstDesktop: boolean;
 };
 
@@ -45,10 +47,10 @@ const PRODUCT_FEATURES: readonly ProductFeature[] = [
     lightMobileSrc: "/images/product-agents-mobile-image-light-mode-eng.svg",
     darkMobileSrc: "/images/product-agents-mobile-image-dark-mode-eng.svg",
     alt: "AI workspace showing multiple AI agents collaborating across projects",
-    desktopWidth: 738,
-    desktopHeight: 715,
-    mobileWidth: 375,
-    mobileHeight: 757,
+    desktopWidth: 718,
+    desktopHeight: 553,
+    mobileWidth: 351,
+    mobileHeight: 555,
     imageFirstDesktop: true,
   },
   {
@@ -61,10 +63,12 @@ const PRODUCT_FEATURES: readonly ProductFeature[] = [
     lightMobileSrc: "/images/product-projects-mobile-image-light-mode-eng.svg",
     darkMobileSrc: "/images/product-projects-mobile-image-dark-mode-eng.svg",
     alt: "AI-powered collaboration platform with shared team conversations and context",
-    desktopWidth: 738,
-    desktopHeight: 637,
-    mobileWidth: 375,
-    mobileHeight: 639,
+    desktopWidth: 718,
+    desktopHeight: 553,
+    darkDesktopHeight: 613,
+    mobileWidth: 351,
+    mobileHeight: 564,
+    darkMobileHeight: 575,
     imageFirstDesktop: false,
   },
   {
@@ -77,10 +81,11 @@ const PRODUCT_FEATURES: readonly ProductFeature[] = [
     lightMobileSrc: "/images/product-chat-mobile-image-light-mode-eng.svg",
     darkMobileSrc: "/images/product-chat-mobile-image-dark-mode-eng.svg",
     alt: "Multi-agent system working together inside a unified AI workspace",
-    desktopWidth: 739,
-    desktopHeight: 696,
-    mobileWidth: 375,
-    mobileHeight: 765,
+    desktopWidth: 718,
+    desktopHeight: 735,
+    mobileWidth: 351,
+    mobileHeight: 801,
+    darkMobileHeight: 760,
     imageFirstDesktop: true,
   },
 ];
@@ -186,6 +191,7 @@ function ProductFeatureSection({ feature }: { feature: ProductFeature }) {
         alt={feature.alt}
         width={feature.desktopWidth}
         height={feature.desktopHeight}
+        darkHeight={feature.darkDesktopHeight}
       />
     </div>
   );
@@ -198,6 +204,7 @@ function ProductFeatureSection({ feature }: { feature: ProductFeature }) {
         alt={feature.alt}
         width={feature.mobileWidth}
         height={feature.mobileHeight}
+        darkHeight={feature.darkMobileHeight}
       />
     </div>
   );

@@ -20,10 +20,8 @@ Instead of relying on one assistant for every task, Krellix enables multiple spe
 - Designers
 - Researchers
 
-## Integrations mentioned on the website
-- Notion
-- Google Calendar
-- Asana
+## Integrations
+Native third-party connectors are planned for v2. Current public positioning focuses on multi-agent collaboration, shared project context, and workflow continuity.
 
 ## Pricing snapshot
 - Free: $0.00 / month

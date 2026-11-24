@@ -1,11 +1,12 @@
-import Image from "next/image";
 import DotGridDivider from "@/ui/DotGridDivider";
+import ThemeImage from "@/ui/ThemeImage";
 
 type ContactCard = {
   title: string;
   description: string;
   email: string;
-  imageSrc: string;
+  imageLightSrc: string;
+  imageDarkSrc: string;
   imageAlt: string;
 };
 
@@ -14,22 +15,25 @@ const CONTACT_CARDS: readonly ContactCard[] = [
     title: "General queries",
     description: "For general queries and business requests",
     email: "office@krellixlabs.com",
-    imageSrc: "/images/contact-general.png",
-    imageAlt: "General contact card image",
+    imageLightSrc: "/images/contact-general-icon-light-mode.svg",
+    imageDarkSrc: "/images/contact-general-icon-dark-mode.svg",
+    imageAlt: "General queries icon",
   },
   {
     title: "Press inquiries",
     description: "For press inquiries and marketing requests",
     email: "press@krellixlabs.com",
-    imageSrc: "/images/contact-press.png",
-    imageAlt: "Press inquiries contact card image",
+    imageLightSrc: "/images/contact-press-icon-light-mode.svg",
+    imageDarkSrc: "/images/contact-press-icon-dark-mode.svg",
+    imageAlt: "Press inquiries icon",
   },
   {
     title: "Support requests",
     description: "For technical and product support requests",
     email: "support@krellixlabs.com",
-    imageSrc: "/images/contact-support.png",
-    imageAlt: "Support requests contact card image",
+    imageLightSrc: "/images/contact-support-icon-light-mode.svg",
+    imageDarkSrc: "/images/contact-support-icon-dark-mode.svg",
+    imageAlt: "Support requests icon",
   },
 ];
 
@@ -62,13 +66,13 @@ function ContactCardTile({
     <article
       className={`flex flex-col border-b border-[var(--border-soft)] ${withDivider ? "md:border-l" : ""}`.trim()}
     >
-      <div className="relative h-[214px] w-full overflow-hidden bg-[var(--surface-bg)]">
-        <Image
-          src={card.imageSrc}
+      <div className="flex h-[214px] w-full items-center justify-center bg-[var(--contact-icon-panel-bg)]">
+        <ThemeImage
+          lightSrc={card.imageLightSrc}
+          darkSrc={card.imageDarkSrc}
           alt={card.imageAlt}
-          fill
-          sizes="(min-width: 768px) 33vw, 100vw"
-          className="object-cover object-center"
+          width={64}
+          height={64}
         />
       </div>
 

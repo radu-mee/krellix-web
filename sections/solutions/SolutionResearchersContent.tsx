@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import DotGridDivider from "@/ui/DotGridDivider";
 import ThemeImage from "@/ui/ThemeImage";
@@ -13,7 +12,8 @@ type AgentExample = {
 type BenefitCard = {
   title: string;
   description: string;
-  imageSrc: string;
+  imageLightSrc: string;
+  imageDarkSrc: string;
   imageAlt: string;
 };
 
@@ -43,21 +43,24 @@ const BENEFIT_CARDS: readonly BenefitCard[] = [
     title: "Get real-time team debates",
     description:
       "Bring a research question and watch your agents challenge it. Business Analyst defines methodology, Copywriter refines clarity, and General Assistant supports with sources - all in one thread.",
-    imageSrc: "/images/solutions-team-debates.png",
+    imageLightSrc: "/images/solutions-real-time-debates-illustration-light-mode.svg",
+    imageDarkSrc: "/images/solutions-real-time-debates-illustration-dark-mode.svg",
     imageAlt: "Team debates visualization",
   },
   {
     title: "Every decision gets captured",
     description:
       "From hypotheses to methodology choices, every decision and its reasoning is preserved. Come back later and your AI research assistant remembers exactly what was explored and why.",
-    imageSrc: "/images/solutions-decisions.png",
+    imageLightSrc: "/images/solutions-decisions-illustration-light-mode.svg",
+    imageDarkSrc: "/images/solutions-decisions-illustration-dark-mode.svg",
     imageAlt: "Decisions visualization",
   },
   {
     title: "Agents reference each other",
     description:
       "General Assistant surfaces new information. Business Analyst adapts the approach. Copywriter refines how insights are presented. Your agents build on each other's input - not as isolated AI research tools.",
-    imageSrc: "/images/solutions-references.png",
+    imageLightSrc: "/images/solutions-agents-reference-illustration-light-mode.svg",
+    imageDarkSrc: "/images/solutions-agents-reference-illustration-dark-mode.svg",
     imageAlt: "References visualization",
   },
 ];
@@ -130,14 +133,29 @@ function BenefitCard({
     <article
       className={`flex flex-col border-b border-[var(--border-soft)] ${withDivider ? "md:border-l" : ""}`.trim()}
     >
-      <div className="relative h-[214px] border-b border-[var(--border-soft)] bg-[var(--ascii-divider-bg)]">
-        <Image
-          src={card.imageSrc}
-          alt={card.imageAlt}
-          fill
-          sizes="(min-width: 768px) 33vw, 100vw"
-          className="object-cover"
-        />
+      <div
+        className="relative h-[214px] w-full overflow-hidden border-b border-[var(--border-soft)] bg-[var(--illustration-panel-bg)]"
+        role="img"
+        aria-label={card.imageAlt}
+      >
+        <div className="absolute inset-0 flex items-center justify-center px-4">
+          <img
+            src={card.imageLightSrc}
+            alt=""
+            aria-hidden="true"
+            width={343}
+            height={111}
+            className="theme-only-light h-[111px] w-[343px] max-w-full object-contain"
+          />
+          <img
+            src={card.imageDarkSrc}
+            alt=""
+            aria-hidden="true"
+            width={343}
+            height={111}
+            className="theme-only-dark h-[111px] w-[343px] max-w-full object-contain"
+          />
+        </div>
       </div>
 
       <div className="bg-[var(--surface-bg)] px-6 py-6">
@@ -158,7 +176,7 @@ export default function SolutionResearchersContent() {
           <Link
             href="/en/solutions"
             className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#00ddb5" }}
+            style={{ color: "#BA88FF" }}
           >
             BACK TO SOLUTIONS
           </Link>
@@ -189,8 +207,10 @@ export default function SolutionResearchersContent() {
               lightSrc="/images/solutions-researchers-hero-image-light-mode-eng.svg"
               darkSrc="/images/solutions-researchers-hero-image-dark-mode-eng.svg"
               alt="AI research assistant agents collaborating on research workflows, combining analysis, writing, and data interpretation"
-              width={738}
-              height={773}
+              width={718}
+              height={775}
+              darkHeight={771}
+              darkWidth={714}
             />
           </div>
 
@@ -199,8 +219,8 @@ export default function SolutionResearchersContent() {
               lightSrc="/images/solutions-researchers-mobile-hero-image-light-mode-eng.svg"
               darkSrc="/images/solutions-researchers-mobile-hero-image-dark-mode-eng.svg"
               alt="AI research assistant agents collaborating on research workflows, combining analysis, writing, and data interpretation"
-              width={375}
-              height={697}
+              width={351}
+              height={716}
             />
           </div>
 

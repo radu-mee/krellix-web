@@ -24,10 +24,8 @@ Users can work with specialized AI agents in one shared workspace so strategy, w
 - Role-oriented solution paths by audience (founders, PMs, marketers, developers, designers, researchers)
 - Web and desktop product presence (Windows and macOS download page available)
 
-## Integrations mentioned on the website
-- Notion
-- Google Calendar
-- Asana
+## Integrations
+Native third-party connectors are planned for v2. Current public positioning focuses on multi-agent collaboration, shared project context, and workflow continuity.
 
 ## Pricing (machine-readable summary)
 Source page: https://krellixlabs.com/en/pricing
@@ -76,6 +74,7 @@ Pricing note:
 ## Security and privacy references
 Primary policy URLs:
 - Privacy Policy: https://krellixlabs.com/en/privacy-policy
+- Data Processing Agreement: https://krellixlabs.com/en/data-processing-agreement
 - Terms of Service: https://krellixlabs.com/en/terms-of-service
 - Cookie Policy: https://krellixlabs.com/en/cookie-policy
 - Subprocessors: https://krellixlabs.com/en/subprocessors

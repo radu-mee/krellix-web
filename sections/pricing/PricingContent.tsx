@@ -1,4 +1,3 @@
-import Image from "next/image";
 import DotGridDivider from "@/ui/DotGridDivider";
 import ThemeImage from "@/ui/ThemeImage";
 import WaitlistHero from "@/sections/waitlist/WaitlistHero";
@@ -9,7 +8,6 @@ type PricingPlan = {
   price: string;
   period: string;
   features: readonly string[];
-  imageSrc: string;
 };
 
 const PRICING_PLANS: readonly PricingPlan[] = [
@@ -26,7 +24,6 @@ const PRICING_PLANS: readonly PricingPlan[] = [
       "2 Files per project",
       "Group agents chats",
     ],
-    imageSrc: "/images/pricing-free.png",
   },
   {
     badge: "Most popular",
@@ -34,6 +31,7 @@ const PRICING_PLANS: readonly PricingPlan[] = [
     price: "$19.90",
     period: "/MO",
     features: [
+      "Extended usage limits",
       "Unlimited chats",
       "6 Agents",
       "4 Projects",
@@ -41,7 +39,6 @@ const PRICING_PLANS: readonly PricingPlan[] = [
       "4 Files per project",
       "Group agents chats",
     ],
-    imageSrc: "/images/pricing-plus.png",
   },
   {
     badge: "Most powerful",
@@ -49,14 +46,15 @@ const PRICING_PLANS: readonly PricingPlan[] = [
     price: "$29.90",
     period: "/MO",
     features: [
+      "Highest usage limits",
       "Unlimited chats",
       "Unlimited Agents",
       "10 Projects",
       "100 Mb files per project",
       "6 Files per project",
       "Group agents chats",
+      "Priority support",
     ],
-    imageSrc: "/images/pricing-pro.png",
   },
 ];
 
@@ -89,9 +87,10 @@ function PricingPlanCard({
     <article
       className={`flex flex-col border-b border-[var(--border-soft)] ${withDivider ? "md:border-l" : ""}`.trim()}
     >
-      <div className="relative h-[214px] w-full overflow-hidden border-b border-[var(--border-soft)] bg-[var(--ascii-divider-bg)]">
-        <Image src={plan.imageSrc} alt={`${plan.name} plan illustration`} fill className="object-cover" />
-      </div>
+      <div
+        className="h-8 w-full border-b border-[var(--border-soft)] bg-[var(--pricing-panel-bg)]"
+        aria-hidden="true"
+      />
 
       <div className="flex flex-1 flex-col bg-[var(--surface-bg)] px-5 pb-6 pt-5 md:px-6">
         <p className="type-label text-brand-mint">{plan.badge}</p>
@@ -118,8 +117,8 @@ function PricingPlanCard({
             >
               <span className="relative inline-flex size-5 shrink-0" aria-hidden="true">
                 <ThemeImage
-                  lightSrc="/brand/pricing-check-black.svg"
-                  darkSrc="/brand/pricing-check-white.svg"
+                  lightSrc="/images/pricing-check-light-mode.svg"
+                  darkSrc="/images/pricing-check-dark-mode.svg"
                   alt=""
                   width={20}
                   height={20}

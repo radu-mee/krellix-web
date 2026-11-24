@@ -26,6 +26,7 @@ Key terms: AI collaboration platform, multi-agent system, AI agents, AI copilots
 
 ## Legal
 - [Privacy Policy](https://krellixlabs.com/en/privacy-policy): Data handling and privacy practices.
+- [Data Processing Agreement](https://krellixlabs.com/en/data-processing-agreement): Customer-controller and Krellixlabs-processor data processing terms.
 - [Terms of Service](https://krellixlabs.com/en/terms-of-service): Terms and conditions for using Krellix.
 - [Cookie Policy](https://krellixlabs.com/en/cookie-policy): Cookie usage and controls.
 - [Subprocessors](https://krellixlabs.com/en/subprocessors): Third-party subprocessors and roles.

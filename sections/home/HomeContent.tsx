@@ -1,11 +1,11 @@
-import Image from "next/image";
 import DotGridDivider from "@/ui/DotGridDivider";
 import ThemeImage from "@/ui/ThemeImage";
 
 type GetStartedCard = {
   title: string;
   description: string;
-  imageSrc: string;
+  imageLightSrc: string;
+  imageDarkSrc: string;
 };
 
 type IntegrationCard = {
@@ -17,19 +17,22 @@ type IntegrationCard = {
 
 const GET_STARTED_CARDS: readonly GetStartedCard[] = [
   {
-    title: "Create your AI agents",
-    description: "Give them a name, a personality and a job description.",
-    imageSrc: "/images/create-agents-home.png",
-  },
-  {
     title: "Create your projects",
     description: "Set up your projects, add descriptions and upload files.",
-    imageSrc: "/images/create-projects-home.png",
+    imageLightSrc: "/images/create-your-projects-illustration-light-mode.svg",
+    imageDarkSrc: "/images/create-your-projects-illustration-dark-mode.svg",
+  },
+  {
+    title: "Create your AI agents",
+    description: "Give them a name, a personality and a job description.",
+    imageLightSrc: "/images/build-your-agents-illustration-light-mode.svg",
+    imageDarkSrc: "/images/build-your-agents-illustration-dark-mode.svg",
   },
   {
     title: "You're good to go",
     description: "Get to know your new team and start collaborating.",
-    imageSrc: "/images/all-set-home.png",
+    imageLightSrc: "/images/start-your-chat-illustration-light-mode.svg",
+    imageDarkSrc: "/images/start-your-chat-illustration-dark-mode.svg",
   },
 ];
 
@@ -81,70 +84,26 @@ const FAQ_ITEMS = [
       "Krellix uses collaborative artificial intelligence, where multiple AI agents work together instead of acting alone.",
   },
   {
-    question: "Can Krellix integrate with tools?",
+    question: "Will my agents remember the decisions we made?",
     answer:
-      "Krellix integrates with key tools like Notion, Google Calendar, and Asana, allowing your AI agents to access context from your workflow and support your team more effectively.",
+      "Yes. Every decision, finding, and open question is logged in the conversation ledger and stays accessible for the lifetime of the project.",
   },
 ] as const;
 
 function HomeHeroImage() {
   return (
     <span
-      className="mx-auto block w-full max-w-[375px] md:max-w-[786px] lg:max-w-[1232px]"
+      className="home-hero-image mx-auto block w-full max-w-[351px] md:max-w-[786px] lg:max-w-[1232px]"
       role="img"
       aria-label="AI copilots collaborating in a multi-agent workspace interface"
-    >
-      <picture className="theme-only-light w-full">
-        <source
-          media="(min-width: 64rem)"
-          srcSet="/images/home-hero-image-light-mode-eng.svg"
-        />
-        <source
-          media="(min-width: 48rem)"
-          srcSet="/images/home-hero-tablet-image-light-mode-eng.svg"
-        />
-        <img
-          src="/images/home-hero-mobile-image-light-mode-eng.svg"
-          alt=""
-          aria-hidden="true"
-          width={375}
-          height={928}
-          loading="eager"
-          decoding="async"
-          fetchPriority="high"
-          className="h-auto w-full"
-        />
-      </picture>
-
-      <picture className="theme-only-dark w-full">
-        <source
-          media="(min-width: 64rem)"
-          srcSet="/images/home-hero-image-dark-mode-eng.svg"
-        />
-        <source
-          media="(min-width: 48rem)"
-          srcSet="/images/home-hero-tablet-image-dark-mode-eng.svg"
-        />
-        <img
-          src="/images/home-hero-mobile-image-dark-mode-eng.svg"
-          alt=""
-          aria-hidden="true"
-          width={375}
-          height={919}
-          loading="eager"
-          decoding="async"
-          fetchPriority="high"
-          className="h-auto w-full"
-        />
-      </picture>
-    </span>
+    />
   );
 }
 
 function HomeLedgerImage() {
   return (
     <span
-      className="mx-auto block w-full max-w-[375px] md:max-w-[730px]"
+      className="mx-auto block w-full max-w-[351px] md:max-w-[718px]"
       role="img"
       aria-label="Krellix remembering project context across decisions and action items"
     >
@@ -152,13 +111,15 @@ function HomeLedgerImage() {
         <source
           media="(min-width: 48rem)"
           srcSet="/images/home-ledger-hero-image-light-mode-eng.svg"
+          width={718}
+          height={482}
         />
         <img
           src="/images/home-ledger-mobile-hero-image-light-mode-eng.svg"
           alt=""
           aria-hidden="true"
-          width={375}
-          height={612}
+          width={351}
+          height={408}
           loading="lazy"
           decoding="async"
           className="h-auto w-full"
@@ -169,13 +130,15 @@ function HomeLedgerImage() {
         <source
           media="(min-width: 48rem)"
           srcSet="/images/home-ledger-hero-image-dark-mode-eng.svg"
+          width={718}
+          height={482}
         />
         <img
           src="/images/home-ledger-mobile-hero-image-dark-mode-eng.svg"
           alt=""
           aria-hidden="true"
-          width={375}
-          height={612}
+          width={351}
+          height={408}
           loading="lazy"
           decoding="async"
           className="h-auto w-full"
@@ -196,13 +159,33 @@ function GetStartedStepCard({
     <article
       className={`flex flex-col border-b border-[var(--border-soft)] ${withDivider ? "md:border-l" : ""}`.trim()}
     >
-      <div className="relative h-[214px] w-full overflow-hidden bg-[var(--surface-bg)]">
-        <Image
-          src={card.imageSrc}
-          alt={card.title}
-          fill
-          className="object-cover"
-        />
+      <div
+        className="relative h-[214px] w-full overflow-hidden bg-[var(--illustration-panel-bg)]"
+        role="img"
+        aria-label={card.title}
+      >
+        <div className="absolute inset-0 flex items-center justify-center px-4">
+          <img
+            src={card.imageLightSrc}
+            alt=""
+            aria-hidden="true"
+            width={343}
+            height={111}
+            loading="lazy"
+            decoding="async"
+            className="theme-only-light h-[111px] w-[343px] max-w-full object-contain"
+          />
+          <img
+            src={card.imageDarkSrc}
+            alt=""
+            aria-hidden="true"
+            width={343}
+            height={111}
+            loading="lazy"
+            decoding="async"
+            className="theme-only-dark h-[111px] w-[343px] max-w-full object-contain"
+          />
+        </div>
       </div>
 
       <div className="border-t border-[var(--border-soft)] bg-[var(--surface-raised)] px-4 py-7 text-center">
@@ -302,8 +285,8 @@ export default function HomeContent() {
               lightSrc="/images/home-collaboration-hero-image-light-mode-eng.svg"
               darkSrc="/images/home-collaboration-hero-image-dark-mode-eng.svg"
               alt="Your team of AI agents collaborating across workflows in a shared workspace"
-              width={738}
-              height={510}
+              width={718}
+              height={490}
             />
           </div>
 
@@ -312,8 +295,8 @@ export default function HomeContent() {
               lightSrc="/images/home-collaboration-mobile-hero-image-light-mode-eng.svg"
               darkSrc="/images/home-collaboration-mobile-hero-image-dark-mode-eng.svg"
               alt="Your team of AI agents collaborating across workflows in a shared workspace"
-              width={375}
-              height={536}
+              width={351}
+              height={476}
             />
           </div>
 

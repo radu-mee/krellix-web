@@ -47,6 +47,7 @@ export const cookiePolicyPage: LegalPage = {
       paragraphs: [
         "You can control cookie usage in several ways.",
         "Consent Banner and Privacy Choices: You can accept, reject, or modify non-essential cookie preferences through our consent management tools (powered by Ketch), where legally required.",
+        "Krellixlabs does not sell personal information. California residents may opt out of any sharing for cross-context behavioral advertising purposes by clicking 'Your privacy choices' in the footer of our website.",
         "Browser Settings: Most browsers let you block or delete cookies. Blocking some cookies may affect site functionality.",
         "Device and App Controls: Mobile operating systems and app settings may offer controls for tracking and diagnostics.",
         "Email Preferences: You can unsubscribe from marketing emails using the unsubscribe link included in those messages.",

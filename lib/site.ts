@@ -32,6 +32,7 @@ export const footerNavigation = [
 export const legalNavigation = [
   { href: localizePath("/terms-of-service"), label: "Terms of Service" },
   { href: localizePath("/privacy-policy"), label: "Privacy Policy" },
+  { href: localizePath("/data-processing-agreement"), label: "Data Processing Agreement" },
   { href: localizePath("/cookie-policy"), label: "Cookie Policy" },
   { href: localizePath("/subprocessors"), label: "Subprocessors" },
 ] satisfies readonly NavigationItem[];

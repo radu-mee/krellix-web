@@ -55,6 +55,7 @@ export const privacyPolicyPage: LegalPage = {
       title: "How We Share Personal Data",
       paragraphs: [
         "We may share personal data with service providers and subprocessors that help us operate Krellix, payment processors to process transactions, professional advisors where necessary, authorities or regulators where required by law, and successors in a business transaction subject to applicable safeguards.",
+        "Krellixlabs does not sell personal information. We may share certain data with third-party service providers for operational purposes. California residents may opt out of any sharing for cross-context behavioral advertising purposes by clicking 'Your privacy choices' in the footer of our website.",
         "Current subprocessors used by Krellixlabs include Stripe, Supabase, Cloudflare, X AI, OpenAI, Gemini, Loops, and Ketch.",
       ],
     },

@@ -4,7 +4,7 @@ import { localizePath } from "@/lib/i18n";
 function ResourceKrellixCtaImage() {
   return (
     <span
-      className="mx-auto block w-full max-w-[375px] md:max-w-[786px] lg:max-w-[1232px]"
+      className="mx-auto block w-full max-w-[351px] md:max-w-[786px] lg:max-w-[1232px]"
       role="img"
       aria-label="Krellix AI copilots collaborating in a multi-agent workspace interface"
     >
@@ -12,17 +12,21 @@ function ResourceKrellixCtaImage() {
         <source
           media="(min-width: 64rem)"
           srcSet="/images/home-hero-image-light-mode-eng.svg"
+          width={1232}
+          height={848}
         />
         <source
           media="(min-width: 48rem)"
           srcSet="/images/home-hero-tablet-image-light-mode-eng.svg"
+          width={786}
+          height={863}
         />
         <img
           src="/images/home-hero-mobile-image-light-mode-eng.svg"
           alt=""
           aria-hidden="true"
-          width={375}
-          height={928}
+          width={351}
+          height={940}
           loading="lazy"
           decoding="async"
           className="h-auto w-full"
@@ -33,17 +37,21 @@ function ResourceKrellixCtaImage() {
         <source
           media="(min-width: 64rem)"
           srcSet="/images/home-hero-image-dark-mode-eng.svg"
+          width={1232}
+          height={848}
         />
         <source
           media="(min-width: 48rem)"
           srcSet="/images/home-hero-tablet-image-dark-mode-eng.svg"
+          width={786}
+          height={863}
         />
         <img
           src="/images/home-hero-mobile-image-dark-mode-eng.svg"
           alt=""
           aria-hidden="true"
-          width={375}
-          height={919}
+          width={351}
+          height={940}
           loading="lazy"
           decoding="async"
           className="h-auto w-full"

@@ -11,6 +11,7 @@ const STATIC_ROUTES = [
   "/download",
   "/press-kit",
   "/pricing",
+  "/product",
   "/solutions",
   "/resources",
   "/resources/agents",
@@ -62,6 +63,7 @@ const STATIC_ROUTES = [
   "/blog",
   "/cookie-policy",
   "/privacy-policy",
+  "/data-processing-agreement",
   "/terms-of-service",
   "/subprocessors",
 ] as const;

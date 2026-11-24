@@ -36,7 +36,7 @@ export default function ResourceGuideMarketingCampaignContent() {
           <Link
             href={localizePath("/resources/guides")}
             className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#00ddb5" }}
+            style={{ color: "#BA88FF" }}
           >
             BACK TO GUIDES
           </Link>

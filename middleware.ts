@@ -77,6 +77,16 @@ export function middleware(request: NextRequest) {
     return withEuVisitorCookie(NextResponse.redirect(url, 308), euVisitor);
   }
 
+  const isLocaleHomepage = SUPPORTED_LOCALES.some((locale) => pathname === `/${locale}`);
+  const isAgentMode = request.nextUrl.searchParams.get("mode")?.toLowerCase() === "agent";
+
+  if (isLocaleHomepage && isAgentMode) {
+    const url = request.nextUrl.clone();
+    url.pathname = `${pathname}/agent-mode`;
+    url.searchParams.delete("mode");
+    return withEuVisitorCookie(NextResponse.rewrite(url), euVisitor);
+  }
+
   if (hasSupportedLocale(pathname)) {
     return withEuVisitorCookie(NextResponse.next(), euVisitor);
   }

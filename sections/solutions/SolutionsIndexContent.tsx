@@ -1,19 +1,12 @@
-import Image from "next/image";
 import Link from "next/link";
 import DotGridDivider from "@/ui/DotGridDivider";
-
-const designersThumbnail = "/solutions/Designers.png";
-const developersThumbnail = "/solutions/Developers.png";
-const foundersThumbnail = "/solutions/Founders.png";
-const marketersThumbnail = "/solutions/Marketers.png";
-const productManagersThumbnail = "/solutions/Product-managers.png";
-const researchersThumbnail = "/solutions/Researchers.png";
 
 type SolutionCard = {
   title: string;
   description: string;
   href: string;
-  thumbnailImageSrc: string;
+  imageLightSrc: string;
+  imageDarkSrc: string;
   thumbnailImageAlt: string;
 };
 
@@ -28,7 +21,8 @@ const SOLUTION_CARDS: readonly SolutionCard[] = [
     description:
       "Strategy, marketing, product, and engineering agents in one workspace. Get cross-functional alignment without the meetings.",
     href: "/en/solutions/founders",
-    thumbnailImageSrc: foundersThumbnail,
+    imageLightSrc: "/images/solutions-founders-icon-light-mode.svg",
+    imageDarkSrc: "/images/solutions-founders-icon-dark-mode.svg",
     thumbnailImageAlt: "Founders solution thumbnail illustration",
   },
   {
@@ -36,7 +30,8 @@ const SOLUTION_CARDS: readonly SolutionCard[] = [
     description:
       "PM, engineering, and design agents working together on specs, user intent, and cross-functional feedback before a single line of code is written.",
     href: "/en/solutions/product-managers",
-    thumbnailImageSrc: productManagersThumbnail,
+    imageLightSrc: "/images/solutions-product-managers-icon-light-mode.svg",
+    imageDarkSrc: "/images/solutions-product-managers-icon-dark-mode.svg",
     thumbnailImageAlt: "Product managers solution thumbnail illustration",
   },
   {
@@ -44,7 +39,8 @@ const SOLUTION_CARDS: readonly SolutionCard[] = [
     description:
       "Writing, marketing, and strategy agents that remember your voice, audience, and past campaigns. Build consistency at scale.",
     href: "/en/solutions/marketers",
-    thumbnailImageSrc: marketersThumbnail,
+    imageLightSrc: "/images/solutions-marketers-icon-light-mode.svg",
+    imageDarkSrc: "/images/solutions-marketers-icon-dark-mode.svg",
     thumbnailImageAlt: "Marketers solution thumbnail illustration",
   },
   {
@@ -52,7 +48,8 @@ const SOLUTION_CARDS: readonly SolutionCard[] = [
     description:
       "Code review, architecture, and security agents that understand your codebase, remember decisions, and debate trade-offs together.",
     href: "/en/solutions/developers",
-    thumbnailImageSrc: developersThumbnail,
+    imageLightSrc: "/images/solutions-developers-icon-light-mode.svg",
+    imageDarkSrc: "/images/solutions-developers-icon-dark-mode.svg",
     thumbnailImageAlt: "Developers solution thumbnail illustration",
   },
   {
@@ -60,7 +57,8 @@ const SOLUTION_CARDS: readonly SolutionCard[] = [
     description:
       "UX, copy, and brand agents collaborating on your designs. Get holistic critique: accessibility, messaging, and conversion in one thread.",
     href: "/en/solutions/designers",
-    thumbnailImageSrc: designersThumbnail,
+    imageLightSrc: "/images/solutions-designers-icon-light-mode.svg",
+    imageDarkSrc: "/images/solutions-designers-icon-dark-mode.svg",
     thumbnailImageAlt: "Designers solution thumbnail illustration",
   },
   {
@@ -68,7 +66,8 @@ const SOLUTION_CARDS: readonly SolutionCard[] = [
     description:
       "Analysis, synthesis, and strategy agents maintaining continuity across your research. Never lose a thread or forget a finding.",
     href: "/en/solutions/researchers",
-    thumbnailImageSrc: researchersThumbnail,
+    imageLightSrc: "/images/solutions-reserchers-icon-light-mode.svg",
+    imageDarkSrc: "/images/solutions-researchers-icon-dark-mode.svg",
     thumbnailImageAlt: "Researchers solution thumbnail illustration",
   },
 ];
@@ -112,13 +111,26 @@ function SolutionsCard({
     <article
       className={`flex flex-col border-b border-[var(--border-soft)] ${withRightDivider ? "md:border-r" : ""}`.trim()}
     >
-      <div className="relative h-[214px] border-b border-[var(--border-soft)] bg-[var(--ascii-divider-bg)]">
-        <Image
-          src={card.thumbnailImageSrc}
-          alt={card.thumbnailImageAlt}
-          fill
-          sizes="(min-width: 768px) 33vw, 100vw"
-          className="object-cover"
+      <div
+        className="relative flex h-[214px] items-center justify-center border-b border-[var(--border-soft)] bg-[var(--illustration-panel-bg)]"
+        role="img"
+        aria-label={card.thumbnailImageAlt}
+      >
+        <img
+          src={card.imageLightSrc}
+          alt=""
+          aria-hidden="true"
+          width={64}
+          height={64}
+          className="theme-only-light h-16 w-16 object-contain"
+        />
+        <img
+          src={card.imageDarkSrc}
+          alt=""
+          aria-hidden="true"
+          width={64}
+          height={64}
+          className="theme-only-dark h-16 w-16 object-contain"
         />
       </div>
 
@@ -129,9 +141,9 @@ function SolutionsCard({
         <p className="type-paragraph mt-4 text-[var(--text-muted)]">{card.description}</p>
         <Link
           href={card.href}
-          className="type-paragraph mt-4 inline-flex w-fit no-underline text-[var(--text-strong)] transition-colors hover:text-brand-mint hover:underline hover:underline-offset-4"
+          className="solution-card-cta type-paragraph mt-4 inline-flex w-fit"
         >
-          {`AI solutions for ${card.title}`}
+          {`AI solutions for ${card.title.toLowerCase()}`}
         </Link>
       </div>
     </article>
