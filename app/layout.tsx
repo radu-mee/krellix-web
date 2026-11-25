@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import Script from "next/script";
+import { jetbrainsMono } from "@/lib/fonts";
 import ConsentBanner from "@/ui/ConsentBanner";
 import ThemeScript from "@/ui/ThemeScript";
 import "./globals.css";
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-jetbrains-mono",
-  display: "swap",
-});
 
 const poppins = Poppins({
   subsets: ["latin"],

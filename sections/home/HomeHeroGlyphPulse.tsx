@@ -1,12 +1,17 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { jetbrainsMono } from "@/lib/fonts";
 
 const SIGNS = ".:·-+=*/<>[]#%";
 const LETTERS = "ACEHKMNRSTVWXYZ";
 const GLYPH_SIZE = 10;
 const COLUMN_STEP = GLYPH_SIZE * .97;
 const ROW_STEP = GLYPH_SIZE * 1.24;
+// About 20 paints per second: the glyphs drift only a few pixels per second, so
+// more paints don't look smoother, they just cost CPU. 45ms (not 50) lands on
+// every 3rd frame at 60Hz instead of jittering between the 3rd and 4th.
+const MIN_PAINT_INTERVAL_MS = 45;
 const MESSAGES = [
   { height: .055, inset: .43, text: "[DRAFT-THE-AGENDA]" },
   { height: .11, inset: .30, text: "[SUMMARIZE-THE-CALL]" },
@@ -31,6 +36,9 @@ function glyphSeed(row: number, column: number) {
   const hash = Math.imul(mixed ^ (mixed >>> 13), 1274126177);
   return (hash ^ (hash >>> 16)) >>> 0;
 }
+
+// Always JetBrains Mono, independent of the heading font (see lib/fonts.ts).
+const GLYPH_FONT_FAMILY = `${jetbrainsMono.style.fontFamily}, monospace`;
 
 function createScene(canvas: HTMLCanvasElement) {
   const ctx = canvas.getContext("2d");
@@ -69,7 +77,7 @@ function createScene(canvas: HTMLCanvasElement) {
       }
     },
 
-    paint(elapsed: number, color: string) {
+    paint(elapsed: number, color: string, fontFamily: string) {
       if (!width || !height) return;
 
       const breath = Math.sin(elapsed * 1.3);
@@ -80,7 +88,7 @@ function createScene(canvas: HTMLCanvasElement) {
 
       ctx.clearRect(0, 0, width, height);
       ctx.fillStyle = color;
-      ctx.font = `${GLYPH_SIZE}px "Cascadia Mono", Consolas, monospace`;
+      ctx.font = `${GLYPH_SIZE}px ${fontFamily}`;
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
 
@@ -142,13 +150,14 @@ export default function HomeHeroGlyphPulse() {
     let elapsed = 0;
     let previousPaint = 0;
     let color = "#c9c9c9";
+    const fontFamily = GLYPH_FONT_FAMILY;
 
     function tick(now: number) {
       const delta = now - previousPaint;
-      if (delta >= 30) {
+      if (delta >= MIN_PAINT_INTERVAL_MS) {
         previousPaint = now;
         elapsed += Math.min(delta, 80) * .6 / 1000;
-        scene?.paint(elapsed, color);
+        scene?.paint(elapsed, color, fontFamily);
       }
       frame = requestAnimationFrame(tick);
     }
@@ -165,11 +174,11 @@ export default function HomeHeroGlyphPulse() {
 
     const resize = () => {
       scene.resize();
-      scene.paint(elapsed, color);
+      scene.paint(elapsed, color, fontFamily);
     };
     const applyTheme = () => {
       color = root.dataset.theme === "dark" ? "#c9c9c9" : "#8d765d";
-      scene.paint(elapsed, color);
+      scene.paint(elapsed, color, fontFamily);
     };
     const sizeObserver = new ResizeObserver(resize);
     const visibilityObserver = new IntersectionObserver(([entry]) => {
@@ -180,6 +189,15 @@ export default function HomeHeroGlyphPulse() {
 
     applyTheme();
     resize();
+    // Canvas text doesn't swap in a web font by itself: repaint once it's ready
+    // (it's preloaded, so this is usually immediate).
+    let disposed = false;
+    document.fonts
+      .load(`${GLYPH_SIZE}px ${fontFamily}`)
+      .then(() => {
+        if (!disposed) scene.paint(elapsed, color, fontFamily);
+      })
+      .catch(() => {});
     sizeObserver.observe(canvas);
     visibilityObserver.observe(canvas);
     themeObserver.observe(root, { attributes: true, attributeFilter: ["data-theme"] });
@@ -187,6 +205,7 @@ export default function HomeHeroGlyphPulse() {
     document.addEventListener("visibilitychange", syncPlayback);
 
     return () => {
+      disposed = true;
       cancelAnimationFrame(frame);
       sizeObserver.disconnect();
       visibilityObserver.disconnect();
