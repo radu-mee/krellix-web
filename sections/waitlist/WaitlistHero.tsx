@@ -10,6 +10,29 @@ const LOOPS_FORM_ACTION =
 const LOOPS_RATE_LIMIT_KEY = "loops-form-timestamp";
 const LOOPS_RATE_LIMIT_MS = 60_000;
 
+const RATE_LIMIT_MESSAGE = "Too many signups, please try again in a little while.";
+const NETWORK_ERROR_MESSAGE =
+  "We couldn't submit your email right now. Please check your connection and try again in a moment.";
+const GENERIC_ERROR_MESSAGE = "Oops! Something went wrong, please try again.";
+
+// localStorage can throw (blocked storage, private modes); the rate limit is
+// best-effort, so never let it break the form.
+function readLastSignupAt(): number {
+  try {
+    return Number(localStorage.getItem(LOOPS_RATE_LIMIT_KEY)) || 0;
+  } catch {
+    return 0;
+  }
+}
+
+function recordSuccessfulSignup() {
+  try {
+    localStorage.setItem(LOOPS_RATE_LIMIT_KEY, String(Date.now()));
+  } catch {
+    // Ignore: the server-side limit still applies.
+  }
+}
+
 export default function WaitlistHero() {
   const router = useRouter();
   const [email, setEmail] = useState("");
@@ -24,17 +47,13 @@ export default function WaitlistHero() {
       return;
     }
 
-    const now = Date.now();
-    const previousTimestamp = localStorage.getItem(LOOPS_RATE_LIMIT_KEY);
-    if (
-      previousTimestamp &&
-      Number(previousTimestamp) + LOOPS_RATE_LIMIT_MS > now
-    ) {
-      setErrorMessage("Too many signups, please try again in a little while.");
+    // Only successful signups count toward the limit, so a rejected or failed
+    // attempt never blocks the visitor from correcting it and retrying.
+    if (readLastSignupAt() + LOOPS_RATE_LIMIT_MS > Date.now()) {
+      setErrorMessage(RATE_LIMIT_MESSAGE);
       return;
     }
 
-    localStorage.setItem(LOOPS_RATE_LIMIT_KEY, String(now));
     setErrorMessage("");
     setIsSubmitting(true);
 
@@ -50,7 +69,13 @@ export default function WaitlistHero() {
       });
 
       if (response.ok) {
+        recordSuccessfulSignup();
         router.push("/en/registration-successful");
+        return;
+      }
+
+      if (response.status === 429) {
+        setErrorMessage(RATE_LIMIT_MESSAGE);
         return;
       }
 
@@ -64,16 +89,13 @@ export default function WaitlistHero() {
         // Keep fallback status text when response is not JSON.
       }
 
-      setErrorMessage(message || "Oops! Something went wrong, please try again.");
-    } catch (error) {
-      const message =
-        error instanceof Error && error.message
-          ? error.message === "Failed to fetch"
-            ? "Too many signups, please try again in a little while."
-            : error.message
-          : "Oops! Something went wrong, please try again.";
-      setErrorMessage(message);
-      localStorage.setItem(LOOPS_RATE_LIMIT_KEY, "");
+      setErrorMessage(message || GENERIC_ERROR_MESSAGE);
+    } catch {
+      // fetch only throws when the request never got a readable response:
+      // offline, blocked by an extension, or a CORS-less error from Loops.
+      // Browsers word this differently ("Failed to fetch", "Load failed"), so
+      // show one clear message instead of the raw error.
+      setErrorMessage(NETWORK_ERROR_MESSAGE);
     } finally {
       setIsSubmitting(false);
     }

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getBlogPosts, type BlogPost } from "@/content/blog/posts";
+import { localizePath } from "@/lib/i18n";
 import BlogPagination from "@/ui/BlogPagination";
 
 const POSTS_PER_PAGE = 12;
@@ -28,7 +29,7 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
       className={`${mdDividerClass} ${lgDividerClass} min-w-0 w-full border-[var(--border-soft)]`.trim()}
     >
       <Link
-        href={`/blog/${post.slug}`}
+        href={localizePath(`/blog/${post.slug}`)}
         className="group flex h-full min-w-0 flex-col overflow-hidden"
       >
         <BlogThumbnail post={post} />

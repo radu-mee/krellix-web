@@ -10,3 +10,9 @@ dist/
 *.tsbuildinfo
 .env.local
 .env.*.local
+
+# OS and scratch files
+.DS_Store
+tmp_*
+.tmp_*
+.codex-tmp/

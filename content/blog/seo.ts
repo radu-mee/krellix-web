@@ -201,7 +201,3 @@ const BLOG_SEO_METADATA_BY_SLUG: Readonly<Record<string, BlogSeoMetadata>> =
 export function getBlogSeoBySlug(slug: string): BlogSeoMetadata | undefined {
   return BLOG_SEO_METADATA_BY_SLUG[slug];
 }
-
-export function getAllBlogSeoMetadata(): readonly BlogSeoMetadata[] {
-  return BLOG_SEO_METADATA;
-}

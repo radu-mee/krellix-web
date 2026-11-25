@@ -74,6 +74,36 @@ function isEuVisitor(): boolean {
   return decodeURIComponent(cookieMatch[1]) === "1";
 }
 
+const ANALYTICS_COOKIE_PATTERN = /^(_ga|_ga_.+|_gid|_gat.*)$/;
+
+// Expire Google Analytics cookies already set before consent was withdrawn.
+// GA writes them on the top-level domain (e.g. ".krellixlabs.com"), so try the
+// bare host plus every parent domain.
+function clearAnalyticsCookies() {
+  const cookieNames = document.cookie
+    .split(";")
+    .map((cookie) => cookie.split("=")[0]?.trim() ?? "")
+    .filter((name) => ANALYTICS_COOKIE_PATTERN.test(name));
+
+  if (cookieNames.length === 0) {
+    return;
+  }
+
+  const hostParts = window.location.hostname.split(".");
+  const domains: (string | null)[] = [null];
+
+  for (let index = 0; index < hostParts.length - 1; index += 1) {
+    domains.push(`.${hostParts.slice(index).join(".")}`);
+  }
+
+  for (const name of cookieNames) {
+    for (const domain of domains) {
+      const domainAttribute = domain ? `; domain=${domain}` : "";
+      document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/${domainAttribute}`;
+    }
+  }
+}
+
 function persistConsent(analytics: boolean) {
   const nextConsent: StoredConsent = {
     analytics,
@@ -81,8 +111,17 @@ function persistConsent(analytics: boolean) {
     version: 1,
   };
 
-  window.localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify(nextConsent));
+  try {
+    window.localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify(nextConsent));
+  } catch {
+    // Storage can be blocked; still apply the choice for this page view.
+  }
+
   applyConsentToGoogle(analytics);
+
+  if (!analytics) {
+    clearAnalyticsCookies();
+  }
 }
 
 export default function ConsentBanner() {
@@ -93,24 +132,22 @@ export default function ConsentBanner() {
 
   useEffect(() => {
     const euVisitor = isEuVisitor();
-
-    if (!euVisitor) {
-      // Non-EU visitors should not be blocked by consent mode defaults.
-      setAnalyticsEnabled(true);
-      applyConsentToGoogle(true);
-      setIsVisible(false);
-      setIsReady(true);
-      return;
-    }
-
     const storedConsent = readStoredConsent();
 
     if (storedConsent) {
+      // A saved choice wins for every visitor, including non-EU opt-outs.
       setAnalyticsEnabled(storedConsent.analytics);
       applyConsentToGoogle(storedConsent.analytics);
       setIsVisible(false);
-    } else {
+    } else if (euVisitor) {
+      // Opt-in regions: ask before enabling analytics.
       setIsVisible(true);
+    } else {
+      // Opt-out regions: analytics on by default; the footer
+      // "privacy choices" link below lets visitors turn it off.
+      setAnalyticsEnabled(true);
+      applyConsentToGoogle(true);
+      setIsVisible(false);
     }
 
     setIsReady(true);
@@ -118,10 +155,7 @@ export default function ConsentBanner() {
     const openPreferences = () => {
       const latestConsent = readStoredConsent();
 
-      if (latestConsent) {
-        setAnalyticsEnabled(latestConsent.analytics);
-      }
-
+      setAnalyticsEnabled(latestConsent ? latestConsent.analytics : !euVisitor);
       setShowPreferences(true);
       setIsVisible(true);
     };

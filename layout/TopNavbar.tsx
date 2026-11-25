@@ -58,7 +58,6 @@ export default function TopNavbar() {
             alt="Krellix"
             width={72}
             height={20}
-            priority
           />
         </Link>
         <WaitlistButton
@@ -76,7 +75,6 @@ export default function TopNavbar() {
               alt="Krellix"
               width={72}
               height={20}
-              priority
             />
           </Link>
           <div className="flex items-center gap-3">

@@ -1,4 +1,5 @@
 import DotGridDivider from "@/ui/DotGridDivider";
+import HeroImagePreload from "@/ui/HeroImagePreload";
 import ThemeImage from "@/ui/ThemeImage";
 import WaitlistHero from "@/sections/waitlist/WaitlistHero";
 
@@ -336,6 +337,19 @@ export default function ProductContent() {
         </div>
       </div>
 
+      <HeroImagePreload
+        variants={[
+          {
+            media: "(min-width: 48rem)",
+            light: PRODUCT_FEATURES[0].lightDesktopSrc,
+            dark: PRODUCT_FEATURES[0].darkDesktopSrc,
+          },
+          {
+            light: PRODUCT_FEATURES[0].lightMobileSrc,
+            dark: PRODUCT_FEATURES[0].darkMobileSrc,
+          },
+        ]}
+      />
       <ProductFeatureSection feature={PRODUCT_FEATURES[0]} />
 
       <div className="my-16">

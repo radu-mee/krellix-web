@@ -6,6 +6,8 @@ const LOCALE_SEGMENT_PATTERN = /^[a-z]{2}(?:-[a-z]{2,4})?$/i;
 const EU_VISITOR_COOKIE_KEY = "krellix-eu-visitor";
 const WWW_HOSTNAME = "www.krellixlabs.com";
 const CANONICAL_HOSTNAME = "krellixlabs.com";
+// Countries where analytics require opt-in consent: EU-27, the rest of the EEA
+// (IS, LI, NO), the UK (UK GDPR) and Switzerland (revFADP).
 const EU_COUNTRY_CODES = new Set([
   "AT",
   "BE",
@@ -34,6 +36,11 @@ const EU_COUNTRY_CODES = new Set([
   "SI",
   "ES",
   "SE",
+  "IS",
+  "LI",
+  "NO",
+  "GB",
+  "CH",
 ]);
 
 function hasSupportedLocale(pathname: string): boolean {
@@ -53,8 +60,19 @@ function isEuVisitor(request: NextRequest): boolean {
   return EU_COUNTRY_CODES.has(countryCode);
 }
 
-function withEuVisitorCookie(response: NextResponse, isEu: boolean): NextResponse {
-  response.cookies.set(EU_VISITOR_COOKIE_KEY, isEu ? "1" : "0", {
+// Only send Set-Cookie when the visitor's cookie is missing or out of date.
+// Writing it on every response would make every HTML response uncacheable.
+function withEuVisitorCookie(
+  request: NextRequest,
+  response: NextResponse,
+  isEu: boolean,
+): NextResponse {
+  const value = isEu ? "1" : "0";
+  if (request.cookies.get(EU_VISITOR_COOKIE_KEY)?.value === value) {
+    return response;
+  }
+
+  response.cookies.set(EU_VISITOR_COOKIE_KEY, value, {
     path: "/",
     maxAge: 60 * 60 * 24 * 30,
     sameSite: "lax",
@@ -74,7 +92,7 @@ export function middleware(request: NextRequest) {
   if (hostname === WWW_HOSTNAME) {
     const url = request.nextUrl.clone();
     url.hostname = CANONICAL_HOSTNAME;
-    return withEuVisitorCookie(NextResponse.redirect(url, 308), euVisitor);
+    return withEuVisitorCookie(request, NextResponse.redirect(url, 308), euVisitor);
   }
 
   const isLocaleHomepage = SUPPORTED_LOCALES.some((locale) => pathname === `/${locale}`);
@@ -84,11 +102,11 @@ export function middleware(request: NextRequest) {
     const url = request.nextUrl.clone();
     url.pathname = `${pathname}/agent-mode`;
     url.searchParams.delete("mode");
-    return withEuVisitorCookie(NextResponse.rewrite(url), euVisitor);
+    return withEuVisitorCookie(request, NextResponse.rewrite(url), euVisitor);
   }
 
   if (hasSupportedLocale(pathname)) {
-    return withEuVisitorCookie(NextResponse.next(), euVisitor);
+    return withEuVisitorCookie(request, NextResponse.next(), euVisitor);
   }
 
   const [, firstSegment, ...restSegments] = pathname.split("/");
@@ -107,7 +125,7 @@ export function middleware(request: NextRequest) {
       ? `/${DEFAULT_LOCALE}`
       : `/${DEFAULT_LOCALE}${normalizedPath}`;
 
-  return withEuVisitorCookie(NextResponse.redirect(url, 308), euVisitor);
+  return withEuVisitorCookie(request, NextResponse.redirect(url, 308), euVisitor);
 }
 
 export const config = {

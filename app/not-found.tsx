@@ -9,7 +9,7 @@ export default function NotFound() {
         <section className="mx-auto flex w-full max-w-[760px] flex-col items-center">
           <Ascii404Burst size={248} className="mb-16" />
 
-          <h1 className="type-h1 text-[var(--text-strong)]">Oups!</h1>
+          <h1 className="type-h1 text-[var(--text-strong)]">Oops!</h1>
           <p className="type-paragraph mt-4 max-w-[560px] text-[var(--text-muted)]">
             It looks like something&apos;s gone wrong! The page you are looking for
             appears to have been moved, deleted or doesn&apos;t exist.

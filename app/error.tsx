@@ -18,8 +18,8 @@ export default function Error({ error, reset }: ErrorProps) {
           The page could not be rendered.
         </h1>
         <p className="mt-4 max-w-[48ch] text-sm text-[var(--text-muted)] md:text-base">
-          The current scaffold caught an unexpected error. You can retry this page
-          or return to the legal-page sample while we keep building.
+          Something broke on our side while loading this page. Try again, or head
+          back to the homepage.
         </p>
         {error.digest ? (
           <p className="mt-4 rounded-md border border-[var(--border-soft)] bg-[var(--surface-muted)] px-4 py-3 text-xs text-[var(--text-muted)]">
@@ -35,10 +35,10 @@ export default function Error({ error, reset }: ErrorProps) {
             Try again
           </button>
           <Link
-            href="/en/cookie-policy"
+            href="/en"
             className="inline-flex min-h-10 items-center rounded-md border border-transparent px-4 text-sm text-[var(--text-muted)] transition-colors hover:text-[var(--text-strong)]"
           >
-            Go to cookie policy
+            Go to homepage
           </Link>
         </div>
       </section>

@@ -22,34 +22,4 @@ export const primaryNavigation = [
   { href: localizePath("/blog"), label: "Blog" },
 ] satisfies readonly NavigationItem[];
 
-export const footerNavigation = [
-  ...primaryNavigation,
-  { href: localizePath("/about"), label: "About" },
-  { href: localizePath("/contact"), label: "Contact" },
-  { href: localizePath("/press-kit"), label: "Press kit" },
-] satisfies readonly NavigationItem[];
-
-export const legalNavigation = [
-  { href: localizePath("/terms-of-service"), label: "Terms of Service" },
-  { href: localizePath("/privacy-policy"), label: "Privacy Policy" },
-  { href: localizePath("/data-processing-agreement"), label: "Data Processing Agreement" },
-  { href: localizePath("/cookie-policy"), label: "Cookie Policy" },
-  { href: localizePath("/subprocessors"), label: "Subprocessors" },
-] satisfies readonly NavigationItem[];
-
-export const complianceNavigation = [
-  {
-    href: "https://www.europarl.europa.eu/topics/en/article/20230601STO93804/eu-ai-act-first-regulation-on-artificial-intelligence",
-    label: "EU Artificial Intelligence Act",
-  },
-  {
-    href: "https://commission.europa.eu/law/law-topic/data-protection_en",
-    label: "Data Protection",
-  },
-  {
-    href: "https://www.consilium.europa.eu/en/policies/data-protection-regulation/",
-    label: "User Rights",
-  },
-] satisfies readonly NavigationItem[];
-
 export const privacyChoicesLabel = "Your privacy choices";

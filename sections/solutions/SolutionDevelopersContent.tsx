@@ -1,5 +1,6 @@
 import Link from "next/link";
 import DotGridDivider from "@/ui/DotGridDivider";
+import HeroImagePreload from "@/ui/HeroImagePreload";
 import ThemeImage from "@/ui/ThemeImage";
 import WaitlistHero from "@/sections/waitlist/WaitlistHero";
 
@@ -69,7 +70,7 @@ const FAQ_ITEMS = [
   {
     question: "What is AI for developers?",
     answer:
-      "Yes. AI code review helps you evaluate implementation, identify issues, and improve code quality faster. Instead of reviewing in isolation, multiple agents contribute different perspectives to refine your code before it ships.",
+      "AI for developers refers to tools that help you write, review, and reason about code faster. In Krellix, multiple agents bring different perspectives, from architecture to code review, into one shared conversation, so you can weigh trade-offs and make better technical decisions before you ship.",
   },
   {
     question: "Can AI help with code review?",
@@ -145,6 +146,8 @@ function BenefitCard({
             aria-hidden="true"
             width={343}
             height={111}
+            loading="lazy"
+            decoding="async"
             className="theme-only-light h-[111px] w-[343px] max-w-full object-contain"
           />
           <img
@@ -153,6 +156,8 @@ function BenefitCard({
             aria-hidden="true"
             width={343}
             height={111}
+            loading="lazy"
+            decoding="async"
             className="theme-only-dark h-[111px] w-[343px] max-w-full object-contain"
           />
         </div>
@@ -201,6 +206,15 @@ export default function SolutionDevelopersContent() {
 
       <div className="border-b border-[var(--border-soft)] px-4 py-10 md:px-6 md:py-12">
         <div className="grid gap-8 md:grid-cols-[minmax(420px,1.2fr)_minmax(240px,0.8fr)] md:items-center md:gap-10">
+          <HeroImagePreload
+            variants={[
+              {
+                media: "(min-width: 48rem)",
+                light: "/images/solutions-developers-hero-image-light-mode-eng.svg",
+                dark: "/images/solutions-developers-hero-image-dark-mode-eng.svg",
+              },
+            ]}
+          />
           <div className="hidden justify-center md:flex">
             <ThemeImage
               lightSrc="/images/solutions-developers-hero-image-light-mode-eng.svg"

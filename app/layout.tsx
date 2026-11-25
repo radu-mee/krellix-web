@@ -105,10 +105,8 @@ export default function RootLayout({
     wait_for_update:500
   });
 
-  if (!euVisitor) {
-    return;
-  }
-
+  // A saved choice (from the banner or the footer "privacy choices" link)
+  // overrides the regional default for every visitor.
   try {
     var savedConsentRaw = w.localStorage.getItem(k);
     if (!savedConsentRaw) {

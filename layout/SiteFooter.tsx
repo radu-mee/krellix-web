@@ -200,7 +200,6 @@ export default function SiteFooter() {
                 alt="Krellix"
                 width={32}
                 height={32}
-                priority
               />
             </Link>
 
