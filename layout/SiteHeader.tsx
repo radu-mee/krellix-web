@@ -10,7 +10,7 @@ export default function SiteHeader() {
           <BottomNavbar />
         </div>
       </header>
-      <div aria-hidden="true" className="h-[76px] md:h-[152px]" />
+      <div aria-hidden="true" className="h-[var(--site-header-spacer)]" />
     </>
   );
 }

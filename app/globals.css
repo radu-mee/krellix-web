@@ -14,6 +14,7 @@
 
 :root {
   color-scheme: light;
+  --site-header-spacer: 76px;
   --page-bg: #f9f9fa;
   --panel-bg: #fafafa;
   --surface-bg: var(--page-bg);
@@ -137,6 +138,7 @@
 
 @media (min-width: 48rem) {
   :root {
+    --site-header-spacer: 152px;
     --type-h1-size: 2.25rem;
     --type-h2-size: 2rem;
     --type-h3-size: 1.5rem;
@@ -215,6 +217,31 @@ select {
 
 [data-theme="dark"] .theme-only-dark {
   display: inline-flex !important;
+}
+
+.home-hero-glyph-pulse {
+  position: absolute;
+  top: calc(-1 * var(--site-header-spacer));
+  right: 0;
+  width: min(74%, 54rem);
+  height: auto;
+  aspect-ratio: 1;
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+[data-theme="dark"] .home-hero-glyph-pulse {
+  opacity: 0.37;
+}
+
+@media (max-width: 47.99rem) {
+  .home-hero-glyph-pulse {
+    opacity: 0.52;
+  }
+
+  [data-theme="dark"] .home-hero-glyph-pulse {
+    opacity: 0.26;
+  }
 }
 
 .home-hero-image {

@@ -1,5 +1,6 @@
 import DotGridDivider from "@/ui/DotGridDivider";
 import ThemeImage from "@/ui/ThemeImage";
+import HomeHeroGlyphPulse from "./HomeHeroGlyphPulse";
 
 type GetStartedCard = {
   title: string;
@@ -232,8 +233,9 @@ function IntegrationToolCard({
 export default function HomeContent() {
   return (
     <section className="flex flex-col">
-      <div className="px-4 pb-14 pt-14 md:px-6 md:pb-16 md:pt-16 lg:pt-20">
-        <div className="flex flex-col">
+      <div className="relative isolate overflow-hidden px-4 pb-14 pt-14 md:px-6 md:pb-16 md:pt-16 lg:pt-20">
+        <HomeHeroGlyphPulse />
+        <div className="relative flex flex-col">
           <div className="max-w-[900px]">
             <p className="type-label text-brand-mint">COLLABORATION IMPROVES OUTCOMES</p>
             <h1 className="type-h1 mt-5 leading-[1.18] text-[var(--text-strong)] md:leading-[1.2]">
