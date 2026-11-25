@@ -3,9 +3,9 @@ import IconCtaButton from "@/ui/IconCtaButton";
 import ThemeImage from "@/ui/ThemeImage";
 
 const PNG_ARCHIVE_URL =
-  "https://cdlhsmdugnbzoirpwpxh.supabase.co/storage/v1/object/public/website-assets/Krellix-logo-PNG.zip";
+  "https://xrhiiexazeufauvmnhko.supabase.co/storage/v1/object/public/website-assets/Krellix-logo-PNG.zip";
 const SVG_ARCHIVE_URL =
-  "https://cdlhsmdugnbzoirpwpxh.supabase.co/storage/v1/object/public/website-assets/Krellix-logo-SVG.zip";
+  "https://xrhiiexazeufauvmnhko.supabase.co/storage/v1/object/public/website-assets/Krellix-logo-SVG.zip";
 
 function PressKitAssetCard({
   buttonLabel,

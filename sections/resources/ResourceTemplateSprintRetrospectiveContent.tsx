@@ -66,7 +66,7 @@ export default function ResourceTemplateSprintRetrospectiveContent() {
           </p>
 
           <a
-            href="https://cdlhsmdugnbzoirpwpxh.supabase.co/storage/v1/object/public/website-assets/resources-templates/Sprint-retrospective-template-krellixlabs.zip"
+            href="https://xrhiiexazeufauvmnhko.supabase.co/storage/v1/object/public/website-assets/resources-templates/Sprint-retrospective-template-krellixlabs.zip"
             className="mt-8 inline-flex h-[38px] items-center justify-center rounded-[6px] border border-[var(--border-soft)] bg-[var(--resource-agent-download-button-bg)] px-3 transition-colors hover:text-brand-mint"
           >
             <ThemeImage
