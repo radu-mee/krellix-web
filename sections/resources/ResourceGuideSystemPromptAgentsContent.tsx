@@ -32,18 +32,17 @@ export default function ResourceGuideSystemPromptAgentsContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/guides")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO GUIDES
+            Back to guides
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">
             How to write a system prompt for AI agents
           </h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Learn the four components that turn a generic AI tool into a specialist that actually understands your
             role, your context, and how you want it to work.
           </p>
@@ -53,13 +52,13 @@ export default function ResourceGuideSystemPromptAgentsContent() {
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
           <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)]">About this guide</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             AI tools perform best when they receive clear instructions about their role, responsibilities, and expected
             outputs. Without that guidance, responses often become inconsistent, generic, or disconnected from the
             context that matters most. A well-designed system prompt helps establish those expectations before any
             conversation begins.
           </p>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             This guide explores the core building blocks of effective AI system prompts, including defining roles,
             setting goals, establishing rules, and creating useful output formats. It also explains how role definitions
             shape an AI persona, allowing an agent to reflect a specific expertise, perspective, and way of working.
@@ -114,7 +113,7 @@ export default function ResourceGuideSystemPromptAgentsContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

@@ -32,16 +32,15 @@ export default function ResourceGuideUserResearchContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/guides")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO GUIDES
+            Back to guides
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">How to Use AI for User Research</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">How to Use AI for User Research</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             A practical guide to using AI for user research, from planning studies and writing interview guides to
             synthesizing findings and generating research insights faster.
           </p>
@@ -51,13 +50,13 @@ export default function ResourceGuideUserResearchContent() {
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
           <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)]">About this guide</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Great research depends on real people, not generated answers. While AI cannot replace conversations with
             users, it can help researchers spend less time on administration and more time uncovering meaningful
             insights. From planning studies to analyzing findings, AI can support many of the activities that surround
             research without replacing the human perspective at its core.
           </p>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             This guide explores practical ways to use AI user research techniques throughout the research process. It
             covers user research planning, creating effective discussion guides, improving user interviews,
             accelerating research synthesis, and transforming observations into actionable insights. The goal is not to
@@ -111,7 +110,7 @@ export default function ResourceGuideUserResearchContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

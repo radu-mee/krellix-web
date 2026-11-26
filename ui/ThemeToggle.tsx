@@ -33,7 +33,7 @@ export default function ThemeToggle() {
       onClick={handleToggle}
       aria-pressed={isDark}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className="relative inline-flex h-6 w-[60px] items-center rounded-[20px] border border-[var(--toggle-track-border)] bg-[var(--toggle-track-bg)] p-[2px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-mint focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface-bg)]"
+      className="relative inline-flex h-6 w-[60px] cursor-pointer items-center rounded-[20px] border border-[var(--toggle-track-border)] bg-[var(--toggle-track-bg)] p-[2px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-mint focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface-bg)]"
     >
       <span
         className={`inline-flex h-5 w-8 items-center justify-center rounded-[20px] bg-[var(--toggle-thumb-bg)] transition-transform duration-200 ease-out ${isDark ? "translate-x-6" : "translate-x-0"}`}

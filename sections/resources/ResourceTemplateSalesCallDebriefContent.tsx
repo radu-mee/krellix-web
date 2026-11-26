@@ -32,16 +32,15 @@ export default function ResourceTemplateSalesCallDebriefContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/templates")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO TEMPLATES
+            Back to templates
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Sales Call Debrief</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">Sales Call Debrief</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Capture key insights, qualification signals, and next steps with a Sales Call Report Template designed to
             help teams evaluate conversations, maintain deal momentum, and improve sales execution over time.
           </p>
@@ -51,13 +50,13 @@ export default function ResourceTemplateSalesCallDebriefContent() {
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
           <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)]">About this template</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             The most valuable information from a sales conversation is often lost shortly after the call ends. Without
             a consistent process for documenting what was learned, important details about buyer priorities,
             objections, decision processes, and deal risks can be overlooked. A structured sales call report helps
             turn conversations into actionable information while the details are still fresh.
           </p>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Use this template to document prospect insights, review call performance, track objections, evaluate deal
             qualification, and define clear follow-up actions. The framework can support discovery calls, demos,
             follow-up conversations, negotiations, and closing discussions while helping teams maintain stronger deal
@@ -111,7 +110,7 @@ export default function ResourceTemplateSalesCallDebriefContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

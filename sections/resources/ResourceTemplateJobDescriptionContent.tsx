@@ -32,16 +32,15 @@ export default function ResourceTemplateJobDescriptionContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/templates")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO TEMPLATES
+            Back to templates
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Job Description</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">Job Description</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Create clearer hiring expectations with a Job Description template designed to define responsibilities,
             communicate role requirements, and help attract candidates who are aligned with the work, team, and
             company.
@@ -52,13 +51,13 @@ export default function ResourceTemplateJobDescriptionContent() {
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
           <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)]">About this template</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Many hiring challenges begin long before interviews start. Vague responsibilities, unrealistic
             requirements, and unclear expectations can make it harder to attract qualified candidates and evaluate
             them consistently. A well-written job description creates alignment between hiring managers, recruiters,
             and applicants before the hiring process begins.
           </p>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Use this job description template to define role scope, clarify responsibilities, communicate candidate
             requirements, document compensation and benefits, and create a more consistent hiring experience. The
             structure can support new roles, growing teams, replacement hires, and evolving organizational needs while
@@ -112,7 +111,7 @@ export default function ResourceTemplateJobDescriptionContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

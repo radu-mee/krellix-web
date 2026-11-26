@@ -477,16 +477,15 @@ export default function BlogArticleContent({ post }: { post: BlogPost }) {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[760px]">
+        <div className="max-w-[720px]">
           <Link
             href="/en/blog"
-            className="type-label !text-[#00C29F] transition-opacity hover:opacity-80"
-            style={{ color: "#00C29F" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO BLOG
+            Back to blog
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">{post.title}</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">{post.excerpt}</p>
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">{post.title}</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">{post.excerpt}</p>
         </div>
       </div>
 
@@ -512,7 +511,7 @@ export default function BlogArticleContent({ post }: { post: BlogPost }) {
                 {section.paragraphs.map((paragraph) => (
                   <p
                     key={paragraph}
-                    className="type-paragraph text-[var(--text-muted)]"
+                    className="type-paragraph text-[var(--text-strong)]"
                   >
                     {renderParagraphWithLinks(paragraph)}
                   </p>
@@ -542,7 +541,7 @@ export default function BlogArticleContent({ post }: { post: BlogPost }) {
                 <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                   {item.question}
                 </h3>
-                <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+                <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
               </article>
             ))}
           </div>

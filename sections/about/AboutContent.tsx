@@ -55,7 +55,7 @@ function AboutValueTile({
 
       <div className="flex flex-col items-center border-t border-[var(--border-soft)] bg-[var(--surface-raised)] px-4 py-7 md:px-5 text-center">
         <p className="type-label text-brand-mint">{card.title}</p>
-        <p className="type-paragraph mt-4 max-w-[360px] text-[var(--text-muted)]">
+        <p className="type-paragraph mt-4 max-w-[360px] text-[var(--text-strong)]">
           {card.description}
         </p>
       </div>
@@ -68,9 +68,8 @@ export default function AboutContent() {
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
         <div className="max-w-[720px]">
-          <p className="type-label text-brand-mint">About us</p>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Who we are</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 text-balance text-[var(--text-strong)]">Who we are</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             We&apos;re a team of builders who believe the future of work is
             collaboration between humans and AI, organized around real projects.
             We build context-driven AI, where intelligence works together in a
@@ -86,7 +85,7 @@ export default function AboutContent() {
       <div className="px-4 md:px-6">
         <div className="mx-auto max-w-[760px] text-center">
           <h2 className="type-h2 text-[var(--text-strong)]">Why we built Krellix</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             We started Krellix because modern teams don&apos;t work in one lane.
             Strategy, design, coding, and writing constantly overlap. Most tools
             still treat this as separate workflows. Krellix brings those worlds
@@ -102,7 +101,7 @@ export default function AboutContent() {
       <div className="px-4 md:px-6">
         <div className="mx-auto max-w-[760px] text-center">
           <h2 className="type-h2 text-[var(--text-strong)]">What be believe</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             AI should amplify teams, not replace judgment. Great collaboration
             happens when context is shared, decisions are traceable, and tools
             adapt to how people already work. We believe in a more natural way

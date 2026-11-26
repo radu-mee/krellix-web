@@ -212,11 +212,10 @@ function ProductFeatureSection({ feature }: { feature: ProductFeature }) {
 
   const copy = (
     <div className="max-w-[460px]">
-      <p className="type-label text-brand-mint">{feature.label}</p>
-      <h2 className="mt-3 font-display text-[20px] leading-none text-[var(--text-strong)] md:text-[24px]">
+      <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)] md:text-[24px]">
         {feature.title}
       </h2>
-      <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+      <p className="type-paragraph mt-4 text-[var(--text-strong)]">
         {feature.description}
       </p>
     </div>
@@ -267,7 +266,7 @@ function IntegrationToolCard({
         <h3 className="font-display text-[20px] leading-[1.1] text-[var(--text-strong)]">
           {card.title}
         </h3>
-        <p className="type-paragraph mt-3 text-[var(--text-muted)]">{card.description}</p>
+        <p className="type-paragraph mt-3 text-[var(--text-strong)]">{card.description}</p>
       </div>
     </article>
   );
@@ -324,14 +323,13 @@ export default function ProductContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[760px]">
-          <p className="type-label text-brand-mint">Product</p>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">
+        <div className="max-w-[720px]">
+          <h1 className="type-h1 text-balance text-[var(--text-strong)]">
             Your AI-powered
             <br />
             collaboration platform
           </h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Build your team, organize your projects, and let your AI agents collaborate in one place.
           </p>
         </div>
@@ -371,11 +369,10 @@ export default function ProductContent() {
       <div className="border-b border-[var(--border-soft)]">
         <div className="bg-[var(--surface-raised)] px-4 py-10 md:px-6 md:py-12">
           <div className="max-w-[760px]">
-            <p className="type-label text-brand-mint">BRING YOUR FILES</p>
-            <h2 className="mt-3 font-display text-[20px] leading-none text-[var(--text-strong)] md:text-[24px]">
+            <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)] md:text-[24px]">
               Works with most file types
             </h2>
-            <p className="type-paragraph mt-4 max-w-[700px] text-[var(--text-muted)]">
+            <p className="type-paragraph mt-4 max-w-[700px] text-[var(--text-strong)]">
               Your work doesn't live in one format, and neither does Krellix. Your agents can read a large variety of file types, understand them, and get to work.
             </p>
           </div>
@@ -384,7 +381,7 @@ export default function ProductContent() {
       </div>
 
       <div className="border-b border-[var(--border-soft)] px-4 py-10 md:px-6">
-        <p className="type-paragraph mx-auto max-w-[860px] text-center text-[var(--text-muted)]">
+        <p className="type-paragraph mx-auto max-w-[860px] text-center text-[var(--text-strong)]">
           Krellix is an AI-powered collaboration platform built as a multi-agent system where AI agents
           collaborate, manage workflows, and support orchestration across a shared workspace.
         </p>
@@ -398,9 +395,8 @@ export default function ProductContent() {
         <>
           <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
             <div className="max-w-[780px]">
-              <p className="type-label text-brand-mint">Integrations</p>
-              <h2 className="type-h2 mt-4 text-[var(--text-strong)]">Works with the tools you already use</h2>
-              <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+              <h2 className="type-h2 text-[var(--text-strong)]">Works with the tools you already use</h2>
+              <p className="type-paragraph mt-4 text-[var(--text-strong)]">
                 Krellix connects to your existing workflow, giving your AI agents the context they need
                 from the tools your team already depends on.
               </p>
@@ -437,7 +433,7 @@ export default function ProductContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

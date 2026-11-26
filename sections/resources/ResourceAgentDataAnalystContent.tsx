@@ -32,16 +32,15 @@ export default function ResourceAgentDataAnalystContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/agents")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO AGENTS
+            Back to agents
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Data analyst</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">Data analyst</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             A clear-headed analyst that turns raw datasets into actionable decisions.
           </p>
         </div>
@@ -49,19 +48,19 @@ export default function ResourceAgentDataAnalystContent() {
 
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
-          <p className="type-paragraph text-[var(--text-muted)]">
+          <p className="type-paragraph text-[var(--text-strong)]">
             Write and explain SQL queries, recommend clearer data visualization approaches, interpret analytical
             findings correctly, and turn raw numbers into decisions with an AI agent for data analysis built for
             practical insight.
           </p>
           <h2 className="mt-8 font-display text-[20px] leading-none text-[var(--text-strong)]">How this agent works</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Data analysis workflows often involve messy datasets, unclear metrics, conflicting stakeholder priorities,
             and pressure to turn numbers into decisions quickly. Interpreting data correctly requires more than
             dashboards alone - it requires statistical reasoning, clear communication, and an understanding of what
             the data can and cannot reliably explain.
           </p>
-          <p className="type-paragraph mt-2 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-2 text-[var(--text-strong)]">
             This agent is designed to support reporting, experimentation, dashboards, and stakeholder communication
             through practical AI for data analysis. Use it to structure statistical analysis, explain SQL queries,
             improve data visualization, and translate analytical findings into actionable insights for non-technical
@@ -117,7 +116,7 @@ export default function ResourceAgentDataAnalystContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

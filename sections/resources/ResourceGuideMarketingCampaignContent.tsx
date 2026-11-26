@@ -32,16 +32,15 @@ export default function ResourceGuideMarketingCampaignContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/guides")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO GUIDES
+            Back to guides
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">How to run a marketing campaign with AI</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">How to run a marketing campaign with AI</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             A practical guide to using AI marketing techniques throughout the campaign lifecycle, from strategy and
             messaging to content production, campaign execution, and analysis.
           </p>
@@ -51,13 +50,13 @@ export default function ResourceGuideMarketingCampaignContent() {
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
           <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)]">About this guide</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Many teams use AI only for writing copy or generating content, but the biggest opportunities often appear
             much earlier in the process. Strong campaigns rely on understanding the audience, developing clear
             positioning, testing ideas, and learning from results. Using AI for marketing can help teams make better
             decisions, uncover stronger insights, and improve consistency across every stage of a campaign.
           </p>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             This guide explains how to use AI in marketing to strengthen planning, messaging, creative development, and
             performance evaluation. It explores practical approaches to AI marketing campaigns, audience research,
             campaign reviews, and post-campaign learning while helping teams connect strategy, execution, and analysis
@@ -111,7 +110,7 @@ export default function ResourceGuideMarketingCampaignContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

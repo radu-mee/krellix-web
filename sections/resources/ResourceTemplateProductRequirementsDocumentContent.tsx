@@ -32,16 +32,15 @@ export default function ResourceTemplateProductRequirementsDocumentContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/templates")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO TEMPLATES
+            Back to templates
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Product Requirements Document</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">Product Requirements Document</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Define what you're building, why it matters, and how success will be measured with a Product Requirements
             Document template designed to align product, design, engineering, and business stakeholders around a
             shared plan.
@@ -52,13 +51,13 @@ export default function ResourceTemplateProductRequirementsDocumentContent() {
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
           <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)]">About this template</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Strong products are built on shared understanding. Before development begins, teams need clarity around
             the problem being solved, the users being served, the requirements that matter most, and the outcomes that
             define success. A well-structured product requirements document creates a single source of truth that
             helps teams make better decisions throughout the product development process.
           </p>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Use this PRD template to document user needs, define functional and non-functional requirements, capture
             technical considerations, organize launch planning, and establish measurable success criteria. The
             framework can support new products, feature development, platform improvements, and other initiatives that
@@ -112,7 +111,7 @@ export default function ResourceTemplateProductRequirementsDocumentContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

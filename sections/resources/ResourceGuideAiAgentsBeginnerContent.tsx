@@ -32,16 +32,15 @@ export default function ResourceGuideAiAgentsBeginnerContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/guides")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO GUIDES
+            Back to guides
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">The beginner&apos;s guide to AI agents</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">The beginner&apos;s guide to AI agents</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Understand what AI agents actually are, how they differ from traditional AI tools, and how to create your
             first custom AI agent without any technical background.
           </p>
@@ -51,13 +50,13 @@ export default function ResourceGuideAiAgentsBeginnerContent() {
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
           <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)]">About this guide</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             AI agents are often described in different ways, from simple assistants that follow instructions to
             autonomous AI agents capable of completing multi-step tasks. As a result, it can be difficult for beginners
             to understand what an agent actually is, what makes it different from a traditional AI tool, and when it
             becomes useful.
           </p>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             This guide provides a practical introduction to AI agents, explaining how they work, the different types of
             AI agents, and how they evolve from simple role-based assistants into more advanced systems with memory,
             tools, and collaboration capabilities. Whether you&apos;re exploring a custom AI agent for personal
@@ -112,7 +111,7 @@ export default function ResourceGuideAiAgentsBeginnerContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

@@ -117,7 +117,7 @@ function AgentExampleCard({
         <h2 className="mt-4 font-display text-[20px] leading-none text-[var(--text-strong)]">
           {item.title}
         </h2>
-        <p className="type-paragraph mt-3 text-[var(--text-muted)]">{item.description}</p>
+        <p className="type-paragraph mt-3 text-[var(--text-strong)]">{item.description}</p>
       </div>
     </article>
   );
@@ -167,7 +167,7 @@ function BenefitCard({
         <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
           {card.title}
         </h3>
-        <p className="type-paragraph mt-3 text-[var(--text-muted)]">{card.description}</p>
+        <p className="type-paragraph mt-3 text-[var(--text-strong)]">{card.description}</p>
       </div>
     </article>
   );
@@ -177,16 +177,15 @@ export default function SolutionResearchersContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[760px]">
+        <div className="max-w-[720px]">
           <Link
             href="/en/solutions"
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO SOLUTIONS
+            Back to solutions
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Researchers</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">Researchers</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Synthesize findings, track hypotheses, and maintain research continuity across weeks of work. Your AI
             research team remembers every data point, methodology decision, and open question - so your thinking
             compounds instead of restarting. Krellix is a personalized AI research assistant, building on your
@@ -239,11 +238,10 @@ export default function SolutionResearchersContent() {
           </div>
 
           <div>
-            <p className="type-label text-brand-mint">STOP WEARING EVERY HAT ALONE</p>
-            <h2 className="mt-3 font-display text-[20px] leading-none text-[var(--text-strong)] md:text-[24px]">
+            <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)] md:text-[24px]">
               How they collaborate
             </h2>
-            <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+            <p className="type-paragraph mt-4 text-[var(--text-strong)]">
               You bring a research question. Business Analyst structures the approach. Copywriter refines how insights
               are expressed. General Assistant gathers sources and fills gaps. They build on each other's input in the
               same conversation - so your research stays structured and connected.
@@ -252,7 +250,7 @@ export default function SolutionResearchersContent() {
         </div>
       </div>
 
-      <p className="type-paragraph mx-auto mt-10 max-w-[760px] px-4 text-center text-[var(--text-muted)] md:px-6">
+      <p className="type-paragraph mx-auto mt-10 max-w-[760px] px-4 text-center text-[var(--text-strong)] md:px-6">
         Krellix is a personalized AI research assistant where multiple agents collaborate across one continuous
         workflow. Instead of switching between separate AI research tools, your agents build on shared context - so
         research improves over time.
@@ -264,11 +262,10 @@ export default function SolutionResearchersContent() {
 
       <div className="px-4 md:px-6">
         <div className="max-w-[760px]">
-          <p className="type-label text-brand-mint">A REAL DYNAMIC</p>
-          <h2 className="mt-3 font-display text-[20px] leading-none text-[var(--text-strong)] md:text-[24px]">
+          <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)] md:text-[24px]">
             Collaboration benefits
           </h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Having a team of AI agents is more than just speed. It's about perspective. When multiple specialists
             weigh in on the same problem, blind spots shrink and better research decisions emerge.
           </p>
@@ -307,7 +304,7 @@ export default function SolutionResearchersContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

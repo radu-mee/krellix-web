@@ -49,9 +49,8 @@ export default function SubprocessorsContent() {
     <section className="flex flex-col">
       <div className="px-4 py-14 md:px-6 md:py-16">
         <div className="max-w-[720px]">
-          <p className="type-label text-brand-mint">Legal stuff</p>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Subprocessors</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 text-balance text-[var(--text-strong)]">Subprocessors</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Know exactly where your data is and how it&apos;s being used.
           </p>
         </div>
@@ -64,7 +63,7 @@ export default function SubprocessorsContent() {
           {SUBPROCESSORS.map((item) => (
             <section key={item.name} className="grid gap-y-3 text-left">
               <h2 className="type-h3 text-[var(--text-strong)]">{item.name}</h2>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.purpose}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.purpose}</p>
               <a
                 href={item.url}
                 target="_blank"
@@ -84,7 +83,7 @@ export default function SubprocessorsContent() {
               <h2 className="type-h3 text-left text-[var(--text-strong)]">
                 {item.name}
               </h2>
-              <p className="type-paragraph text-left text-[var(--text-muted)]">
+              <p className="type-paragraph text-left text-[var(--text-strong)]">
                 {item.purpose}
               </p>
               <a

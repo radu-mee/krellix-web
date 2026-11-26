@@ -1,6 +1,7 @@
 import DotGridDivider from "@/ui/DotGridDivider";
 import ThemeImage from "@/ui/ThemeImage";
 import HomeHeroGlyphPulse from "./HomeHeroGlyphPulse";
+import WelcomeBadge from "./WelcomeBadge";
 
 type GetStartedCard = {
   title: string;
@@ -193,7 +194,7 @@ function GetStartedStepCard({
         <h3 className="font-display text-[20px] leading-[1.1] text-[var(--text-strong)]">
           {card.title}
         </h3>
-        <p className="type-paragraph mt-3 text-[var(--text-muted)]">{card.description}</p>
+        <p className="type-paragraph mt-3 text-[var(--text-strong)]">{card.description}</p>
       </div>
     </article>
   );
@@ -224,7 +225,7 @@ function IntegrationToolCard({
         <h3 className="font-display text-[20px] leading-[1.1] text-[var(--text-strong)]">
           {card.title}
         </h3>
-        <p className="type-paragraph mt-3 text-[var(--text-muted)]">{card.description}</p>
+        <p className="type-paragraph mt-3 text-[var(--text-strong)]">{card.description}</p>
       </div>
     </article>
   );
@@ -236,18 +237,17 @@ export default function HomeContent() {
       <div className="relative isolate overflow-hidden px-4 pb-14 pt-14 md:px-6 md:pb-16 md:pt-16 lg:pt-20">
         <HomeHeroGlyphPulse />
         <div className="relative flex flex-col">
-          <div className="max-w-[900px]">
-            <p className="type-label text-brand-mint">COLLABORATION IMPROVES OUTCOMES</p>
-            <h1 className="type-h1 mt-5 leading-[1.18] text-[var(--text-strong)] md:leading-[1.2]">
-              Next generation workspace where your <br className="hidden md:block" />
-              AI copilots actually collaborate
+          <div className="max-w-[720px]">
+            <WelcomeBadge />
+            <h1 className="type-h1 mt-6 text-balance text-[var(--text-strong)] md:mt-8">
+              The AI workspace built for professionals
             </h1>
-            <p className="type-paragraph mt-4 max-w-[860px] text-[var(--text-muted)]">
-              Bring multiple perspectives into every decision and increase the output quality with a collaborative multi-agent system tailored to your workflow.
+            <p className="type-paragraph mt-5 max-w-[520px] text-balance text-[var(--text-strong)]">
+              Streamline workflows, automate tedious work and increase the output quality with the help of your team-based AI copilots.
             </p>
           </div>
 
-          <div className="mt-10 md:mt-12">
+          <div className="mt-14 md:mt-16 lg:mt-20">
             <HomeHeroImage />
           </div>
         </div>
@@ -255,9 +255,8 @@ export default function HomeContent() {
 
       <div id="product" className="px-4 pb-10 md:px-6">
         <div className="mx-auto max-w-[760px] text-center">
-          <p className="type-label text-brand-mint">NO TIME TO WASTE</p>
-          <h2 className="type-h2 mt-4 text-[var(--text-strong)]">Get started fast</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h2 className="type-h2 text-[var(--text-strong)]">Get started fast</h2>
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             We know your time is important. Set up your AI workflow instantly.
           </p>
         </div>
@@ -270,7 +269,7 @@ export default function HomeContent() {
       </div>
 
       <div className="border-b border-[var(--border-soft)] px-4 py-10 md:px-6">
-        <p className="type-paragraph mx-auto max-w-[780px] text-center text-[var(--text-muted)]">
+        <p className="type-paragraph mx-auto max-w-[780px] text-center text-[var(--text-strong)]">
           Krellix is an AI copilot platform built as a multi-agent system where AI agents collaborate,
           streamline workflows, and improve productivity in modern workplaces.
         </p>
@@ -303,11 +302,10 @@ export default function HomeContent() {
           </div>
 
           <div>
-            <p className="type-label text-brand-mint">DESIGNED FOR COLLABORATION</p>
-            <h2 className="type-h2 mt-4 text-[var(--text-strong)]">
+            <h2 className="type-h2 text-[var(--text-strong)]">
               Better solutions through AI collaboration
             </h2>
-            <p className="type-paragraph mt-5 text-[var(--text-muted)]">
+            <p className="type-paragraph mt-5 text-[var(--text-strong)]">
               One AI can answer a question. A team of AI agents can challenge it, refine it, and make it better. Krellix brings that collaborative dynamic to every conversation.
             </p>
           </div>
@@ -321,11 +319,10 @@ export default function HomeContent() {
       <div className="border-b border-[var(--border-soft)] px-4 py-10 md:px-6 md:py-12">
         <div className="grid items-center gap-8 lg:grid-cols-[minmax(300px,0.78fr)_minmax(560px,1.22fr)] lg:gap-10">
           <div className="max-w-[460px]">
-            <p className="type-label text-brand-mint">BUILT FOR PRODUCTIVITY</p>
-            <h2 className="type-h2 mt-4 text-[var(--text-strong)]">
+            <h2 className="type-h2 text-[var(--text-strong)]">
               Tasks get done faster without context switching
             </h2>
-            <p className="type-paragraph mt-5 text-[var(--text-muted)]">
+            <p className="type-paragraph mt-5 text-[var(--text-strong)]">
               Most tools make you repeat yourself. Krellix remembers. Your agents carry full context across every session, every device, and every conversation so nothing falls through the cracks.
             </p>
           </div>
@@ -343,7 +340,7 @@ export default function HomeContent() {
       <div className="px-4 md:px-6">
         <div className="mx-auto flex max-w-[780px] flex-col items-center text-center">
           <h2 className="type-h2 text-[var(--text-strong)]">Cross platform continuity</h2>
-          <p className="type-paragraph mt-4 max-w-[700px] text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 max-w-[700px] text-[var(--text-strong)]">
             Your AI workplace moves with you. Projects, agents, and conversations stay in sync, so you can switch devices, change locations, and pick up exactly where you left off.
           </p>
           <div className="mt-8">
@@ -366,9 +363,8 @@ export default function HomeContent() {
         <>
           <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
             <div className="max-w-[780px]">
-              <p className="type-label text-brand-mint">INTEGRATIONS</p>
-              <h2 className="type-h2 mt-4 text-[var(--text-strong)]">Works with the tools you already use</h2>
-              <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+              <h2 className="type-h2 text-[var(--text-strong)]">Works with the tools you already use</h2>
+              <p className="type-paragraph mt-4 text-[var(--text-strong)]">
                 Krellix connects to your existing workflow, giving your AI agents the context they need from the tools your team already depends on.
               </p>
             </div>
@@ -394,7 +390,7 @@ export default function HomeContent() {
               className="grid gap-4 py-8 md:grid-cols-[minmax(280px,1fr)_minmax(320px,1.2fr)] md:gap-10"
             >
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">{item.question}</h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

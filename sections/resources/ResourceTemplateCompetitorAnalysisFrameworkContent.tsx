@@ -32,16 +32,15 @@ export default function ResourceTemplateCompetitorAnalysisFrameworkContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/templates")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO TEMPLATES
+            Back to templates
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Competitor analysis framework</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">Competitor analysis framework</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Map your competitive landscape, compare product positioning, and turn market insights into clearer
             product, messaging, and strategic decisions with a Competitor Analysis template designed for evolving
             markets and growing businesses..
@@ -52,12 +51,12 @@ export default function ResourceTemplateCompetitorAnalysisFrameworkContent() {
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
           <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)]">About this template</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Strong competitor research requires more than tracking feature lists or monitoring pricing pages.
             Understanding the competitive landscape means identifying positioning patterns, customer expectations,
             product gaps, market trends, and the strategic decisions shaping how companies compete over time.
           </p>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Use this Competitor Analysis template to organize competitor research, compare positioning, evaluate
             strengths and weaknesses, analyze customer sentiment, and track market movements across products, services,
             and industries. The framework can support strategic planning, product direction, messaging reviews, market
@@ -111,7 +110,7 @@ export default function ResourceTemplateCompetitorAnalysisFrameworkContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

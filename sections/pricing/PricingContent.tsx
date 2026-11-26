@@ -140,9 +140,8 @@ export default function PricingContent() {
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
         <div className="max-w-[720px]">
-          <p className="type-label text-brand-mint">Pricing</p>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Work smarter</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 text-balance text-[var(--text-strong)]">Start free, scale as you grow</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Get started in minutes. Build your team and scale your workflow as your AI agents work together
             seamlessly.
           </p>
@@ -156,7 +155,7 @@ export default function PricingContent() {
       </div>
 
       <div className="flex min-h-[54px] items-center justify-center border-b border-[var(--border-soft)] bg-[var(--ascii-divider-bg)] px-4">
-        <p className="type-paragraph text-center text-[12px] text-[var(--text-muted)]">
+        <p className="type-paragraph text-center text-[12px] text-[var(--text-strong)]">
           The pricing outlined does not include *VAT. Krellix reserves the right to adjust its pricing.
         </p>
       </div>
@@ -174,7 +173,7 @@ export default function PricingContent() {
           <h2 className="type-h2 text-[var(--text-strong)]">
             Cross platform continuity
           </h2>
-          <p className="type-paragraph mt-4 max-w-[560px] text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 max-w-[560px] text-[var(--text-strong)]">
             Start on your Mac, continue on your PC or the other way around. Your AI agents and workflows stay
             connected across devices—so your work continues without interruption.
           </p>
@@ -202,7 +201,7 @@ export default function PricingContent() {
               className="grid gap-4 py-8 md:grid-cols-[minmax(280px,1fr)_minmax(320px,1.2fr)] md:gap-10"
             >
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">{item.question}</h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

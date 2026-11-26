@@ -41,10 +41,9 @@ export default function DownloadHero() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[620px]">
-          <p className="type-label text-brand-mint">Download</p>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Get Krellix</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+        <div className="max-w-[720px]">
+          <h1 className="type-h1 text-balance text-[var(--text-strong)]">Get Krellix</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Access all the feature on your Mac or PC or both.
           </p>
         </div>

@@ -32,16 +32,15 @@ export default function ResourceAgentUxResearcherContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/agents")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO AGENTS
+            Back to agents
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">UX researcher</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">UX researcher</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             A structured researcher that turns user insights into product clarity.
           </p>
         </div>
@@ -49,19 +48,19 @@ export default function ResourceAgentUxResearcherContent() {
 
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
-          <p className="type-paragraph text-[var(--text-muted)]">
+          <p className="type-paragraph text-[var(--text-strong)]">
             Design research plans, write unbiased interview scripts, synthesize findings into actionable insights, and
             improve product decisions with an AI UX researcher focused on research quality, usability, and reducing
             bias in user feedback.
           </p>
           <h2 className="mt-8 font-display text-[20px] leading-none text-[var(--text-strong)]">How this agent works</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Strong UX research requires more than collecting user opinions. Effective user research helps teams
             understand behaviors, motivations, friction points, and decision-making patterns through structured studies
             and thoughtful analysis. Good research also depends on choosing the right research methods, avoiding bias,
             and translating findings into insights that teams can confidently act on.
           </p>
-          <p className="type-paragraph mt-2 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-2 text-[var(--text-strong)]">
             Use AI for UX research to support interview planning, usability testing, participant criteria, discussion
             guides, and research synthesis. This agent is designed to help structure usability testing, improve
             research quality, identify patterns across findings, and communicate clearer insights that support better
@@ -117,7 +116,7 @@ export default function ResourceAgentUxResearcherContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

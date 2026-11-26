@@ -32,16 +32,15 @@ export default function ResourceGuideAiOnboardingContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/guides")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO GUIDES
+            Back to guides
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">How to Onboard Your Team to AI Without the Pushback</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">How to Onboard Your Team to AI Without the Pushback</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             A practical guide to AI adoption that helps teams build trust, address concerns, and introduce AI in ways
             that encourage lasting engagement rather than resistance.
           </p>
@@ -51,13 +50,13 @@ export default function ResourceGuideAiOnboardingContent() {
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
           <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)]">About this guide</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Successful AI adoption is rarely about the technology itself. Most challenges come from people, habits,
             expectations, and uncertainty about how AI will affect existing ways of working. When concerns go
             unaddressed or new tools are introduced without a clear purpose, even promising initiatives can struggle
             to gain traction.
           </p>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             This guide explores the people and process side of AI implementation, including how to earn genuine buy-in,
             address job security concerns honestly, introduce new ways of working gradually, and build habits that
             stick. It covers practical approaches to AI adoption strategy, pilot programs, team communication, and
@@ -112,7 +111,7 @@ export default function ResourceGuideAiOnboardingContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

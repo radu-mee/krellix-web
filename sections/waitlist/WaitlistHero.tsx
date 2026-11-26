@@ -109,7 +109,7 @@ export default function WaitlistHero() {
         </div>
 
         <h2 className="type-h1 text-[var(--text-strong)]">Coming soon</h2>
-        <p className="type-paragraph mt-4 max-w-[620px] text-[var(--text-muted)]">
+        <p className="type-paragraph mt-4 max-w-[620px] text-[var(--text-strong)]">
           We&apos;re putting the final touches on something new. Join the
           waitlist. Access rolls out in batches, and spots open as we go.
         </p>
@@ -145,7 +145,7 @@ export default function WaitlistHero() {
             </button>
           </form>
           {errorMessage ? (
-            <p className="type-paragraph mt-2 text-left text-[12px] leading-[1.4] text-[var(--text-muted)]">
+            <p className="type-paragraph mt-2 text-left text-[12px] leading-[1.4] text-[var(--text-strong)]">
               {errorMessage}
             </p>
           ) : null}

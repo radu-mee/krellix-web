@@ -32,16 +32,15 @@ export default function ResourceGuideCompetitiveAnalysisContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/guides")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO GUIDES
+            Back to guides
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">How to use AI for competitive analysis</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">How to use AI for competitive analysis</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             A practical guide to using AI for competitive analysis, competitor research, and competitive intelligence
             so you can identify opportunities, understand market dynamics, and make stronger strategic decisions.
           </p>
@@ -51,13 +50,13 @@ export default function ResourceGuideCompetitiveAnalysisContent() {
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
           <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)]">About this guide</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Understanding competitors has always been valuable, but gathering information, comparing findings, and
             turning insights into action can be time-consuming. Websites, reviews, pricing pages, product updates, and
             customer feedback often live across multiple sources, making it difficult to build a complete picture of
             the market.
           </p>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             This guide explains how to use AI for competitive analysis, competitor research, and competitive
             intelligence more efficiently. It explores how to map the competitive landscape, understand how competitors
             position themselves, identify market opportunities, monitor competitive changes, and translate findings
@@ -113,7 +112,7 @@ export default function ResourceGuideCompetitiveAnalysisContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

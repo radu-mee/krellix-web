@@ -11,7 +11,7 @@ export default function ResourceMarkdownNotice() {
           decoding="async"
           className="h-8 w-8 shrink-0"
         />
-        <p className="type-paragraph w-full text-[var(--text-muted)] md:w-1/2">
+        <p className="type-paragraph w-full text-[var(--text-strong)] md:w-1/2">
           This resource is a Markdown file. It opens in any text editor, but we recommend{" "}
           <a
             href="https://obsidian.md"

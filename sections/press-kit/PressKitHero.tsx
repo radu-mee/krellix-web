@@ -41,12 +41,11 @@ export default function PressKitHero() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[620px]">
-          <p className="type-label text-brand-mint">Press kit</p>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">
+        <div className="max-w-[720px]">
+          <h1 className="type-h1 text-balance text-[var(--text-strong)]">
             Krellix brand assets
           </h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Access the official logos and brand guidelines.
           </p>
         </div>

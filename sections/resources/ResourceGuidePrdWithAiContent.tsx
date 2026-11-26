@@ -32,16 +32,15 @@ export default function ResourceGuidePrdWithAiContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/guides")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO GUIDES
+            Back to guides
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">How to write a PRD with AI</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">How to write a PRD with AI</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Use AI to pressure-test your problem statement, generate user stories, sharpen requirements, and catch the
             gaps that only show up during sprint planning.
           </p>
@@ -51,13 +50,13 @@ export default function ResourceGuidePrdWithAiContent() {
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
           <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)]">About this guide</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Writing a strong PRD requires balancing user needs, business goals, technical constraints, and product
             strategy. While AI cannot make product decisions for you, it can help improve the quality of the thinking
             and documentation behind them. From challenging assumptions to identifying missing requirements, AI can help
             product teams move from rough ideas to clearer plans more efficiently.
           </p>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             This guide explores practical ways to use AI when writing a product requirements document, including
             refining problem statements, generating user stories, improving functional requirements, identifying risks,
             and preparing for sprint planning discussions. The goal is not to automate product management, but to help
@@ -112,7 +111,7 @@ export default function ResourceGuidePrdWithAiContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

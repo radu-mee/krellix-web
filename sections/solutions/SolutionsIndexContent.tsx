@@ -138,7 +138,7 @@ function SolutionsCard({
         <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
           {card.title}
         </h2>
-        <p className="type-paragraph mt-4 text-[var(--text-muted)]">{card.description}</p>
+        <p className="type-paragraph mt-4 text-[var(--text-strong)]">{card.description}</p>
         <Link
           href={card.href}
           className="solution-card-cta type-paragraph mt-4 inline-flex w-fit"
@@ -155,9 +155,8 @@ export default function SolutionsIndexContent() {
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
         <div className="max-w-[720px]">
-          <p className="type-label text-brand-mint">Solutions</p>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Work smarter</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 text-balance text-[var(--text-strong)]">Work smarter</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Every professional works differently. That's why Krellix isn't one
             solution.
           </p>
@@ -188,7 +187,7 @@ export default function SolutionsIndexContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {pillar.title}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">
+              <p className="type-paragraph text-[var(--text-strong)]">
                 {pillar.description}
               </p>
             </article>

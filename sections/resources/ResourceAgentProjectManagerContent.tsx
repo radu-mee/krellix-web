@@ -32,16 +32,15 @@ export default function ResourceAgentProjectManagerContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/agents")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO AGENTS
+            Back to agents
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Project manager</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">Project manager</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             A delivery-focused PM that keeps projects on track and stakeholders aligned.
           </p>
         </div>
@@ -49,19 +48,19 @@ export default function ResourceAgentProjectManagerContent() {
 
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
-          <p className="type-paragraph text-[var(--text-muted)]">
+          <p className="type-paragraph text-[var(--text-strong)]">
             Build project plans, manage scope creep, write stakeholder updates, and keep delivery moving with an AI
             project manager focused on execution, alignment, and reducing ambiguity without losing sight of the people
             doing the work.
           </p>
           <h2 className="mt-8 font-display text-[20px] leading-none text-[var(--text-strong)]">How this agent works</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Projects rarely fail because people stop working - they fail because priorities become unclear,
             dependencies get missed, communication breaks down, or risks are identified too late. Strong project
             delivery requires more than timelines and task tracking. It requires structure, coordination, and the
             ability to keep teams aligned as priorities shift.
           </p>
-          <p className="type-paragraph mt-2 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-2 text-[var(--text-strong)]">
             Use AI for project management across delivery planning, retrospectives, risk management, and
             cross-functional coordination. This agent is designed to support project planning, stakeholder
             communication, status updates, and scope management while keeping projects realistic, organized, and
@@ -117,7 +116,7 @@ export default function ResourceAgentProjectManagerContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

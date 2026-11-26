@@ -10,7 +10,7 @@ export default function RegistrationSuccessHero() {
         </div>
 
         <h1 className="type-h1 text-[var(--text-strong)]">All done</h1>
-        <p className="type-paragraph mt-4 max-w-[620px] text-[var(--text-muted)]">
+        <p className="type-paragraph mt-4 max-w-[620px] text-[var(--text-strong)]">
           Your registration was successful. We&apos;ll be in touch.
         </p>
 

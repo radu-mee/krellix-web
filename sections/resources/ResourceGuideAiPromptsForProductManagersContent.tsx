@@ -32,16 +32,15 @@ export default function ResourceGuideAiPromptsForProductManagersContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/guides")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO GUIDES
+            Back to guides
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">AI Prompts for Product Managers</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">AI Prompts for Product Managers</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             A practical collection of copy-paste AI prompts designed to help product managers move faster across
             research, prioritization, roadmap planning, requirements, stakeholder communication, and data analysis
             workflows.
@@ -52,14 +51,14 @@ export default function ResourceGuideAiPromptsForProductManagersContent() {
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
           <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)]">About this guide</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Product management requires constant context switching between customer research, strategic planning,
             requirements definition, stakeholder alignment, and execution. AI can accelerate many of these activities,
             but only when prompts are structured clearly enough to produce useful outputs. This guide provides
             ready-to-use prompts that support common product management workflows while helping teams spend less time
             creating first drafts and more time making decisions.
           </p>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Use this guide to improve product discovery, generate user interview questions, explore prioritization
             frameworks, support roadmap planning, create user stories, draft acceptance criteria, review requirements,
             analyze research findings, and communicate more effectively with stakeholders. The prompts can be adapted
@@ -113,7 +112,7 @@ export default function ResourceGuideAiPromptsForProductManagersContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

@@ -93,7 +93,7 @@ export default function AgentModeView({ locale }: { locale: string }) {
       <main className="flex flex-1 flex-col px-4 py-14 md:px-6 md:py-16">
         <section className="mx-auto w-full max-w-[980px]">
           <h1 className="type-h2 text-[var(--text-strong)]">Krellix Agent Mode</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Structured machine-readable product context for AI agents.
           </p>
           <h2 className="mt-8 font-display text-[18px] leading-none text-[var(--text-strong)]">

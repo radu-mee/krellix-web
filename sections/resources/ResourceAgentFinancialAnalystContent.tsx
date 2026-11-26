@@ -32,16 +32,15 @@ export default function ResourceAgentFinancialAnalystContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/agents")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO AGENTS
+            Back to agents
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Financial analyst</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">Financial analyst</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             A rigorous financial thinker that turns numbers into structured plans.
           </p>
         </div>
@@ -49,19 +48,19 @@ export default function ResourceAgentFinancialAnalystContent() {
 
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
-          <p className="type-paragraph text-[var(--text-muted)]">
+          <p className="type-paragraph text-[var(--text-strong)]">
             Interpret financial statements, stress-test business cases, understand unit economics, and turn numbers
             into decisions with an AI financial analyst focused on clarity, assumptions, and practical business
             insight.
           </p>
           <h2 className="mt-8 font-display text-[20px] leading-none text-[var(--text-strong)]">How this agent works</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Financial analysis often involves incomplete information, uncertain assumptions, changing market
             conditions, and pressure to make decisions quickly. Understanding what numbers actually mean requires more
             than spreadsheets alone - it requires context, structured thinking, and the ability to identify risks,
             trade-offs, and weak assumptions before they become larger problems.
           </p>
-          <p className="type-paragraph mt-2 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-2 text-[var(--text-strong)]">
             This agent is designed to support budgeting, forecasting, business modeling, and operational
             decision-making through structured AI for financial analysis. Use it to analyze financial statements,
             evaluate unit economics, test financial assumptions, and translate financial data into clearer business
@@ -117,7 +116,7 @@ export default function ResourceAgentFinancialAnalystContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

@@ -32,16 +32,15 @@ export default function ResourceGuideBetterMeetingsContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/guides")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO GUIDES
+            Back to guides
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">How to Run Better Meetings with AI</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">How to Run Better Meetings with AI</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             A practical guide to using AI before, during, and after meetings to write sharper agendas, capture better
             notes, create clear summaries, and make sure decisions and action items actually get followed up on.
           </p>
@@ -51,13 +50,13 @@ export default function ResourceGuideBetterMeetingsContent() {
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
           <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)]">About this guide</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Many meetings consume significant amounts of time without producing clear decisions, accountability, or
             momentum. In most cases, the problem is not the people involved but the process surrounding the meeting.
             Better planning, clearer documentation, stronger follow-up, and more intentional communication can
             dramatically improve meeting effectiveness.
           </p>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             This guide explains how to use AI throughout the meeting lifecycle, from meeting preparation and agenda
             development to note-taking, documentation, decision tracking, and post-meeting reviews. It explores
             practical ways to capture meeting notes, create meeting summaries, strengthen meeting follow up, and help
@@ -111,7 +110,7 @@ export default function ResourceGuideBetterMeetingsContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

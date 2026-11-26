@@ -32,16 +32,15 @@ export default function ResourceTemplateArchitectureDecisionRecordContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/templates")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO TEMPLATES
+            Back to templates
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Architecture decision record</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">Architecture decision record</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Document architectural decisions, implementation trade-offs, and long-term system changes with an
             Architecture Decision Record template designed to preserve context as projects and workflows evolve.
           </p>
@@ -51,12 +50,12 @@ export default function ResourceTemplateArchitectureDecisionRecordContent() {
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
           <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)]">About this template</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             As projects grow, important architectural context is often lost between releases, migrations, handoffs,
             and new contributors joining the work. Architecture Decision Records help preserve that context by creating
             a consistent way to track why certain implementation paths were chosen and how systems evolved over time.
           </p>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Use this ADR template to standardize technical decision-making, support onboarding, document system
             changes, and maintain clearer software architecture documentation across evolving projects and workflows. It
             can also serve as a useful reference during onboarding, planning, and technical architecture discussions.
@@ -109,7 +108,7 @@ export default function ResourceTemplateArchitectureDecisionRecordContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

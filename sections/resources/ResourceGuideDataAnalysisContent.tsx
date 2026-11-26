@@ -32,16 +32,15 @@ export default function ResourceGuideDataAnalysisContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/guides")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO GUIDES
+            Back to guides
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">How to use AI for data analysis</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">How to use AI for data analysis</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             A practical guide to using AI data analysis, from structuring the right question and writing SQL to
             interpreting findings and turning numbers into a narrative that drives decisions.
           </p>
@@ -51,13 +50,13 @@ export default function ResourceGuideDataAnalysisContent() {
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
           <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)]">About this guide</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Working with data involves much more than producing charts or running queries. Analysts often spend
             significant time structuring questions, preparing data, exploring results, validating findings, and
             communicating insights to stakeholders. AI can help accelerate many of these steps while allowing people to
             focus more on judgment and decision-making.
           </p>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             This guide explores practical ways to apply AI data analysis across the data analytics process, helping
             teams move beyond raw numbers and develop a clearer understanding of what the data actually means. From
             strengthening data interpretation to supporting more confident decisions, the focus is on turning
@@ -111,7 +110,7 @@ export default function ResourceGuideDataAnalysisContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

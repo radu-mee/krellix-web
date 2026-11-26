@@ -11,10 +11,7 @@ export default function Error({ error, reset }: ErrorProps) {
   return (
     <main className="flex min-h-screen items-center justify-center bg-[var(--page-bg)] px-4 py-24 md:px-6">
       <section className="frame-shadow w-full max-w-[720px] border border-[var(--border-soft)] bg-[var(--surface-bg)] p-8 md:p-12">
-        <p className="font-display text-sm uppercase tracking-[0.12em] text-brand-mint">
-          Something went wrong
-        </p>
-        <h1 className="mt-4 font-display text-3xl leading-none text-[var(--text-strong)] md:text-4xl">
+        <h1 className="font-display text-3xl leading-none text-[var(--text-strong)] md:text-4xl">
           The page could not be rendered.
         </h1>
         <p className="mt-4 max-w-[48ch] text-sm text-[var(--text-muted)] md:text-base">

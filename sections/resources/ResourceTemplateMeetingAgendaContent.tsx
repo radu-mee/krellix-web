@@ -32,16 +32,15 @@ export default function ResourceTemplateMeetingAgendaContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/templates")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO TEMPLATES
+            Back to templates
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Meeting Agenda</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">Meeting Agenda</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Run more effective meetings with a Meeting Agenda template designed to clarify objectives, structure
             discussions, support decision-making, and ensure everyone leaves with clear next steps and ownership.
           </p>
@@ -51,13 +50,13 @@ export default function ResourceTemplateMeetingAgendaContent() {
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
           <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)]">About this template</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Many meetings fail before they begin. Attendees arrive without context, discussions drift away from the
             intended purpose, and decisions are left unresolved. A well-structured meeting agenda creates alignment
             before the meeting starts by making expectations, responsibilities, and desired outcomes clear to everyone
             involved.
           </p>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Use this meeting agenda template to organize discussion topics, prepare attendees, manage time more
             effectively, document decisions, and track follow-up actions. The framework can support leadership
             meetings, project reviews, planning sessions, workshops, and recurring team meetings where accountability
@@ -111,7 +110,7 @@ export default function ResourceTemplateMeetingAgendaContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

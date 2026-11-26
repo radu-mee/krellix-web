@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Geist, Poppins } from "next/font/google";
 import Script from "next/script";
 import { jetbrainsMono } from "@/lib/fonts";
 import ConsentBanner from "@/ui/ConsentBanner";
@@ -10,6 +10,12 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-poppins",
+  display: "swap",
+});
+
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist",
   display: "swap",
 });
 
@@ -68,7 +74,7 @@ export default function RootLayout({
       lang="en"
       data-theme="dark"
       suppressHydrationWarning
-      className={`${jetbrainsMono.variable} ${poppins.variable}`}
+      className={`${jetbrainsMono.variable} ${poppins.variable} ${geist.variable}`}
     >
       <head>
         {gtmId ? (

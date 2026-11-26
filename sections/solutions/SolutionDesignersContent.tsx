@@ -117,7 +117,7 @@ function AgentExampleCard({
         <h2 className="mt-4 font-display text-[20px] leading-none text-[var(--text-strong)]">
           {item.title}
         </h2>
-        <p className="type-paragraph mt-3 text-[var(--text-muted)]">{item.description}</p>
+        <p className="type-paragraph mt-3 text-[var(--text-strong)]">{item.description}</p>
       </div>
     </article>
   );
@@ -167,7 +167,7 @@ function BenefitCard({
         <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
           {card.title}
         </h3>
-        <p className="type-paragraph mt-3 text-[var(--text-muted)]">{card.description}</p>
+        <p className="type-paragraph mt-3 text-[var(--text-strong)]">{card.description}</p>
       </div>
     </article>
   );
@@ -177,16 +177,15 @@ export default function SolutionDesignersContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[760px]">
+        <div className="max-w-[720px]">
           <Link
             href="/en/solutions"
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO SOLUTIONS
+            Back to solutions
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Designers</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">Designers</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Get UX, copy, and brand feedback in one conversation. Your AI design team critiques flows, flags
             inconsistencies, and checks brand alignment-so you iterate faster without chasing feedback across tools
             and channels. Krellix works as a single AI design tool for feedback, iteration, and alignment.
@@ -236,11 +235,10 @@ export default function SolutionDesignersContent() {
           </div>
 
           <div>
-            <p className="type-label text-brand-mint">STOP WEARING EVERY HAT ALONE</p>
-            <h2 className="mt-3 font-display text-[20px] leading-none text-[var(--text-strong)] md:text-[24px]">
+            <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)] md:text-[24px]">
               How they collaborate
             </h2>
-            <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+            <p className="type-paragraph mt-4 text-[var(--text-strong)]">
               You describe a design or flow once. UI/UX Designer evaluates usability and structure. Copywriter
               refines messaging and clarity. Marketing Pro ensures alignment with brand and conversion goals. They
               build on each other's input in the same conversation-so your design, copy, and user experience stay
@@ -251,7 +249,7 @@ export default function SolutionDesignersContent() {
 
       </div>
 
-      <p className="type-paragraph mx-auto mt-10 max-w-[760px] px-4 text-center text-[var(--text-muted)] md:px-6">
+      <p className="type-paragraph mx-auto mt-10 max-w-[760px] px-4 text-center text-[var(--text-strong)] md:px-6">
         Krellix brings UX, copy, and product feedback into one place. Your AI agents work together on the same
         problems-so ideas build, decisions improve, and your designs evolve faster.
       </p>
@@ -262,11 +260,10 @@ export default function SolutionDesignersContent() {
 
       <div className="px-4 md:px-6">
         <div className="max-w-[760px]">
-          <p className="type-label text-brand-mint">A REAL DYNAMIC</p>
-          <h2 className="mt-3 font-display text-[20px] leading-none text-[var(--text-strong)] md:text-[24px]">
+          <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)] md:text-[24px]">
             Collaboration benefits
           </h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Having a team of AI agents is more than just speed-it's about perspective. When multiple specialists
             weigh in on the same problem, blind spots shrink and better design decisions emerge.
           </p>
@@ -305,7 +302,7 @@ export default function SolutionDesignersContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

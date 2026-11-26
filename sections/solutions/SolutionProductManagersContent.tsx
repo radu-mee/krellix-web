@@ -117,7 +117,7 @@ function AgentExampleCard({
         <h2 className="mt-4 font-display text-[20px] leading-none text-[var(--text-strong)]">
           {item.title}
         </h2>
-        <p className="type-paragraph mt-3 text-[var(--text-muted)]">{item.description}</p>
+        <p className="type-paragraph mt-3 text-[var(--text-strong)]">{item.description}</p>
       </div>
     </article>
   );
@@ -167,7 +167,7 @@ function BenefitCard({
         <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
           {card.title}
         </h3>
-        <p className="type-paragraph mt-3 text-[var(--text-muted)]">{card.description}</p>
+        <p className="type-paragraph mt-3 text-[var(--text-strong)]">{card.description}</p>
       </div>
     </article>
   );
@@ -177,16 +177,15 @@ export default function SolutionProductManagersContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[760px]">
+        <div className="max-w-[720px]">
           <Link
             href="/en/solutions"
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO SOLUTIONS
+            Back to solutions
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Product managers</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">Product managers</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Turn specs into actionable plans with AI for product managers, bringing design, engineering, and data
             perspectives into one collaborative workspace without scheduling a single meeting.
           </p>
@@ -236,11 +235,10 @@ export default function SolutionProductManagersContent() {
           </div>
 
           <div>
-            <p className="type-label text-brand-mint">STOP WEARING EVERY HAT ALONE</p>
-            <h2 className="mt-3 font-display text-[20px] leading-none text-[var(--text-strong)] md:text-[24px]">
+            <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)] md:text-[24px]">
               How they collaborate
             </h2>
-            <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+            <p className="type-paragraph mt-4 text-[var(--text-strong)]">
               You drop in a product spec. Code Reviewer flags what's complex to build. Design Expert catches UX
               friction before it ships. Business Analyst defines success metrics. They build on each other's input in
               the same thread-so trade-offs surface before sprint planning.
@@ -250,7 +248,7 @@ export default function SolutionProductManagersContent() {
 
       </div>
 
-      <p className="type-paragraph mx-auto mt-10 max-w-[760px] px-4 text-center text-[var(--text-muted)] md:px-6">
+      <p className="type-paragraph mx-auto mt-10 max-w-[760px] px-4 text-center text-[var(--text-strong)] md:px-6">
         Krellix is an AI productivity tool where multiple agents collaborate to support decision-making,
         prioritisation, and execution in one place.
       </p>
@@ -261,11 +259,10 @@ export default function SolutionProductManagersContent() {
 
       <div className="px-4 md:px-6">
         <div className="max-w-[760px]">
-          <p className="type-label text-brand-mint">A REAL DYNAMIC</p>
-          <h2 className="mt-3 font-display text-[20px] leading-none text-[var(--text-strong)] md:text-[24px]">
+          <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)] md:text-[24px]">
             Collaboration benefits
           </h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Working with an AI productivity tool gives you more than speed. A team of AI agents brings structure and
             multiple perspectives to every decision, helping you move forward with clarity across every stage of
             development.
@@ -305,7 +302,7 @@ export default function SolutionProductManagersContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

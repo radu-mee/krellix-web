@@ -32,16 +32,15 @@ export default function ResourceTemplateCreativeBriefContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/templates")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO TEMPLATES
+            Back to templates
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Creative brief</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">Creative brief</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Give your team the context they need to produce stronger work with a Creative Brief template designed to
             align messaging, audiences, deliverables, timelines, and direction before production begins.
           </p>
@@ -51,13 +50,13 @@ export default function ResourceTemplateCreativeBriefContent() {
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
           <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)]">About this template</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Creative projects often lose momentum when expectations, messaging, timelines, or deliverables are unclear
             from the beginning. A strong well-structured brief helps align stakeholders, reduce unnecessary revisions,
             clarify campaign objectives, and create a shared understanding of the audience, tone, and desired outcome
             before creative work starts.
           </p>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Use this Creative Brief template to organize campaign goals, audience insights, approvals, production
             timelines, and creative direction across branding, content, and marketing projects. It can also serve as a
             practical reference during planning discussions, onboarding, and creative reviews.
@@ -110,7 +109,7 @@ export default function ResourceTemplateCreativeBriefContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

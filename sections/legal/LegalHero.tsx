@@ -1,11 +1,11 @@
 import DotGridDivider from "@/ui/DotGridDivider";
 
 export default function LegalHero({
-  label,
   title,
   updatedAt,
 }: {
-  label: string;
+  /** No longer rendered; kept so existing pages still type-check. */
+  label?: string;
   title: string;
   updatedAt: string;
 }) {
@@ -13,9 +13,8 @@ export default function LegalHero({
     <section className="flex flex-col gap-16">
       <div className="px-4 md:px-6">
         <div className="flex max-w-[720px] flex-col gap-2">
-          <p className="type-label text-brand-mint">{label}</p>
-          <h1 className="type-h1 text-[var(--text-strong)]">{title}</h1>
-          <p className="type-paragraph text-[var(--text-muted)]">
+          <h1 className="type-h1 text-balance text-[var(--text-strong)]">{title}</h1>
+          <p className="type-paragraph max-w-[520px] text-balance text-[var(--text-strong)]">
             Last updated: {updatedAt}
           </p>
         </div>

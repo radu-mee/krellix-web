@@ -32,16 +32,15 @@ export default function ResourceTemplateProjectPlanningContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/templates")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO TEMPLATES
+            Back to templates
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Project Planning Template</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">Project Planning Template</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Plan projects with greater clarity using a Project Planning Template designed to define objectives,
             organize work, align stakeholders, manage risks, and keep delivery on track from kickoff to completion.
           </p>
@@ -51,13 +50,13 @@ export default function ResourceTemplateProjectPlanningContent() {
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
           <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)]">About this template</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Successful projects rarely fail because teams lack effort. More often, challenges emerge when priorities
             are unclear, responsibilities are undefined, risks are overlooked, or important decisions are made without
             shared visibility. Effective project planning creates alignment early, helping teams understand what needs
             to be delivered, who owns each part of the work, and how progress will be measured along the way.
           </p>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Use this template for project planning to establish project goals, define scope, organize deliverables,
             map timelines, identify dependencies, manage risks, and coordinate communication across stakeholders. The
             framework can support strategic initiatives, operational projects, product launches, process improvements,
@@ -111,7 +110,7 @@ export default function ResourceTemplateProjectPlanningContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

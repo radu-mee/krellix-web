@@ -32,16 +32,15 @@ export default function ResourceGuideCodeReviewContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/guides")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO GUIDES
+            Back to guides
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">How Developers Can Use AI for Code Review</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">How Developers Can Use AI for Code Review</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Learn how to use AI code review with practical guidance on security checks, architectural consistency, test
             coverage, agent configuration, and human review practices.
           </p>
@@ -51,13 +50,13 @@ export default function ResourceGuideCodeReviewContent() {
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
           <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)]">About this guide</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Code review plays a critical role in software quality, security, maintainability, and knowledge sharing,
             but it is often constrained by limited reviewer time and inconsistent review practices. Modern AI code
             review systems can help teams identify common issues faster, improve review consistency, and reduce the
             amount of manual effort spent on repetitive checks.
           </p>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             This guide explores where AI-powered code review delivers the most value, where it falls short, and how
             developers can integrate AI into existing review workflows without sacrificing engineering judgment. It
             covers secure code review, architecture considerations, review agents, workflow design, and practical
@@ -111,7 +110,7 @@ export default function ResourceGuideCodeReviewContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

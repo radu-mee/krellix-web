@@ -15,7 +15,7 @@ export default function LegalArticle({
               {section.paragraphs.map((paragraph) => (
                 <p
                   key={paragraph}
-                  className="type-paragraph max-w-[90ch] text-[var(--text-muted)]"
+                  className="type-paragraph max-w-[90ch] text-[var(--text-strong)]"
                 >
                   {paragraph}
                 </p>

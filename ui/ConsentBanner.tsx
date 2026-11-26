@@ -222,7 +222,7 @@ export default function ConsentBanner() {
               <h2 className="font-display text-[16px] leading-tight text-[var(--text-strong)] md:text-[18px]">
                 We use essential cookies and optional analytics cookies.
               </h2>
-              <p className="type-paragraph text-[13px] text-[var(--text-muted)] md:text-[14px]">
+              <p className="type-paragraph text-[13px] text-[var(--text-strong)] md:text-[14px]">
                 Essential cookies keep the website functional. Analytics helps us
                 understand usage so we can improve the product experience.
                 <span className="ml-1">

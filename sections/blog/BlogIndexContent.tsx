@@ -38,7 +38,7 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
           <h2 className="break-words font-display text-[20px] leading-[1.2] text-[var(--text-strong)]">
             {post.title}
           </h2>
-          <p className="type-paragraph max-w-full truncate text-[var(--text-muted)]">{post.excerpt}</p>
+          <p className="type-paragraph max-w-full truncate text-[var(--text-strong)]">{post.excerpt}</p>
           <p className="mt-1 max-w-full truncate font-display text-[14px] leading-[1.3] text-[var(--text-strong)]">
             {post.publishedAtLabel} • {post.readTimeLabel}
           </p>
@@ -58,10 +58,9 @@ export default function BlogIndexContent({ currentPage }: { currentPage: number 
   return (
     <section className="flex flex-col overflow-x-clip">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[620px]">
-          <p className="type-label text-brand-mint">Get weekly updates</p>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">The Krellix blog</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+        <div className="max-w-[720px]">
+          <h1 className="type-h1 text-balance text-[var(--text-strong)]">The Krellix blog</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             News, updates, and hot takes on everything AI—from working with intelligent systems to productivity,
             context-aware workflows, and real-world use.
           </p>

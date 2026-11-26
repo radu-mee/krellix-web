@@ -66,11 +66,10 @@ export default function ResourceKrellixCta() {
     <div className="border-b border-[var(--border-soft)] px-4 py-10 md:px-6 md:py-12">
       <div className="flex flex-col">
         <div className="max-w-[760px]">
-          <p className="type-label text-brand-mint">TRY KRELLIX FOR FREE</p>
-          <h2 className="mt-3 font-display text-[20px] leading-none text-[var(--text-strong)] md:text-[24px]">
+          <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)] md:text-[24px]">
             Get more done with your team of AI copilots
           </h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Solo or with a team, Krellix gives you the collaborators you need to move faster and ship better work.
           </p>
           <Link

@@ -188,6 +188,10 @@
         let frame = 0;
         const messageRows = new Map();
         let messagePeriod = 1;
+        const messagePulses = [];
+        const pulseDuration = 1.05;
+        const pulseFadeDuration = .40 * motionSpeed;
+        let nextMessagePulse = .55;
 
         function setTheme(theme) {
           root.dataset.theme = theme;
@@ -200,12 +204,16 @@
         function setMovement(value) {
           movement = value;
           elapsed = 0;
+          messagePulses.length = 0;
+          nextMessagePulse = .55;
           for (const button of movementButtons) {
             button.setAttribute('aria-pressed', String(button.dataset.movement === value));
           }
           const description = value === 'glyph'
             ? 'A breathing sphere of drifting characters with occasional uppercase messages, clipped at the top and right'
-            : 'An animated dithered sphere cropped to its lower-left quarter';
+            : value === 'pulse'
+              ? 'A breathing dithered sphere with shifting gradients, clipped at the top and left'
+              : 'An animated dithered sphere cropped to its lower-left quarter';
           canvas.setAttribute('aria-label', description);
           resize();
         }
@@ -274,6 +282,51 @@
           }
         }
 
+        function rowDrift(row) {
+          return elapsed * (4 + 11 * Math.sin(row * .31 + .4)) + row * 3.7;
+        }
+
+        function updateMessagePulses(radius, columnStep, rowStep) {
+          for (let index = messagePulses.length - 1; index >= 0; index--) {
+            if (elapsed - messagePulses[index].started >= pulseDuration) {
+              messagePulses.splice(index, 1);
+            }
+          }
+          if (elapsed < nextMessagePulse || messagePulses.length >= 2) return;
+
+          const candidates = [];
+          for (const [row, message] of messageRows) {
+            if (messagePulses.some(pulse => pulse.text === message.text)) continue;
+
+            const y = (row + .12) * rowStep;
+            const reach = Math.sqrt(Math.max(0, radius * radius - y * y)) / columnStep;
+            const right = -rowDrift(row) / columnStep;
+            const focus = right - reach * .38;
+            const repeat = Math.round((focus - message.start - message.text.length / 2) / messagePeriod);
+            const start = message.start + repeat * messagePeriod;
+            const visible = Math.min(right, start + message.text.length) - Math.max(right - reach * .9, start);
+            if (visible >= message.text.length * .7) candidates.push({ text: message.text, repeat });
+          }
+          if (!candidates.length) {
+            nextMessagePulse = elapsed + .35;
+            return;
+          }
+
+          const selected = candidates[Math.floor(Math.random() * candidates.length)];
+          messagePulses.push({ ...selected, started: elapsed });
+          nextMessagePulse = elapsed + .85 + Math.random() * .9;
+        }
+
+        function pulseInk(light, age) {
+          const base = light ? [141, 118, 93] : [201, 201, 201];
+          const purple = light ? [132, 76, 200] : [186, 136, 255];
+          const amount = smoothFade(age / pulseFadeDuration)
+            * smoothFade((pulseDuration - age) / pulseFadeDuration);
+          return 'rgb(' + base.map((channel, index) =>
+            Math.round(channel + (purple[index] - channel) * amount)
+          ).join(',') + ')';
+        }
+
         function paintGlyphPulse(width, height) {
           const light = root.dataset.theme === 'light';
           const breath = Math.sin(elapsed * 1.3);
@@ -285,10 +338,12 @@
           const bottomFeather = Math.min(52, Math.max(12, radius * .08));
           const lastRow = Math.ceil(Math.min(height, radius) / rowStep);
           const bandCenter = .55 + .08 * breath;
+          const neutralInk = light ? '#8d765d' : '#c9c9c9';
+          updateMessagePulses(radius, columnStep, rowStep);
 
           ctx.fillStyle = light ? '#faf8f4' : '#141414';
           ctx.fillRect(0, 0, width, height);
-          ctx.fillStyle = light ? '#8d765d' : '#c9c9c9';
+          ctx.fillStyle = neutralInk;
           ctx.font = `${fontSize}px "Cascadia Mono", Consolas, monospace`;
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
@@ -297,12 +352,16 @@
             // Offset the first row so the top edge cuts through the type.
             const rowY = row * rowStep + rowStep * .12;
             const y = rowY / radius;
-            const drift = elapsed * (4 + 11 * Math.sin(row * .31 + .4)) + row * 3.7;
+            const drift = rowDrift(row);
             const passedColumns = Math.floor(drift / columnStep);
             const shift = drift - passedColumns * columnStep;
             const rowRadius = radius * Math.sqrt(Math.max(0, 1 - y * y));
             const firstColumn = Math.floor((-rowRadius - shift) / columnStep);
             const message = messageRows.get(row);
+            const pulse = message && messagePulses.find(active => active.text === message.text);
+            const highlightedInk = pulse && pulseInk(light, elapsed - pulse.started);
+            const highlightedStart = pulse ? message.start + pulse.repeat * messagePeriod : 0;
+            let tinted = false;
 
             for (let column = firstColumn; column <= 0; column++) {
               const columnX = width + column * columnStep + shift;
@@ -329,10 +388,80 @@
               const brightness = (.23 + .31 * depth + .20 * band) * (1 + .13 * breath);
               ctx.globalAlpha = coverage * brightness * variation * shimmer;
               const alphabet = (seed & 3) === 0 ? letters : signs;
+              if (highlightedInk) {
+                const highlight = Boolean(messageCharacter)
+                  && textColumn >= highlightedStart && textColumn < highlightedStart + message.text.length;
+                if (highlight !== tinted) {
+                  ctx.fillStyle = highlight ? highlightedInk : neutralInk;
+                  tinted = highlight;
+                }
+              }
               ctx.fillText(messageCharacter ?? alphabet[(seed >>> 8) % alphabet.length], columnX, rowY);
             }
+            if (tinted) ctx.fillStyle = neutralInk;
           }
           ctx.globalAlpha = 1;
+        }
+
+        function paintGradientPulse() {
+          const { width, height, data } = pixels;
+          const light = root.dataset.theme === 'light';
+          const [baseR, baseG, baseB] = palettes[light ? 'light' : 'dark'][0];
+          const breath = Math.sin(elapsed * 1.3);
+          const radius = Math.min(width * .72, height * .98) * (1 + .035 * breath);
+          const bottomFeather = Math.min(26, Math.max(6, radius * .08));
+          const lastColumn = Math.min(width, Math.ceil(radius));
+          const lastRow = Math.min(height, Math.ceil(radius));
+          const flow = elapsed * .38;
+          const pools = [
+            { x: .11 + .10 * Math.sin(flow), y: .15, spread: .59, rgb: [147, 83, 217] },
+            { x: .43, y: .29 + .13 * Math.sin(flow + .9), spread: .51, rgb: [160, 174, 119] },
+            { x: .71 + .12 * Math.sin(flow + 1.2), y: .11, spread: .57, rgb: [255, 146, 56] },
+            { x: .12, y: .63 + .11 * Math.sin(flow + 2.5), spread: .50, rgb: [239, 74, 40] },
+          ];
+          const darkWeight = .22;
+          const gain = (light ? .80 : .97) + .08 * breath;
+          const ditherLevels = 5;
+
+          colors.fill(palette[0]);
+          for (let row = 0; row < lastRow; row++) {
+            const y = (row + .5) / radius;
+            const ySquared = y * y;
+            const bottom = (height - row - .5) / bottomFeather;
+            for (let column = 0; column < lastColumn; column++) {
+              const x = (column + .5) / radius;
+              const distanceSquared = x * x + ySquared;
+              if (distanceSquared >= 1) break;
+
+              const edge = smoothFade(Math.min((1 - Math.sqrt(distanceSquared)) / .43, bottom));
+              const depth = Math.sqrt(1 - distanceSquared);
+              const threshold = (bayer[((row & 7) << 3) | (column & 7)] + .5) / 64;
+              const tone = Math.min(ditherLevels, Math.floor(edge * gain * (.66 + .34 * depth) * ditherLevels + threshold));
+              if (!tone) continue;
+
+              // Overlapping pools of color drift across the same feathered quarter shape.
+              let weightSum = darkWeight;
+              let red = 16 * darkWeight;
+              let green = 38 * darkWeight;
+              let blue = 59 * darkWeight;
+              for (const pool of pools) {
+                const dx = x - pool.x;
+                const dy = y - pool.y;
+                const strength = Math.max(0, 1 - (dx * dx + dy * dy) / (pool.spread * pool.spread));
+                const weight = strength * strength;
+                weightSum += weight;
+                red += pool.rgb[0] * weight;
+                green += pool.rgb[1] * weight;
+                blue += pool.rgb[2] * weight;
+              }
+              const mix = tone / ditherLevels;
+              const index = (row * width + column) * 4;
+              data[index] = baseR + (red / weightSum - baseR) * mix;
+              data[index + 1] = baseG + (green / weightSum - baseG) * mix;
+              data[index + 2] = baseB + (blue / weightSum - baseB) * mix;
+            }
+          }
+          ctx.putImageData(pixels, 0, 0);
         }
 
         function paint() {
@@ -341,15 +470,17 @@
             return;
           }
           if (!pixels) return;
+          if (movement === 'pulse') {
+            paintGradientPulse();
+            return;
+          }
           const { width, height } = pixels;
           const fabric = movement === 'fabric';
           const orbit = movement === 'orbit';
-          const pulse = movement === 'pulse';
           const sweep = movement === 'sweep';
-          const breath = pulse ? Math.sin(elapsed * 1.3) : 0;
-          const radius = Math.min(width * .72, height * .98) * (1 + .035 * breath);
+          const radius = Math.min(width * .72, height * .98);
           const bottomFeather = Math.min(26, Math.max(6, radius * .08));
-          const rimFeather = pulse ? radius * .43 : bottomFeather;
+          const rimFeather = bottomFeather;
           const broadRipple = { latitude: 9, around: 3, amplitude: .068 };
           const fineRipple = { latitude: 20, around: 2, amplitude: .017 };
           const rimVariation = fabric ? broadRipple.amplitude + fineRipple.amplitude : 0;
@@ -420,8 +551,6 @@
                 const firstPatch = Math.max(0, -.78 * sphereX + .25 * sphereY + .57 * sphereZ);
                 const secondPatch = Math.max(0, .62 * sphereX + .7 * sphereY - .35 * sphereZ);
                 shade = shade * .68 + .42 * firstPatch ** 4 + .38 * secondPatch ** 5;
-              } else if (pulse) {
-                shade = shade * (.86 + .23 * breath) + .14 * depth ** 3;
               } else if (sweep) {
                 const alongSurface = .8 * (y - x) + .25 * depth;
                 const beam = Math.max(0, 1 - Math.abs(alongSurface - sweepPosition) / .26);

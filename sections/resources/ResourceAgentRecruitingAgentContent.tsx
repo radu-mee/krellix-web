@@ -32,16 +32,15 @@ export default function ResourceAgentRecruitingAgentContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/agents")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO AGENTS
+            Back to agents
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Recruiting agent</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">Recruiting agent</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             A hiring specialist that helps teams evaluate candidates and structure better interviews.
           </p>
         </div>
@@ -49,20 +48,20 @@ export default function ResourceAgentRecruitingAgentContent() {
 
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
-          <p className="type-paragraph text-[var(--text-muted)]">
+          <p className="type-paragraph text-[var(--text-strong)]">
             Write stronger job descriptions, design structured interviews, evaluate candidates more consistently, and
             improve hiring decisions with an AI recruiter focused on hiring quality, candidate experience, and
             long-term team fit.
           </p>
           <h2 className="mt-8 font-display text-[20px] leading-none text-[var(--text-strong)]">How this agent works</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Strong recruiting requires more than filling open roles quickly. Effective hiring depends on clear role
             definition, consistent evaluation processes, thoughtful candidate communication, and the ability to
             identify real evidence of skills and potential. Good recruiting also requires balancing hiring speed with
             rigor, reducing bias in interviews, and creating a candidate experience that reflects the company
             accurately.
           </p>
-          <p className="type-paragraph mt-2 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-2 text-[var(--text-strong)]">
             Use an AI for recruiting that supports job descriptions, interview planning, candidate evaluation, sourcing
             outreach, and hiring debriefs. This agent is designed to help teams run more structured hiring processes,
             improve employer branding, strengthen interview consistency, and make more defensible hiring decisions
@@ -118,7 +117,7 @@ export default function ResourceAgentRecruitingAgentContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

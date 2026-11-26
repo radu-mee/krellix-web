@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: var(--font-jetbrains-mono);
-  --font-body: var(--font-poppins);
+  --font-display: var(--font-geist);
+  --font-body: var(--font-geist);
   --color-brand-mint: #BA88FF;
   --color-canvas: #f9f9fa;
   --color-panel: #fafafa;
@@ -35,7 +35,8 @@
   --signal-line: rgba(0, 0, 0, 0.05);
   --signal-fade: rgba(0, 0, 0, 0.08);
   --shadow-soft: 0 18px 48px rgba(0, 0, 0, 0.06);
-  --type-h1-size: 2rem;
+  --type-h1-size: 2.25rem;
+  --type-h1-line-height: 1.15;
   --type-h2-size: 1.75rem;
   --type-h3-size: 1.25rem;
   --type-body-size: 0.875rem;
@@ -89,8 +90,8 @@
   --surface-muted: #1f1f1f;
   --control-bg: #141414;
   --field-bg: #1f1f1f;
-  --border-soft: #0d0c0d;
-  --border-strong: #0d0c0d;
+  --border-soft: #202020;
+  --border-strong: #202020;
   --border-contrast: #272727;
   --text-strong: #ffffff;
   --text-muted: #c3c3c3;
@@ -104,7 +105,7 @@
   --button-secondary-bg: #ffffff;
   --button-secondary-text: #000000;
   --button-waitlist-bg: #141414;
-  --button-waitlist-border: #0d0c0d;
+  --button-waitlist-border: #202020;
   --button-waitlist-text: #ffffff;
   --button-waitlist-hover-bg: #171717;
   --button-icon-bg: #ffffff;
@@ -119,7 +120,7 @@
   --navbar-top-bg: rgba(23, 23, 23, 0.78);
   --navbar-bottom-bg: rgba(26, 26, 26, 0.74);
   --toggle-track-bg: #1a1a1a;
-  --toggle-track-border: #0d0c0d;
+  --toggle-track-border: #202020;
   --toggle-thumb-bg: #484848;
   --ascii-divider-bg: #171717;
   --ascii-highlight-core: #777777;
@@ -139,15 +140,21 @@
 @media (min-width: 48rem) {
   :root {
     --site-header-spacer: 152px;
-    --type-h1-size: 2.25rem;
+    --type-h1-size: 3rem;
     --type-h2-size: 2rem;
     --type-h3-size: 1.5rem;
   }
 }
 
+@media (min-width: 64rem) {
+  :root {
+    --type-h1-size: 3.5rem;
+    --type-h1-line-height: 1.1;
+  }
+}
+
 @media (min-width: 80rem) {
   :root {
-    --type-h1-size: 2.5rem;
     --type-h2-size: 2.25rem;
     --type-h3-size: 1.75rem;
   }
@@ -406,29 +413,34 @@ select {
   .type-h2,
   .type-h3,
   .type-label {
-    font-family: var(--font-jetbrains-mono);
+    font-family: var(--font-geist);
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     letter-spacing: 0;
   }
 
   .type-h1 {
     font-size: var(--type-h1-size);
-    line-height: 1;
+    line-height: var(--type-h1-line-height);
+    /* Long headlines wrap into balanced lines instead of one wide line
+       hanging over a much narrower intro paragraph. */
+    max-width: 12em;
+    letter-spacing: -0.02em;
   }
 
   .type-h2 {
     font-size: var(--type-h2-size);
-    line-height: 1;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
   }
 
   .type-h3 {
     font-size: var(--type-h3-size);
-    line-height: 1;
+    line-height: 1.3;
   }
 
 .type-paragraph {
-    font-family: var(--font-poppins);
+    font-family: var(--font-geist);
     font-size: var(--type-body-size);
     font-style: normal;
     font-weight: 400;
@@ -438,17 +450,21 @@ select {
 
   .type-label {
     font-size: var(--type-label-size);
+    font-weight: 400;
+    letter-spacing: 0.04em;
     line-height: 1;
     text-transform: uppercase;
   }
 }
 
-.solution-card-cta {
+.solution-card-cta,
+.accent-link {
   color: var(--accent);
   text-decoration: none;
   text-underline-offset: 4px;
 }
 
-.solution-card-cta:hover {
+.solution-card-cta:hover,
+.accent-link:hover {
   text-decoration: underline;
 }

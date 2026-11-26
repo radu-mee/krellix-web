@@ -32,16 +32,15 @@ export default function ResourceTemplateSprintRetrospectiveContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/templates")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO TEMPLATES
+            Back to templates
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Sprint Retrospective Template</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">Sprint Retrospective Template</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Turn team feedback into meaningful improvements with a Sprint Retrospective Template designed to help
             identify root causes, strengthen collaboration, and turn lessons learned into lasting process changes.
           </p>
@@ -51,14 +50,14 @@ export default function ResourceTemplateSprintRetrospectiveContent() {
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
           <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)]">About this template</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             The value of a sprint retrospective is not in discussing what happened-it's in deciding what to do
             differently next. Without clear ownership, follow-up, and honest reflection, the same issues tend to
             appear repeatedly from one iteration to the next. A strong retrospective creates space for teams to learn
             from their work, surface recurring challenges, and continuously improve how they plan, collaborate, and
             deliver.
           </p>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Use this retrospective template to review sprint outcomes, explore what worked and what didn't, identify
             improvement opportunities, track action items, and evaluate team health over time. The framework can
             support Agile teams looking to build stronger feedback loops, increase accountability, and create
@@ -112,7 +111,7 @@ export default function ResourceTemplateSprintRetrospectiveContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

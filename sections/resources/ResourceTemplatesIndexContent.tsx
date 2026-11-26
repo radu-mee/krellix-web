@@ -89,7 +89,7 @@ function TemplatesListRow({
           <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
             {title}
           </h2>
-          <p className="type-paragraph mt-1 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-1 text-[var(--text-strong)]">
             {description}
           </p>
         </div>
@@ -169,18 +169,17 @@ export default function ResourceTemplatesIndexContent({
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO RESOURCES
+            Back to resources
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">
             Templates
           </h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Download free workflow templates for the documents your work runs on.
           </p>
         </div>
@@ -225,7 +224,7 @@ export default function ResourceTemplatesIndexContent({
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">
+              <p className="type-paragraph text-[var(--text-strong)]">
                 {item.answer}
               </p>
             </article>

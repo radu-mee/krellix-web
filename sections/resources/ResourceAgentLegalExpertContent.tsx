@@ -32,16 +32,15 @@ export default function ResourceAgentLegalExpertContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/agents")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO AGENTS
+            Back to agents
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">Legal expert</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">Legal expert</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             A sharp-eyed contract specialist that flags risks and explains legal language clearly.
           </p>
         </div>
@@ -49,19 +48,19 @@ export default function ResourceAgentLegalExpertContent() {
 
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
-          <p className="type-paragraph text-[var(--text-muted)]">
+          <p className="type-paragraph text-[var(--text-strong)]">
             Paste in contracts, NDAs, vendor agreements, or employment documents and use the AI contract review agent
             to identify risks, explain legal language in plain English, and surface important questions worth
             escalating to legal counsel.
           </p>
           <h2 className="mt-8 font-display text-[20px] leading-none text-[var(--text-strong)]">How this agent works</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Contracts often contain dense legal language, unclear obligations, missing protections, and one-sided
             clauses that are difficult to identify without careful review. Understanding what a document actually means
             requires more than scanning for keywords - it requires context, structured contract analysis, and the
             ability to recognize unusual terms, hidden risks, and missing provisions.
           </p>
-          <p className="type-paragraph mt-2 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-2 text-[var(--text-strong)]">
             This agent is designed to review commercial agreements, SaaS contracts, employment agreements, vendor
             terms, and partnership deals. Use AI for legal document review to flag non-standard clauses, explain legal
             terminology in plain English, and turn complex agreements into clearer business and operational decisions.
@@ -116,7 +115,7 @@ export default function ResourceAgentLegalExpertContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

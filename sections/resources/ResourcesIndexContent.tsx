@@ -31,7 +31,7 @@ function ResourceCard({
         <h2 className="mt-8 font-display text-[20px] leading-none text-[var(--text-strong)]">
           {resource.title}
         </h2>
-        <p className="type-paragraph mt-4 max-w-[320px] text-[var(--text-muted)]">
+        <p className="type-paragraph mt-4 max-w-[320px] text-[var(--text-strong)]">
           {resource.description}
         </p>
         <Link
@@ -53,12 +53,11 @@ export default function ResourcesIndexContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
-          <p className="type-label text-brand-mint">Resources</p>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">
+        <div className="max-w-[720px]">
+          <h1 className="type-h1 text-balance text-[var(--text-strong)]">
             The working professional&apos;s toolkit
           </h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Free workflow templates, AI prompts, and guides to help you work
             smarter.
           </p>
@@ -89,7 +88,7 @@ export default function ResourcesIndexContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">
+              <p className="type-paragraph text-[var(--text-strong)]">
                 {item.answer}
               </p>
             </article>

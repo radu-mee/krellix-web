@@ -10,7 +10,7 @@ export default function NotFound() {
           <Ascii404Burst size={248} className="mb-16" />
 
           <h1 className="type-h1 text-[var(--text-strong)]">Oops!</h1>
-          <p className="type-paragraph mt-4 max-w-[560px] text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 max-w-[560px] text-[var(--text-strong)]">
             It looks like something&apos;s gone wrong! The page you are looking for
             appears to have been moved, deleted or doesn&apos;t exist.
           </p>

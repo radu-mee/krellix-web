@@ -32,16 +32,15 @@ export default function ResourceGuideAiWorkflowForTeamContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/guides")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO GUIDES
+            Back to guides
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">How to Build an AI Workflow for Your Team</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">How to Build an AI Workflow for Your Team</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             A practical guide to moving beyond individual AI habits and building shared AI workflows, prompt libraries,
             and agent configurations that benefit the whole team.
           </p>
@@ -51,14 +50,14 @@ export default function ResourceGuideAiWorkflowForTeamContent() {
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
           <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)]">About this guide</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Many people use AI successfully on their own, but very few build processes that make those improvements
             repeatable across a team. One person discovers a useful prompt, another creates an effective agent, and
             someone else develops a workflow that saves hours each week - but the knowledge often stays isolated.
             Without shared systems, the benefits of AI remain limited to individual productivity instead of improving
             how a team works together.
           </p>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             This guide explains how to design practical AI workflows, build shared prompt libraries, create effective AI
             agent workflows, and develop repeatable systems that help knowledge, processes, and best practices spread
             across a team instead of remaining with individuals. Whether you're leading a team, contributing to one, or
@@ -113,7 +112,7 @@ export default function ResourceGuideAiWorkflowForTeamContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

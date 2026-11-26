@@ -78,7 +78,7 @@ function ContactCardTile({
 
       <div className="flex flex-col items-center border-t border-[var(--border-soft)] bg-[var(--surface-raised)] px-6 py-7 text-center">
         <p className="type-label text-brand-mint">{card.title}</p>
-        <p className="type-paragraph mt-4 max-w-[280px] text-[var(--text-muted)]">
+        <p className="type-paragraph mt-4 max-w-[280px] text-[var(--text-strong)]">
           {card.description}
         </p>
         <a
@@ -97,11 +97,10 @@ export default function ContactContent() {
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
         <div className="max-w-[720px]">
-          <p className="type-label text-brand-mint">Contact us</p>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">
+          <h1 className="type-h1 text-balance text-[var(--text-strong)]">
             We&apos;d love to hear from you
           </h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Have questions about Krellix, your AI agents, or your workspace? Reach
             out for support, feedback, press, or partnership inquiries.
           </p>
@@ -126,7 +125,7 @@ export default function ContactContent() {
               className="grid gap-4 py-8 md:grid-cols-[minmax(260px,1fr)_minmax(320px,1.2fr)] md:gap-10"
             >
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">{item.question}</h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>

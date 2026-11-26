@@ -32,16 +32,15 @@ export default function ResourceTemplateOkrPlanningContent() {
   return (
     <section className="flex flex-col">
       <div className="border-b border-[var(--border-soft)] px-4 py-14 md:px-6 md:py-16">
-        <div className="max-w-[900px]">
+        <div className="max-w-[720px]">
           <Link
             href={localizePath("/resources/templates")}
-            className="type-label inline-flex text-brand-mint transition-opacity hover:opacity-80"
-            style={{ color: "#BA88FF" }}
+            className="accent-link type-paragraph inline-flex w-fit"
           >
-            BACK TO TEMPLATES
+            Back to templates
           </Link>
-          <h1 className="type-h1 mt-3 text-[var(--text-strong)]">OKR Planning</h1>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <h1 className="type-h1 mt-3 text-balance text-[var(--text-strong)]">OKR Planning</h1>
+          <p className="type-paragraph mt-4 max-w-[520px] text-balance text-[var(--text-strong)]">
             Set clearer priorities with an OKR template designed to turn ambitious objectives into measurable outcomes,
             align efforts across teams or individuals, and create a consistent rhythm for planning, review, and
             accountability.
@@ -52,13 +51,13 @@ export default function ResourceTemplateOkrPlanningContent() {
       <div className="border-b border-[var(--border-soft)] bg-[var(--resource-agent-detail-bg)] px-4 py-10 md:px-6 md:py-12">
         <div className="max-w-[980px]">
           <h2 className="font-display text-[20px] leading-none text-[var(--text-strong)]">About this template</h2>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Many goals fail not because teams lack ambition, but because success is never clearly defined. Without
             measurable outcomes, regular review points, and shared ownership, priorities can drift and progress
             becomes difficult to evaluate. The OKR framework provides a structured way to connect long-term direction
             with measurable results that can be tracked throughout a quarter.
           </p>
-          <p className="type-paragraph mt-4 text-[var(--text-muted)]">
+          <p className="type-paragraph mt-4 text-[var(--text-strong)]">
             Use this template to support OKR planning, define objectives, track key results, review progress, and
             evaluate performance over time. The structure can be used by individuals, teams, and organizations to
             prioritize work, monitor progress, and create greater visibility into the outcomes that matter most.
@@ -111,7 +110,7 @@ export default function ResourceTemplateOkrPlanningContent() {
               <h3 className="font-display text-[20px] leading-none text-[var(--text-strong)]">
                 {item.question}
               </h3>
-              <p className="type-paragraph text-[var(--text-muted)]">{item.answer}</p>
+              <p className="type-paragraph text-[var(--text-strong)]">{item.answer}</p>
             </article>
           ))}
         </div>
